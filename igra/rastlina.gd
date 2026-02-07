@@ -8,5 +8,5 @@ func _ready():
 	
 	
 func _on_body_entered(body: Node3D):
-	if body.is_class("Player"):  # Assuming your player is in a "Player" group
+	if body is CharacterBody3D:  # Assuming your player is in a "Player" group
 		print("Player collided with " + ime)
