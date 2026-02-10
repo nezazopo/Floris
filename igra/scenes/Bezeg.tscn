@@ -1,10 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://jixhukafw606"]
+[gd_scene load_steps=2 format=3 uid="uid://b500uka7w3uvy"]
 
-[ext_resource type="PackedScene" uid="uid://b22xce27kvu51" path="res://scenes/cemaz.tscn" id="1_c4g7n"]
-[ext_resource type="Script" uid="uid://cgx3420clp5en" path="res://scripts/rastlina.gd" id="2_pcald"]
+[ext_resource type="PackedScene" uid="uid://cjbthrjnggv8r" path="res://scenes/rastlina.tscn" id="1_aflqt"]
 
-[node name="Bezeg" instance=ExtResource("1_c4g7n")]
+[node name="Bezeg" instance=ExtResource("1_aflqt")]
 ime = "Bezeg"
-
-[node name="Area3D" parent="." index="1"]
-script = ExtResource("2_pcald")
