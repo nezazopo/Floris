@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cjbthrjnggv8r"]
 
-[ext_resource type="Script" uid="uid://cgx3420clp5en" path="res://rastlina.gd" id="1_d6yt8"]
+[ext_resource type="Script" uid="uid://cgx3420clp5en" path="res://scripts/rastlina.gd" id="1_d6yt8"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_d6yt8"]
 

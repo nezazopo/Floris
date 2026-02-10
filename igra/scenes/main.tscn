@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b55hhny07f05t"]
+[gd_scene load_steps=9 format=3 uid="uid://b55hhny07f05t"]
 
 [ext_resource type="PackedScene" uid="uid://cjbthrjnggv8r" path="res://scenes/rastlina.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://b22xce27kvu51" path="res://scenes/cemaz.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://cf0en4bfbb2dx" path="res://scenes/character_body_3d.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://cb0qllbssnw34" path="res://scenes/static_body_3d.tscn" id="4_tbgi4"]
+[ext_resource type="Script" uid="uid://dmnm30uihfj4r" path="res://scripts/game_manager.gd" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://jixhukafw606" path="res://scenes/Bezeg.tscn" id="6_tefeu"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_o5qli"]
 
@@ -20,6 +22,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3.5701027)
 
 [node name="Rastlina" parent="." instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48808897, 1.0019733, -0.91481996)
+strupenost = 1
 
 [node name="MeshInstance3D" parent="Rastlina" index="0"]
 mesh = SubResource("CylinderMesh_o5qli")
@@ -33,11 +36,23 @@ mesh = SubResource("BoxMesh_sugp2")
 [node name="Area3D" parent="Cemaz" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
+[node name="Bezeg" parent="." instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2963743, 0.9849178, -3.8344598)
+
+[node name="Area3D" parent="Bezeg" index="1"]
+script = null
+
 [node name="CharacterBody3D" parent="." instance=ExtResource("4_jyhfs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 1)
 
-[node name="StaticBody3D" parent="." instance=ExtResource("4_tbgi4")]
+[node name="Tla" parent="." instance=ExtResource("4_tbgi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5150822, 3)
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_tbgi4")
 
 [editable path="Rastlina"]
 [editable path="Cemaz"]
+[editable path="Bezeg"]
+[editable path="CharacterBody3D"]
