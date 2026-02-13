@@ -7,6 +7,6 @@ extends Panel
 func _ready() -> void:
 	text_poisci_rastlino.text = game_manager.poisciRastlino.ime
 
-func updatePanel(Rastlina):
-	if(Rastlina != null):
-		text_poisci_rastlino.text = Rastlina.ime
+func updatePanel(r):
+	if(r != null):
+		text_poisci_rastlino.text = r.ime

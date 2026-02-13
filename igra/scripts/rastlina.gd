@@ -1,8 +1,9 @@
+#@abstract
 extends Node3D
 class_name Rastlina
 
 @export var ime: String = "Rastlina"
-@export var strupenost = 0 #0, 1, 2
+@export_range(0,2) var strupenost = 0 #0, 1, 2
 @onready var game_manager = %GameManager
 # Called when the node enters the scene tree for the first time.
 func _ready():
