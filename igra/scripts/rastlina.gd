@@ -1,4 +1,4 @@
-#@abstract
+@abstract
 extends Node3D
 class_name Rastlina
 
@@ -8,7 +8,6 @@ class_name Rastlina
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("rastline")
-	print("Rastlina ready → added to group: ", ime, " (", name, ")")
 	$Area3D.body_entered.connect(_on_body_entered)
 	
 func _on_body_entered(body: Node3D):

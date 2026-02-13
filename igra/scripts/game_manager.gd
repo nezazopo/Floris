@@ -10,12 +10,12 @@ var konec = false
 @onready var panel_tocke: Panel = $"../PanelTocke"
 @onready var timer: Timer = $"../Timer"
 
+
 func _ready():
 	var rastline_nodes = get_tree().get_nodes_in_group("rastline")
 	rastline.assign(rastline_nodes)
-	print(rastline)
 	poisciRastlino = rastline[0]
-	print("Poisci " + poisciRastlino.ime)
+	panel_poisci_rastlino.updatePanel(poisciRastlino)
 	if timer != null:
 		timer.timeout.connect(on_timer_timeout)
 	

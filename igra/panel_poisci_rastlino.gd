@@ -5,7 +5,8 @@ extends Panel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	text_poisci_rastlino.text = game_manager.poisciRastlino.ime
+	if game_manager.poisciRastlino!= null:
+		text_poisci_rastlino.text = game_manager.poisciRastlino.ime
 
 func updatePanel(r):
 	if(r != null):
