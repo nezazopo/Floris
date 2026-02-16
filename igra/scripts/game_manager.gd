@@ -9,18 +9,13 @@ var konec = false
 @onready var panel_poisci_rastlino: Panel = $"../PanelPoisciRastlino"
 @onready var panel_tocke: Panel = $"../PanelTocke"
 @onready var timer: Timer = $"../Timer"
-
+@onready var panel_death: Panel = $"../PanelDeath"
 
 func _ready():
 	var rastline_nodes = get_tree().get_nodes_in_group("rastline")
 	rastline.assign(rastline_nodes)
 	poisciRastlino = rastline[0]
 	panel_poisci_rastlino.updatePanel(poisciRastlino)
-	if timer != null:
-		timer.timeout.connect(on_timer_timeout)
-	
-func on_timer_timeout():
-	konecIgre()
 	
 func naslednjaRastlina():
 	indeksRastline += 1
@@ -28,33 +23,18 @@ func naslednjaRastlina():
 		poisciRastlino = rastline[indeksRastline]
 		panel_poisci_rastlino.updatePanel(poisciRastlino)
 	else:
-		konec = true
-		print("KONEC rastlin")
-		Engine.time_scale = 0.5
-		if timer != null:
-			timer.start()
+		panel_death.prikaziPanel("Zmaga!")
 	
 func odstej(st):
 	tocke -= st
 	panel_tocke.updateTocke()
 	if(tocke < 0):
-		Engine.time_scale = 0.5
-		if timer != null:
-			timer.start()
+		panel_death.prikaziPanel("Zmanjkalo ti je točk!")
 		
 func pristej():
 	tocke += 3
 	panel_tocke.updateTocke()
 	
-func umre():
-	print("Zaužil si smrtonosno rastlino, igre je konec")
-	Engine.time_scale = 0.5
-	if timer != null:
-		timer.start()
-	
-func konecIgre():
-	Engine.time_scale = 1
-	get_tree().call_deferred("reload_current_scene")
 	
 func poiskano():
 	if poiskanoBool == false:

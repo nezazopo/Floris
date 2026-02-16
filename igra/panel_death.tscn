@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp4lg4dcudre5"]
+
+[ext_resource type="Script" uid="uid://ddc87cpseu6vn" path="res://panel_death.gd" id="1_vy8l5"]
+
+[node name="PanelDeath" type="Panel"]
+offset_right = 427.0
+offset_bottom = 416.0
+script = ExtResource("1_vy8l5")
+
+[node name="RestartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 288.0
+offset_right = 290.0
+offset_bottom = 330.0
+text = "Pokusi še enkrat!"
+
+[node name="PanelDeathText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 19.0
+offset_right = 389.0
+offset_bottom = 268.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
