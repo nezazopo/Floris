@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="8_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cp4lg4dcudre5" path="res://scenes/panel_konec.tscn" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://cxc3h5ttci816" path="res://scenes/panel_uvod.tscn" id="9_85g3d"]
+[ext_resource type="Script" uid="uid://n7ufouy6utr1" path="res://scenes/panel_opisastline.gd" id="10_choun"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_sugp2"]
 
@@ -36,6 +37,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5150822, 3)
 
 [node name="PanelPoisciRastlino" parent="." unique_id=1712557753 instance=ExtResource("6_o6xl0")]
+offset_right = 274.0
 
 [node name="PanelTocke" parent="." unique_id=2025925362 instance=ExtResource("7_o6xl0")]
 
@@ -68,31 +70,32 @@ offset_top = -159.5
 offset_right = 263.0
 offset_bottom = 159.5
 
-[node name="Panel" type="Panel" parent="." unique_id=1901042987]
+[node name="PanelOpisastline" type="Panel" parent="." unique_id=1901042987]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -196.0
-offset_top = -237.0
-offset_right = 196.0
-offset_bottom = 237.0
+offset_left = -235.0
+offset_top = -311.0
+offset_right = 235.0
+offset_bottom = 311.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+script = ExtResource("10_choun")
 
-[node name="Label" type="Label" parent="Panel" unique_id=1695216502]
+[node name="LabelOpisRastline" type="Label" parent="PanelOpisastline" unique_id=1695216502]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -167.0
-offset_top = -219.0
-offset_right = 167.0
-offset_bottom = 219.0
+offset_left = -205.0
+offset_top = -274.0
+offset_right = 205.0
+offset_bottom = 274.0
 grow_horizontal = 2
 grow_vertical = 2
 horizontal_alignment = 1
