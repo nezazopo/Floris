@@ -67,7 +67,6 @@ offset_left = -263.0
 offset_top = -159.5
 offset_right = 263.0
 offset_bottom = 159.5
-size_flags_vertical = 4
 
 [node name="Panel" type="Panel" parent="." unique_id=1901042987]
 anchors_preset = 8
