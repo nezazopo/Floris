@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b22xce27kvu51"]
 
 [ext_resource type="PackedScene" uid="uid://cjbthrjnggv8r" path="res://scenes/rastlina.tscn" id="1_pokh7"]
-[ext_resource type="Script" uid="uid://h1odmwux86h6" path="res://scenes/cemaz.gd" id="2_b6cp7"]
+[ext_resource type="Script" uid="uid://h1odmwux86h6" path="res://scripts/cemaz.gd" id="2_b6cp7"]
 
 [node name="Cemaz" unique_id=1910173710 instance=ExtResource("1_pokh7")]
 script = ExtResource("2_b6cp7")

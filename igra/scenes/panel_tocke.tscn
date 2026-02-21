@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://b00ah541am28r"]
+[gd_scene format=3 uid="uid://b00ah541am28r"]
 
-[ext_resource type="Script" uid="uid://dsfjwrl0b5oj4" path="res://panel_tocke.gd" id="1_irexa"]
+[ext_resource type="Script" uid="uid://dsfjwrl0b5oj4" path="res://scripts/panel_tocke.gd" id="1_irexa"]
 
 [node name="PanelTocke" type="Panel"]
 anchors_preset = 1

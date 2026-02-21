@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cp4lg4dcudre5"]
+[gd_scene format=3 uid="uid://cp4lg4dcudre5"]
 
-[ext_resource type="Script" uid="uid://ddc87cpseu6vn" path="res://panel_death.gd" id="1_vy8l5"]
+[ext_resource type="Script" uid="uid://ddc87cpseu6vn" path="res://scripts/panel_konec.gd" id="1_vy8l5"]
 
 [node name="PanelDeath" type="Panel"]
 offset_right = 427.0

@@ -1,6 +1,7 @@
 extends Panel
 @onready var text_poisci_rastlino: Label = %TextPoisciRastlino
 @onready var game_manager = %GameManager
+@onready var proto_controller: CharacterBody3D = $"../ProtoController"
 
 
 # Called when the node enters the scene tree for the first time.

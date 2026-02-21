@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b500uka7w3uvy"]
 
 [ext_resource type="PackedScene" uid="uid://cjbthrjnggv8r" path="res://scenes/rastlina.tscn" id="1_aflqt"]
-[ext_resource type="Script" uid="uid://co48yrv5dxpjr" path="res://scenes/bezeg.gd" id="2_pcald"]
+[ext_resource type="Script" uid="uid://co48yrv5dxpjr" path="res://scripts/bezeg.gd" id="2_pcald"]
 
 [node name="Bezeg" unique_id=1266372627 instance=ExtResource("1_aflqt")]
 script = ExtResource("2_pcald")
