@@ -4,6 +4,7 @@ class_name Rastlina
 
 @export var ime: String = "Rastlina"
 @export_range(0,2) var strupenost = 0 #0, 1, 2
+var slika
 @onready var game_manager = %GameManager
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,3 +28,6 @@ func _on_body_entered(body: Node3D):
 				game_manager.odstej(1 + strupenost);
 			if game_manager.tocke < 0:
 				print("Ni ti uspelo :(") 
+
+func vrniSliko():
+	pass

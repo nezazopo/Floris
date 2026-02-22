@@ -9,9 +9,41 @@
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="8_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cp4lg4dcudre5" path="res://scenes/panel_konec.tscn" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://cxc3h5ttci816" path="res://scenes/panel_uvod.tscn" id="9_85g3d"]
-[ext_resource type="Script" uid="uid://n7ufouy6utr1" path="res://scenes/panel_opisastline.gd" id="10_choun"]
+[ext_resource type="Script" uid="uid://n7ufouy6utr1" path="res://scenes/panel_opis_rastline.gd" id="10_choun"]
+[ext_resource type="Script" uid="uid://dixsng6lhc510" path="res://scenes/button.gd" id="11_ya4ey"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_sugp2"]
+
+[sub_resource type="GDScript" id="GDScript_ya4ey"]
+script/source = "extends Label
+@onready var game_manager = %GameManager
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	if (game_manager.poisciRastlino.ime == \"Bezeg\"):
+		self.text = \"to je bezeg\"
+	else:
+		self.text = \"nic\"
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_choun"]
+script/source = "extends TextureRect
+@onready var texture_rect: TextureRect = $\".\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="main" type="Node3D" unique_id=860746009]
 
@@ -70,7 +102,7 @@ offset_top = -159.5
 offset_right = 263.0
 offset_bottom = 159.5
 
-[node name="PanelOpisastline" type="Panel" parent="." unique_id=1901042987]
+[node name="PanelOpisRastline" type="Panel" parent="." unique_id=1901042987]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -85,7 +117,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("10_choun")
 
-[node name="LabelOpisRastline" type="Label" parent="PanelOpisastline" unique_id=1695216502]
+[node name="LabelOpisRastline" type="Label" parent="PanelOpisRastline" unique_id=1695216502]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -99,8 +131,37 @@ offset_bottom = 274.0
 grow_horizontal = 2
 grow_vertical = 2
 horizontal_alignment = 1
+script = SubResource("GDScript_ya4ey")
+
+[node name="TextureRect" type="TextureRect" parent="PanelOpisRastline" unique_id=1950844459]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 69.0
+offset_right = 438.0
+offset_bottom = 175.0
+expand_mode = 2
+stretch_mode = 5
+script = SubResource("GDScript_choun")
+
+[node name="ButtonOK" type="Button" parent="PanelOpisRastline" unique_id=1759978403]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -83.0
+offset_right = -59.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "OK
+"
+script = ExtResource("11_ya4ey")
 
 [connection signal="pressed" from="PanelUvod/ButtonUvodGo" to="PanelUvod" method="_on_button_uvod_go_pressed"]
+[connection signal="pressed" from="PanelOpisRastline/ButtonOK" to="PanelOpisRastline" method="_on_button_pressed"]
 
 [editable path="Bezeg"]
 [editable path="Cemaz"]
