@@ -17,3 +17,7 @@ func prikaziPanelOpisRastline():
 	
 func _on_button_pressed() -> void:
 	self.visible = false
+
+
+func _on_gui_input(event: InputEvent) -> void:
+	pass # Replace with function body.
