@@ -55,39 +55,6 @@ script = ExtResource("5_tbgi4")
 [node name="Timer" type="Timer" parent="." unique_id=191509279]
 unique_name_in_owner = true
 
-[node name="PanelKonec" parent="." unique_id=1978548227 instance=ExtResource("8_tipki")]
-unique_name_in_owner = true
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -236.0
-offset_top = -62.0
-offset_right = 236.0
-offset_bottom = 62.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-
-[node name="PanelDeathText" parent="PanelKonec" index="0" unique_id=762328038]
-anchors_preset = 8
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -40.0
-offset_bottom = 40.0
-grow_vertical = 2
-
-[node name="Label" parent="PanelKonec" index="1" unique_id=133008883]
-anchors_preset = 6
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = -254.0
-offset_top = 12.0
-offset_right = -1.0
-offset_bottom = 84.0
-grow_vertical = 2
-
 [node name="ProtoController" parent="." unique_id=974561663 instance=ExtResource("8_85g3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87365, -0.015081942, 0.44604683)
 
@@ -157,9 +124,11 @@ grow_vertical = 2
 text = "ESC - izpusti miško
 R - opis trenutne rastline"
 
+[node name="PanelKonec" parent="." unique_id=1496813041 instance=ExtResource("8_tipki")]
+unique_name_in_owner = true
+
 [editable path="Bezeg"]
 [editable path="Cemaz"]
-[editable path="PanelKonec"]
 [editable path="ProtoController"]
 [editable path="PanelUvod"]
 [editable path="PanelOpisRastline"]
