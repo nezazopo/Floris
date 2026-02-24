@@ -4,20 +4,18 @@ extends Panel
 @onready var game_manager = %GameManager
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	self.visible = false
 	label_opis_rastline.text = str("To je " + game_manager.poisciRastlino.ime)
 	texture_rect.texture = game_manager.poisciRastlino.vrniSliko()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	self.visible = false
-	pass
-
+	if Input.is_action_just_pressed("R_pressed"):
+		if self.visible:
+			self.visible = false
+		else:
+			self.visible = true
+		
 func prikaziPanelOpisRastline():
 	self.visible = true
 	
-func _on_button_pressed() -> void:
-	self.visible = false
-
-
-func _on_gui_input(event: InputEvent) -> void:
-	pass # Replace with function body.

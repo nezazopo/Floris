@@ -4,7 +4,7 @@
 # Happy prototyping!
 
 extends CharacterBody3D
-
+@onready var label_pritisni: Label = $"../LabelPritisni"
 ## Can we move around?
 @export var can_move : bool = true
 ## Are we affected by gravity?
@@ -143,12 +143,13 @@ func disable_freefly():
 
 
 func capture_mouse():
+	label_pritisni.skrij()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	mouse_captured = true
 
 
 func release_mouse():
-	
+	label_pritisni.prikazi()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	mouse_captured = false
 

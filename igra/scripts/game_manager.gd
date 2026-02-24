@@ -6,10 +6,11 @@ var poisciRastlino
 var poiskanoBool = false
 var indeksRastline = 0
 var konec = false
-@onready var panel_poisci_rastlino: Panel = $"../PanelPoisciRastlino"
-@onready var panel_tocke: Panel = $"../PanelTocke"
-@onready var timer: Timer = $"../Timer"
-@onready var panel_death: Panel = $"../PanelKonec"
+
+@onready var panel_poisci_rastlino: Panel = %PanelPoisciRastlino
+@onready var panel_tocke: Panel = %PanelTocke
+@onready var timer: Timer = %Timer
+@onready var panel_death: Panel = %PanelKonec
 
 func _ready():
 	var rastline_nodes = get_tree().get_nodes_in_group("rastline")
