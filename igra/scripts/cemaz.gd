@@ -5,3 +5,6 @@ extends "res://scripts/rastlina.gd"
 func vrniSliko():
 	var slika = preload("res://cat.jpg")
 	return slika
+
+func vrniopis():
+	var opis = " "

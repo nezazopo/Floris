@@ -12,13 +12,13 @@ func _ready():
 	$Area3D.body_entered.connect(_on_body_entered)
 	
 func _on_body_entered(body: Node3D):
-	print("a")
+
 	if body is CharacterBody3D:  #ce je igralec vstopil v okolico rastline
-		print("st. tock ", game_manager.tocke)
 		
 		if self == (game_manager.poisciRastlino):
 			print("pravilno si našel " + ime +"!")
 			game_manager.pristej()
+			print("st tock: ", game_manager.tocke)
 			game_manager.naslednjaRastlina()
 			if(!game_manager.konec):
 				print("sedaj poisci " + game_manager.poisciRastlino.ime)
