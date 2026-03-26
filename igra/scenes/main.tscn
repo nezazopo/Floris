@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b22xce27kvu51" path="res://scenes/cemaz.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://cb0qllbssnw34" path="res://scenes/static_body_3d.tscn" id="4_tbgi4"]
-[ext_resource type="Texture2D" uid="uid://dpeuwktrtodl4" path="res://assets/textures/seamless-grass-texture-free.png" id="5_jkv2x"]
 [ext_resource type="Script" uid="uid://dmnm30uihfj4r" path="res://scripts/game_manager.gd" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://pkgwg5wpoogx" path="res://assets/tla.blend" id="6_muem4"]
 [ext_resource type="PackedScene" uid="uid://j610sgs474b0" path="res://scenes/panel_poisci_rastlino.tscn" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://b500uka7w3uvy" path="res://scenes/Bezeg.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://b00ah541am28r" path="res://scenes/panel_tocke.tscn" id="7_o6xl0"]
@@ -12,14 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://cxc3h5ttci816" path="res://scenes/panel_uvod.tscn" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cds2rmsl3k2cw" path="res://scenes/panel_opis_rastline.tscn" id="10_choun"]
 [ext_resource type="PackedScene" uid="uid://d2t5n7ui5nhct" path="res://scenes/label_pritisni.tscn" id="11_eb6dy"]
-[ext_resource type="Texture2D" uid="uid://dqav0b5rtc0on" path="res://assets/textures/v710-taus-30.jpg" id="12_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://cy7xof686r3av" path="res://scenes/panel_ukazi.tscn" id="12_trceg"]
-[ext_resource type="Texture2D" uid="uid://c344lqte6qw2i" path="res://assets/textures/drawing.png" id="13_muem4"]
+[ext_resource type="Texture2D" uid="uid://klu75cta44u2" path="res://assets/textures/list.png" id="13_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://d2svfm4ea36s1" path="res://assets/textures/drawing.svg" id="13_muem4"]
 [ext_resource type="Script" uid="uid://d3oq3s1dymers" path="res://scenes/panel_ukazi.gd" id="13_trceg"]
 [ext_resource type="PackedScene" uid="uid://bkaytoyfs58yr" path="res://assets/cemaz_koncna.blend" id="15_jkv2x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jkv2x"]
-sky_top_color = Color(1.92523e-07, 0.6024333, 0.88152736, 1)
+sky_top_color = Color(0.12675866, 0.49858016, 0.72374344, 1)
 sky_horizon_color = Color(0.4397096, 0.71199214, 0.69824743, 1)
 
 [sub_resource type="Sky" id="Sky_jbj1t"]
@@ -41,28 +41,37 @@ glow_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jkv2x"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbj1t"]
-disable_ambient_light = true
-albedo_texture = ExtResource("5_jkv2x")
-uv1_scale = Vector3(50, 50, 50)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_jkv2x"]
-lightmap_size_hint = Vector2i(12, 12)
-material = SubResource("StandardMaterial3D_jbj1t")
-
 [sub_resource type="Theme" id="Theme_dp3eg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ld40"]
-texture = ExtResource("12_jbj1t")
+texture = ExtResource("13_muem4")
+expand_margin_left = 48.0
+expand_margin_right = 29.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="Theme" id="Theme_0ld40"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_muem4"]
-texture = ExtResource("13_muem4")
-expand_margin_left = 68.0
-expand_margin_top = 48.0
-expand_margin_right = 65.0
-expand_margin_bottom = 48.0
+texture = ExtResource("13_dp3eg")
+region_rect = Rect2(-0.27322388, 0.08685303, 740.192, 465.00394)
 
 [sub_resource type="Theme" id="Theme_jkv2x"]
+
+[sub_resource type="GDScript" id="GDScript_muem4"]
+script/source = "extends TextureRect
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="Theme" id="Theme_muem4"]
 
 [node name="main" type="Node3D" unique_id=860746009]
 script = ExtResource("5_tbgi4")
@@ -79,7 +88,7 @@ ime = "Bezeg"
 transform = Transform3D(4.974343, 0, 0, 0, 4.974343, 0, 0, 0, 4.974343, 0, -0.43687993, 0)
 
 [node name="Cemaz" parent="." unique_id=2058823422 instance=ExtResource("2_0wfyh")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1, 0.4926368, -7.0587997)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1, 0.1176697, -7.0587997)
 ime = "Cemaz"
 
 [node name="MeshInstance3D" parent="Cemaz" index="0" unique_id=1893549]
@@ -108,10 +117,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.592457, -2.1983566)
 
 [node name="MeshInstance3D" parent="Tla" index="0"]
 transform = Transform3D(141.35352, 0, 0, 0, 141.35193, 0.67104447, 0, -0.67104447, 141.35193, -0.29828262, -0.42027873, -0.09346008)
-mesh = SubResource("PlaneMesh_jkv2x")
+mesh = null
 
 [node name="CollisionShape3D" parent="Tla" index="1"]
-transform = Transform3D(4.861927, 0, 0, 0, 4.861927, 0, 0, 0, 4.861927, 0, 0, 0)
+transform = Transform3D(4.861927, 0, 0, 0, 4.861927, 0, 0, 0, 4.861927, 0, -91.03984, 0)
+
+[node name="tla" parent="Tla" unique_id=1665226752 instance=ExtResource("6_muem4")]
+transform = Transform3D(11.916875, 0, 0, 0, 11.916875, 0, 0, 0, 11.916875, 0, -3.3903658, 0)
+
+[node name="Plane" parent="Tla/tla" index="0" unique_id=1653626071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.944468, -0.04307963, 1.204748)
 
 [node name="PanelPoisciRastlino" parent="." unique_id=1712557753 instance=ExtResource("6_o6xl0")]
 unique_name_in_owner = true
@@ -151,46 +166,65 @@ horizontal_alignment = 2
 
 [node name="PanelOpisRastline" parent="." unique_id=622618984 instance=ExtResource("10_choun")]
 unique_name_in_owner = true
-offset_top = -236.0
-offset_bottom = 236.0
+offset_left = -503.0
+offset_top = -200.0
+offset_right = 503.0
+offset_bottom = 296.0
+theme = SubResource("Theme_0ld40")
 theme_override_styles/panel = SubResource("StyleBoxTexture_muem4")
 
 [node name="LabelOpisRastline" parent="PanelOpisRastline" index="0" unique_id=1942058495]
-offset_left = -189.0
-offset_top = -97.0
-offset_right = 189.0
-offset_bottom = 149.0
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = -166.0
+offset_top = 99.0
+offset_right = 163.0
+offset_bottom = 390.0
+grow_vertical = 1
 theme = SubResource("Theme_jkv2x")
 theme_override_colors/font_color = Color(0.14600512, 0.10781338, 2.4065375e-08, 1)
+theme_override_font_sizes/font_size = 18
 horizontal_alignment = 3
 autowrap_mode = 3
 
 [node name="TextureRect" parent="PanelOpisRastline" index="1" unique_id=432848797]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 6
+anchor_left = 1.0
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 298.0
-offset_top = -159.5
-offset_right = 518.0
-offset_bottom = 159.5
-grow_horizontal = 2
+offset_left = -270.0
+offset_top = -131.90718
+offset_right = -74.0
+offset_bottom = 131.90717
+grow_horizontal = 0
 grow_vertical = 2
+script = SubResource("GDScript_muem4")
 
 [node name="Label" parent="PanelOpisRastline" index="2" unique_id=1070425874]
-offset_left = -122.0
-offset_top = -59.0
+anchors_preset = -1
+anchor_left = 0.95400006
+anchor_right = 0.95400006
+offset_left = -869.72406
+offset_top = -70.0
+offset_right = -793.72406
+offset_bottom = -45.0
 text = "Pritisni R!"
 
 [node name="LabelImeRastline" type="Label" parent="PanelOpisRastline" unique_id=1101168909]
-layout_mode = 0
-offset_left = 37.0
-offset_top = 51.0
-offset_right = 266.0
-offset_bottom = 124.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -114.5
+offset_top = 42.0
+offset_right = 114.5
+offset_bottom = 115.0
+grow_horizontal = 2
 theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
 
 [node name="LabelPritisni" parent="." unique_id=2097961558 instance=ExtResource("11_eb6dy")]
 anchors_preset = 6
@@ -239,10 +273,12 @@ R - opis trenutne rastline"
 
 [node name="PanelKonec" parent="." unique_id=1496813041 instance=ExtResource("8_tipki")]
 unique_name_in_owner = true
+theme = SubResource("Theme_muem4")
 
 [editable path="Bezeg"]
 [editable path="Cemaz"]
 [editable path="Tla"]
+[editable path="Tla/tla"]
 [editable path="ProtoController"]
 [editable path="PanelUvod"]
 [editable path="PanelOpisRastline"]

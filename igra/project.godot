@@ -24,6 +24,10 @@ config/icon="res://icon.svg"
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
+[gui]
+
+theme/custom_font="uid://d1twkv33pe068"
+
 [input]
 
 ui_accept={
