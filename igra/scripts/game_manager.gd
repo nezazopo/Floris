@@ -11,6 +11,7 @@ var konec = false
 @onready var panel_tocke: Panel = %PanelTocke
 @onready var timer: Timer = %Timer
 @onready var panel_konec: Panel = %PanelKonec
+@onready var panel_opis_rastline = %PanelOpisRastline
 
 func _ready():
 	var rastline_nodes = get_tree().get_nodes_in_group("rastline")
@@ -23,6 +24,7 @@ func naslednjaRastlina():
 	if indeksRastline < rastline.size():
 		poisciRastlino = rastline[indeksRastline]
 		panel_poisci_rastlino.updatePanel(poisciRastlino)
+		panel_opis_rastline.updateOpisRastline()
 	else:
 		panel_konec.prikaziPanel("Zmaga!")
 	

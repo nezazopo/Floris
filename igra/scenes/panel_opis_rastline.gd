@@ -6,11 +6,7 @@ extends Panel
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.visible = false
-	label_ime_rastline.text = str(game_manager.poisciRastlino.ime)
-	print(game_manager.poisciRastlino.ime)
-	label_opis_rastline.text = game_manager.poisciRastlino.vrniOpis()
-	texture_rect.texture = game_manager.poisciRastlino.vrniSliko()
-
+	updateOpisRastline()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("R_pressed"):
@@ -19,4 +15,10 @@ func _process(delta: float) -> void:
 		else:
 			self.visible = true
 
+func updateOpisRastline():
+	label_ime_rastline.text = str(game_manager.poisciRastlino.ime)
+	print(game_manager.poisciRastlino.ime)
+	label_opis_rastline.text = game_manager.poisciRastlino.vrniOpis()
+	texture_rect.texture = game_manager.poisciRastlino.vrniSliko()
+	
 	

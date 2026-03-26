@@ -12,7 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://cxc3h5ttci816" path="res://scenes/panel_uvod.tscn" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cds2rmsl3k2cw" path="res://scenes/panel_opis_rastline.tscn" id="10_choun"]
 [ext_resource type="PackedScene" uid="uid://d2t5n7ui5nhct" path="res://scenes/label_pritisni.tscn" id="11_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://dqav0b5rtc0on" path="res://assets/textures/v710-taus-30.jpg" id="12_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://cy7xof686r3av" path="res://scenes/panel_ukazi.tscn" id="12_trceg"]
+[ext_resource type="Texture2D" uid="uid://c344lqte6qw2i" path="res://assets/textures/drawing.png" id="13_muem4"]
 [ext_resource type="Script" uid="uid://d3oq3s1dymers" path="res://scenes/panel_ukazi.gd" id="13_trceg"]
 [ext_resource type="PackedScene" uid="uid://bkaytoyfs58yr" path="res://assets/cemaz_koncna.blend" id="15_jkv2x"]
 
@@ -48,6 +50,20 @@ uv1_scale = Vector3(50, 50, 50)
 lightmap_size_hint = Vector2i(12, 12)
 material = SubResource("StandardMaterial3D_jbj1t")
 
+[sub_resource type="Theme" id="Theme_dp3eg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ld40"]
+texture = ExtResource("12_jbj1t")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_muem4"]
+texture = ExtResource("13_muem4")
+expand_margin_left = 68.0
+expand_margin_top = 48.0
+expand_margin_right = 65.0
+expand_margin_bottom = 48.0
+
+[sub_resource type="Theme" id="Theme_jkv2x"]
+
 [node name="main" type="Node3D" unique_id=860746009]
 script = ExtResource("5_tbgi4")
 
@@ -76,7 +92,7 @@ mesh = SubResource("ArrayMesh_jkv2x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1693935, 0, -3.6478348)
 
 [node name="CollisionShape3D" parent="Cemaz/Area3D" index="0" unique_id=1509536775]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42384148, 1.1245732, 0)
+transform = Transform3D(9.245187, 0, 0, 0, 9.245187, 0, 0, 0, 9.245187, -0.42384148, 1.1245732, 0.84593964)
 
 [node name="cemaz_koncna" parent="Cemaz" unique_id=658825819 instance=ExtResource("15_jkv2x")]
 transform = Transform3D(12.706729, 0, 0, 0, 12.706729, 0, 0, 0, 12.706729, 1.9542544, -0.4926368, -3.520369)
@@ -104,6 +120,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="PanelTocke" parent="." unique_id=2025925362 instance=ExtResource("7_o6xl0")]
 unique_name_in_owner = true
+theme = SubResource("Theme_dp3eg")
+theme_override_styles/panel = SubResource("StyleBoxTexture_0ld40")
 
 [node name="GameManager" type="Node" parent="." unique_id=1204597735]
 unique_name_in_owner = true
@@ -132,13 +150,19 @@ text = "Pritisni ENTER!"
 horizontal_alignment = 2
 
 [node name="PanelOpisRastline" parent="." unique_id=622618984 instance=ExtResource("10_choun")]
+unique_name_in_owner = true
 offset_top = -236.0
 offset_bottom = 236.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_muem4")
 
 [node name="LabelOpisRastline" parent="PanelOpisRastline" index="0" unique_id=1942058495]
-offset_top = -164.0
-offset_bottom = 411.0
-horizontal_alignment = 0
+offset_left = -189.0
+offset_top = -97.0
+offset_right = 189.0
+offset_bottom = 149.0
+theme = SubResource("Theme_jkv2x")
+theme_override_colors/font_color = Color(0.14600512, 0.10781338, 2.4065375e-08, 1)
+horizontal_alignment = 3
 autowrap_mode = 3
 
 [node name="TextureRect" parent="PanelOpisRastline" index="1" unique_id=432848797]
@@ -155,17 +179,18 @@ offset_bottom = 159.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LabelImeRastline" type="Label" parent="PanelOpisRastline" unique_id=1101168909]
-layout_mode = 0
-offset_left = 25.0
-offset_top = 29.0
-offset_right = 254.0
-offset_bottom = 102.0
-
-[node name="Label" parent="PanelOpisRastline" index="3" unique_id=1070425874]
+[node name="Label" parent="PanelOpisRastline" index="2" unique_id=1070425874]
 offset_left = -122.0
 offset_top = -59.0
 text = "Pritisni R!"
+
+[node name="LabelImeRastline" type="Label" parent="PanelOpisRastline" unique_id=1101168909]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 51.0
+offset_right = 266.0
+offset_bottom = 124.0
+theme_override_font_sizes/font_size = 22
 
 [node name="LabelPritisni" parent="." unique_id=2097961558 instance=ExtResource("11_eb6dy")]
 anchors_preset = 6
