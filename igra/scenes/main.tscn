@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://d2t5n7ui5nhct" path="res://scenes/label_pritisni.tscn" id="11_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://cy7xof686r3av" path="res://scenes/panel_ukazi.tscn" id="12_trceg"]
 [ext_resource type="Texture2D" uid="uid://klu75cta44u2" path="res://assets/textures/list.png" id="13_dp3eg"]
-[ext_resource type="Texture2D" uid="uid://d2svfm4ea36s1" path="res://assets/textures/drawing.svg" id="13_muem4"]
 [ext_resource type="Script" uid="uid://d3oq3s1dymers" path="res://scenes/panel_ukazi.gd" id="13_trceg"]
 [ext_resource type="PackedScene" uid="uid://bkaytoyfs58yr" path="res://assets/cemaz_koncna.blend" id="15_jkv2x"]
 
@@ -40,14 +39,6 @@ glow_enabled = true
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jkv2x"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jkv2x"]
-
-[sub_resource type="Theme" id="Theme_dp3eg"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ld40"]
-texture = ExtResource("13_muem4")
-expand_margin_left = 48.0
-expand_margin_right = 29.0
-expand_margin_bottom = 20.0
 
 [sub_resource type="Theme" id="Theme_0ld40"]
 
@@ -123,20 +114,50 @@ mesh = null
 transform = Transform3D(4.861927, 0, 0, 0, 4.861927, 0, 0, 0, 4.861927, 0, -91.03984, 0)
 
 [node name="tla" parent="Tla" unique_id=1665226752 instance=ExtResource("6_muem4")]
-transform = Transform3D(11.916875, 0, 0, 0, 11.916875, 0, 0, 0, 11.916875, 0, -3.3903658, 0)
+transform = Transform3D(11.916875, 0, 0, 0, 11.916875, 0, 0, 0, 11.916875, 0, -2.8578637, 0)
 
 [node name="Plane" parent="Tla/tla" index="0" unique_id=1653626071]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.944468, -0.04307963, 1.204748)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022295263, -0.04307963, -0.12824804)
 
 [node name="PanelPoisciRastlino" parent="." unique_id=1712557753 instance=ExtResource("6_o6xl0")]
 unique_name_in_owner = true
 offset_right = 274.0
 metadata/_edit_use_anchors_ = true
 
+[node name="TextPoisciRastlino" parent="PanelPoisciRastlino" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -19.5
+offset_right = 117.0
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="PanelTocke" parent="." unique_id=2025925362 instance=ExtResource("7_o6xl0")]
 unique_name_in_owner = true
-theme = SubResource("Theme_dp3eg")
-theme_override_styles/panel = SubResource("StyleBoxTexture_0ld40")
+offset_top = -1.0
+offset_bottom = 77.0
+
+[node name="TextTocke" parent="PanelTocke" index="0"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -19.0
+offset_right = 90.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="GameManager" type="Node" parent="." unique_id=1204597735]
 unique_name_in_owner = true
@@ -240,17 +261,14 @@ horizontal_alignment = 0
 vertical_alignment = 1
 
 [node name="PanelUkazi" parent="." unique_id=450504735 instance=ExtResource("12_trceg")]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -1130.0
-offset_top = 223.0
-offset_right = -897.0
-offset_bottom = 306.0
-grow_horizontal = 0
-grow_vertical = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -116.5
+offset_top = 32.0
+offset_right = 116.5
+offset_bottom = 115.0
+grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("13_trceg")
@@ -279,6 +297,8 @@ theme = SubResource("Theme_muem4")
 [editable path="Cemaz"]
 [editable path="Tla"]
 [editable path="Tla/tla"]
+[editable path="PanelPoisciRastlino"]
+[editable path="PanelTocke"]
 [editable path="ProtoController"]
 [editable path="PanelUvod"]
 [editable path="PanelOpisRastline"]
