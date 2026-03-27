@@ -4,18 +4,19 @@
 [ext_resource type="PackedScene" uid="uid://cb0qllbssnw34" path="res://scenes/static_body_3d.tscn" id="4_tbgi4"]
 [ext_resource type="Script" uid="uid://dmnm30uihfj4r" path="res://scripts/game_manager.gd" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://pkgwg5wpoogx" path="res://assets/tla.blend" id="6_muem4"]
-[ext_resource type="PackedScene" uid="uid://j610sgs474b0" path="res://scenes/panel_poisci_rastlino.tscn" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://b500uka7w3uvy" path="res://scenes/Bezeg.tscn" id="6_tefeu"]
-[ext_resource type="PackedScene" uid="uid://b00ah541am28r" path="res://scenes/panel_tocke.tscn" id="7_o6xl0"]
+[ext_resource type="Script" uid="uid://bpai3xktmgbr7" path="res://scripts/panel_poisci_rastlino.gd" id="7_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="8_85g3d"]
-[ext_resource type="PackedScene" uid="uid://cp4lg4dcudre5" path="res://scenes/panel_konec.tscn" id="8_tipki"]
-[ext_resource type="PackedScene" uid="uid://cxc3h5ttci816" path="res://scenes/panel_uvod.tscn" id="9_85g3d"]
-[ext_resource type="PackedScene" uid="uid://cds2rmsl3k2cw" path="res://scenes/panel_opis_rastline.tscn" id="10_choun"]
-[ext_resource type="PackedScene" uid="uid://d2t5n7ui5nhct" path="res://scenes/label_pritisni.tscn" id="11_eb6dy"]
-[ext_resource type="PackedScene" uid="uid://cy7xof686r3av" path="res://scenes/panel_ukazi.tscn" id="12_trceg"]
+[ext_resource type="Script" uid="uid://dsfjwrl0b5oj4" path="res://scripts/panel_tocke.gd" id="8_jbj1t"]
+[ext_resource type="Script" uid="uid://f8uifoal7oko" path="res://scripts/panel_uvod.gd" id="10_muem4"]
+[ext_resource type="Script" uid="uid://n7ufouy6utr1" path="res://scenes/panel_opis_rastline.gd" id="12_jbj1t"]
+[ext_resource type="Script" uid="uid://coc4kiauwdl4y" path="res://scenes/label_pritisni.gd" id="13_0ld40"]
 [ext_resource type="Texture2D" uid="uid://klu75cta44u2" path="res://assets/textures/list.png" id="13_dp3eg"]
 [ext_resource type="Script" uid="uid://d3oq3s1dymers" path="res://scenes/panel_ukazi.gd" id="13_trceg"]
+[ext_resource type="Script" uid="uid://ddc87cpseu6vn" path="res://scripts/panel_konec.gd" id="15_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://bkaytoyfs58yr" path="res://assets/cemaz_koncna.blend" id="15_jkv2x"]
+[ext_resource type="VideoStream" path="res://assets/slikeRastlin/cemaz_animacija.ogv" id="16_jbj1t"]
+[ext_resource type="Shader" uid="uid://cygrwf1o5r8kp" path="res://scenes/main.gdshader" id="16_muem4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jkv2x"]
 sky_top_color = Color(0.12675866, 0.49858016, 0.72374344, 1)
@@ -48,6 +49,25 @@ region_rect = Rect2(-0.27322388, 0.08685303, 740.192, 465.00394)
 
 [sub_resource type="Theme" id="Theme_jkv2x"]
 
+[sub_resource type="GDScript" id="GDScript_ya4ey"]
+script/source = "extends Label
+@onready var game_manager: Node = $\"../../GameManager\"
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+		if (game_manager.poisciRastlino.ime == \"Bezeg\"):
+			self.text = \"to je bezeg\"
+		else:
+			self.text = \"nic\"
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [sub_resource type="GDScript" id="GDScript_muem4"]
 script/source = "extends TextureRect
 
@@ -63,6 +83,11 @@ func _process(delta: float) -> void:
 "
 
 [sub_resource type="Theme" id="Theme_muem4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dp3eg"]
+shader = ExtResource("16_muem4")
+shader_parameter/radius = 0.5
+shader_parameter/center = Vector2(0.5, 0.5)
 
 [node name="main" type="Node3D" unique_id=860746009]
 script = ExtResource("5_tbgi4")
@@ -94,7 +119,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1693935, 0, -3.6478348)
 [node name="CollisionShape3D" parent="Cemaz/Area3D" index="0" unique_id=1509536775]
 transform = Transform3D(9.245187, 0, 0, 0, 9.245187, 0, 0, 0, 9.245187, -0.42384148, 1.1245732, 0.84593964)
 
-[node name="cemaz_koncna" parent="Cemaz" unique_id=658825819 instance=ExtResource("15_jkv2x")]
+[node name="cemaz_koncna" parent="Cemaz" unique_id=501642038 instance=ExtResource("15_jkv2x")]
 transform = Transform3D(12.706729, 0, 0, 0, 12.706729, 0, 0, 0, 12.706729, 1.9542544, -0.4926368, -3.520369)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2039463607]
@@ -119,21 +144,24 @@ transform = Transform3D(11.916875, 0, 0, 0, 11.916875, 0, 0, 0, 11.916875, 0, -2
 [node name="Plane" parent="Tla/tla" index="0" unique_id=1653626071]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022295263, -0.04307963, -0.12824804)
 
-[node name="PanelPoisciRastlino" parent="." unique_id=1712557753 instance=ExtResource("6_o6xl0")]
+[node name="PanelPoisciRastlino" type="Panel" parent="." unique_id=1712557753]
 unique_name_in_owner = true
 offset_right = 274.0
+offset_bottom = 81.0
+script = ExtResource("7_jkv2x")
 metadata/_edit_use_anchors_ = true
 
-[node name="TextPoisciRastlino" parent="PanelPoisciRastlino" index="0"]
+[node name="TextPoisciRastlino" type="Label" parent="PanelPoisciRastlino" unique_id=358459333]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -117.0
+offset_left = -83.0
 offset_top = -19.5
-offset_right = 117.0
+offset_right = 83.0
 offset_bottom = 19.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -141,12 +169,20 @@ theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PanelTocke" parent="." unique_id=2025925362 instance=ExtResource("7_o6xl0")]
+[node name="PanelTocke" type="Panel" parent="." unique_id=2025925362]
 unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -207.0
 offset_top = -1.0
 offset_bottom = 77.0
+grow_horizontal = 0
+script = ExtResource("8_jbj1t")
 
-[node name="TextTocke" parent="PanelTocke" index="0"]
+[node name="TextTocke" type="Label" parent="PanelTocke" unique_id=2116499267]
+unique_name_in_owner = true
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -158,6 +194,9 @@ offset_right = 90.0
 offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "Točke:"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="GameManager" type="Node" parent="." unique_id=1204597735]
 unique_name_in_owner = true
@@ -169,47 +208,90 @@ unique_name_in_owner = true
 [node name="ProtoController" parent="." unique_id=974561663 instance=ExtResource("8_85g3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87365, -0.015081942, 0.44604683)
 
-[node name="PanelUvod" parent="." unique_id=1966509095 instance=ExtResource("9_85g3d")]
+[node name="PanelUvod" type="Panel" parent="." unique_id=1966509095]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -234.0
 offset_top = -159.5
 offset_right = 234.0
 offset_bottom = 159.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("10_muem4")
 
-[node name="LabelUvod" parent="PanelUvod" index="0" unique_id=604016167]
+[node name="LabelUvod" type="Label" parent="PanelUvod" unique_id=604016167]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -188.0
+offset_top = 63.0
+offset_right = 186.0
+offset_bottom = 190.0
+grow_horizontal = 2
 text = "Izberi rastlino, ki je zapisana levo zgoraj.
 Če potrebuješ opis rastline, pritisni R. 
 Zberi čim več rastlin v najkrajšem možnem času!"
-horizontal_alignment = 0
+vertical_alignment = 1
 
-[node name="Label" parent="PanelUvod" index="1" unique_id=1674665278]
+[node name="Label" type="Label" parent="PanelUvod" unique_id=1674665278]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -242.0
+offset_top = -76.0
+offset_right = -50.0
+offset_bottom = -33.0
+grow_horizontal = 0
+grow_vertical = 0
 text = "Pritisni ENTER!"
 horizontal_alignment = 2
 
-[node name="PanelOpisRastline" parent="." unique_id=622618984 instance=ExtResource("10_choun")]
+[node name="PanelOpisRastline" type="Panel" parent="." unique_id=622618984]
 unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -503.0
 offset_top = -200.0
 offset_right = 503.0
 offset_bottom = 296.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
 theme = SubResource("Theme_0ld40")
 theme_override_styles/panel = SubResource("StyleBoxTexture_muem4")
+script = ExtResource("12_jbj1t")
 
-[node name="LabelOpisRastline" parent="PanelOpisRastline" index="0" unique_id=1942058495]
+[node name="LabelOpisRastline" type="Label" parent="PanelOpisRastline" unique_id=1942058495]
+layout_mode = 1
 anchors_preset = 5
-anchor_top = 0.0
-anchor_bottom = 0.0
+anchor_left = 0.5
+anchor_right = 0.5
 offset_left = -166.0
 offset_top = 99.0
 offset_right = 163.0
 offset_bottom = 390.0
-grow_vertical = 1
+grow_horizontal = 2
 theme = SubResource("Theme_jkv2x")
 theme_override_colors/font_color = Color(0.14600512, 0.10781338, 2.4065375e-08, 1)
 theme_override_font_sizes/font_size = 18
 horizontal_alignment = 3
 autowrap_mode = 3
+script = SubResource("GDScript_ya4ey")
 
-[node name="TextureRect" parent="PanelOpisRastline" index="1" unique_id=432848797]
+[node name="TextureRect" type="TextureRect" parent="PanelOpisRastline" unique_id=432848797]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -222,16 +304,23 @@ offset_right = -74.0
 offset_bottom = 131.90717
 grow_horizontal = 0
 grow_vertical = 2
+expand_mode = 2
+stretch_mode = 5
 script = SubResource("GDScript_muem4")
 
-[node name="Label" parent="PanelOpisRastline" index="2" unique_id=1070425874]
+[node name="Label" type="Label" parent="PanelOpisRastline" unique_id=1070425874]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.95400006
+anchor_top = 1.0
 anchor_right = 0.95400006
+anchor_bottom = 1.0
 offset_left = -869.72406
 offset_top = -70.0
 offset_right = -793.72406
 offset_bottom = -45.0
+grow_horizontal = 0
+grow_vertical = 0
 text = "Pritisni R!"
 
 [node name="LabelImeRastline" type="Label" parent="PanelOpisRastline" unique_id=1101168909]
@@ -247,28 +336,34 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 22
 horizontal_alignment = 1
 
-[node name="LabelPritisni" parent="." unique_id=2097961558 instance=ExtResource("11_eb6dy")]
+[node name="LabelPritisni" type="Label" parent="." unique_id=2097961558]
 anchors_preset = 6
+anchor_left = 1.0
 anchor_top = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -276.0
 offset_top = -247.0
 offset_right = -9.0
 offset_bottom = -191.0
+grow_horizontal = 0
 grow_vertical = 2
 text = "Klikni na zaslon in premikaj miško!"
-horizontal_alignment = 0
 vertical_alignment = 1
+script = ExtResource("13_0ld40")
 
-[node name="PanelUkazi" parent="." unique_id=450504735 instance=ExtResource("12_trceg")]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -116.5
-offset_top = 32.0
-offset_right = 116.5
-offset_bottom = 115.0
-grow_horizontal = 2
+[node name="PanelUkazi" type="Panel" parent="." unique_id=450504735]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -338.0
+offset_top = -133.0
+offset_right = -105.0
+offset_bottom = -70.0
+grow_horizontal = 0
+grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("13_trceg")
@@ -288,17 +383,75 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "ESC - izpusti miško
 R - opis trenutne rastline"
+vertical_alignment = 1
 
-[node name="PanelKonec" parent="." unique_id=1496813041 instance=ExtResource("8_tipki")]
+[node name="PanelKonec" type="Panel" parent="." unique_id=1496813041]
 unique_name_in_owner = true
+process_mode = 3
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -213.5
+offset_top = -97.0
+offset_right = 213.5
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = SubResource("Theme_muem4")
+script = ExtResource("15_gqmmt")
+
+[node name="PanelDeathText" type="Label" parent="PanelKonec" unique_id=762328038]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -166.0
+offset_top = 48.0
+offset_right = 166.0
+offset_bottom = 107.0
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="PanelKonec" unique_id=133008883]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -142.5
+offset_top = -93.0
+offset_right = -23.5
+offset_bottom = -21.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Pritisni ENTER!"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=1065263924]
+unique_name_in_owner = true
+offset_left = 375.0
+offset_top = 121.0
+offset_right = 837.0
+offset_bottom = 583.0
+alignment_horizontal = 0
+alignment_vertical = 0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer" unique_id=893812988]
+material = SubResource("ShaderMaterial_dp3eg")
+layout_mode = 2
+stream = ExtResource("16_jbj1t")
+autoplay = true
+expand = true
+loop = true
 
 [editable path="Bezeg"]
 [editable path="Cemaz"]
 [editable path="Tla"]
 [editable path="Tla/tla"]
-[editable path="PanelPoisciRastlino"]
-[editable path="PanelTocke"]
 [editable path="ProtoController"]
-[editable path="PanelUvod"]
-[editable path="PanelOpisRastline"]

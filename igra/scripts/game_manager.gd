@@ -6,6 +6,7 @@ var poisciRastlino
 var poiskanoBool = false
 var indeksRastline = 0
 var konec = false
+var inventory: Array[Rastlina] = []
 
 @onready var panel_poisci_rastlino: Panel = %PanelPoisciRastlino
 @onready var panel_tocke: Panel = %PanelTocke
@@ -14,18 +15,22 @@ var konec = false
 @onready var panel_opis_rastline = %PanelOpisRastline
 
 func _ready():
+	if get_tree().paused:
+		get_tree().paused = false
 	var rastline_nodes = get_tree().get_nodes_in_group("rastline")
 	rastline.assign(rastline_nodes)
 	poisciRastlino = rastline[0]
 	panel_poisci_rastlino.updatePanel(poisciRastlino)
 	
 func naslednjaRastlina():
+	inventory.append(poisciRastlino)
 	indeksRastline += 1
 	if indeksRastline < rastline.size():
 		poisciRastlino = rastline[indeksRastline]
 		panel_poisci_rastlino.updatePanel(poisciRastlino)
 		panel_opis_rastline.updateOpisRastline()
 	else:
+		get_tree().paused = true
 		panel_konec.prikaziPanel("Zmaga!")
 	
 func odstej(st):
