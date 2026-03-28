@@ -8,18 +8,24 @@ class_name Rastlina
 @onready var aspect_ratio_container: AspectRatioContainer = %AspectRatioContainer
 @onready var game_manager = %GameManager
 # Called when the node enters the scene tree for the first time.
+@onready var panel_izberi_dn: Panel = %PanelIzberiDN
 
 func _ready():
 	if(aspect_ratio_container != null):
 		aspect_ratio_container.visible = false
+	if(panel_izberi_dn != null):
+		panel_izberi_dn.visible = false;
 	add_to_group("rastline")
 	$Area3D.body_entered.connect(_on_body_entered)
 	
 func _on_body_entered(body: Node3D):
-
 	if body is CharacterBody3D:  #ce je igralec vstopil v okolico rastline
+		#pritisni enter da si ogledaš rastlino
 		aspect_ratio_container.visible = true
-		#listener
+		panel_izberi_dn.visible = true;
+		#if(self == poisci && action.justpressed("da")):
+		#pravilno si našel
+		#
 		if self == (game_manager.poisciRastlino):
 			print("pravilno si našel " + ime +"!")
 			game_manager.pristej()
