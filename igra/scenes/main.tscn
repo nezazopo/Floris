@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b55hhny07f05t"]
+[gd_scene load_steps=32 format=3 uid="uid://b55hhny07f05t"]
 
 [ext_resource type="PackedScene" uid="uid://b22xce27kvu51" path="res://scenes/cemaz.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://cb0qllbssnw34" path="res://scenes/static_body_3d.tscn" id="4_tbgi4"]
@@ -93,46 +93,46 @@ shader = ExtResource("16_muem4")
 shader_parameter/radius = 0.5
 shader_parameter/center = Vector2(0.5, 0.5)
 
-[node name="main" type="Node3D" unique_id=1499652220]
+[node name="main" type="Node3D"]
 script = ExtResource("5_tbgi4")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=904018063]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jkv2x")
 camera_attributes = SubResource("CameraAttributesPractical_jkv2x")
 
-[node name="Bezeg" parent="." unique_id=1165210799 instance=ExtResource("6_tefeu")]
+[node name="Bezeg" parent="." instance=ExtResource("6_tefeu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.367578, 0.98491734, -3.1418538)
 ime = "Bezeg"
 
-[node name="Area3D" parent="Bezeg" index="1" unique_id=150169033]
+[node name="Area3D" parent="Bezeg" index="1"]
 transform = Transform3D(4.974343, 0, 0, 0, 4.974343, 0, 0, 0, 4.974343, 0, -0.43687993, 0)
 
-[node name="Cemaz" parent="." unique_id=924143624 instance=ExtResource("2_0wfyh")]
+[node name="Cemaz" parent="." instance=ExtResource("2_0wfyh")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1, 0.1176697, -7.0587997)
 ime = "Cemaz"
 
-[node name="MeshInstance3D" parent="Cemaz" index="0" unique_id=1893549]
+[node name="MeshInstance3D" parent="Cemaz" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.091917, 0, -3.806923)
 cast_shadow = 0
 gi_mode = 2
 mesh = SubResource("ArrayMesh_jkv2x")
 
-[node name="Area3D" parent="Cemaz" index="1" unique_id=150169033]
+[node name="Area3D" parent="Cemaz" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1693935, 0, -3.6478348)
 
-[node name="CollisionShape3D" parent="Cemaz/Area3D" index="0" unique_id=1509536775]
+[node name="CollisionShape3D" parent="Cemaz/Area3D" index="0"]
 transform = Transform3D(9.245187, 0, 0, 0, 9.245187, 0, 0, 0, 9.245187, -0.42384148, 1.1245732, 0.84593964)
 
-[node name="cemaz_koncna" parent="Cemaz" unique_id=98760883 instance=ExtResource("15_jkv2x")]
+[node name="cemaz_koncna" parent="Cemaz" instance=ExtResource("15_jkv2x")]
 transform = Transform3D(12.706729, 0, 0, 0, 12.706729, 0, 0, 0, 12.706729, 1.9542544, -0.4926368, -3.520369)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1787947186]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.99139696, 0.113353625, -0.06544471, 2.780595e-08, 0.49999994, 0.86602545, 0.13088948, 0.858575, -0.49569842, 0, 101.22486, 0)
 shadow_enabled = true
 shadow_blur = 9.056
 directional_shadow_max_distance = 8192.0
 
-[node name="Tla" parent="." unique_id=75187783 instance=ExtResource("4_tbgi4")]
+[node name="Tla" parent="." instance=ExtResource("4_tbgi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.592457, -2.1983566)
 
 [node name="MeshInstance3D" parent="Tla" index="0"]
@@ -142,20 +142,20 @@ mesh = null
 [node name="CollisionShape3D" parent="Tla" index="1"]
 transform = Transform3D(4.861927, 0, 0, 0, 4.861927, 0, 0, 0, 4.861927, 0, -91.03984, 0)
 
-[node name="tla" parent="Tla" unique_id=364651565 instance=ExtResource("6_muem4")]
+[node name="tla" parent="Tla" instance=ExtResource("6_muem4")]
 transform = Transform3D(11.916875, 0, 0, 0, 11.916875, 0, 0, 0, 11.916875, 0, -2.8578637, 0)
 
-[node name="Plane" parent="Tla/tla" index="0" unique_id=1991936844]
+[node name="Plane" parent="Tla/tla" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022295263, -0.04307963, -0.12824804)
 
-[node name="PanelPoisciRastlino" type="Panel" parent="." unique_id=475535993]
+[node name="PanelPoisciRastlino" type="Panel" parent="."]
 unique_name_in_owner = true
 offset_right = 274.0
 offset_bottom = 81.0
 script = ExtResource("7_jkv2x")
 metadata/_edit_use_anchors_ = true
 
-[node name="TextPoisciRastlino" type="Label" parent="PanelPoisciRastlino" unique_id=2079238948]
+[node name="TextPoisciRastlino" type="Label" parent="PanelPoisciRastlino"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -173,7 +173,7 @@ theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PanelTocke" type="Panel" parent="." unique_id=554118484]
+[node name="PanelTocke" type="Panel" parent="."]
 unique_name_in_owner = true
 anchors_preset = 1
 anchor_left = 1.0
@@ -184,7 +184,7 @@ offset_bottom = 77.0
 grow_horizontal = 0
 script = ExtResource("8_jbj1t")
 
-[node name="TextTocke" type="Label" parent="PanelTocke" unique_id=2056171714]
+[node name="TextTocke" type="Label" parent="PanelTocke"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -202,17 +202,17 @@ text = "Točke:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GameManager" type="Node" parent="." unique_id=554377480]
+[node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("5_tbgi4")
 
-[node name="Timer" type="Timer" parent="." unique_id=59272458]
+[node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
 
-[node name="ProtoController" parent="." unique_id=797381797 instance=ExtResource("8_85g3d")]
+[node name="ProtoController" parent="." instance=ExtResource("8_85g3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87365, -0.015081942, 0.44604683)
 
-[node name="PanelUvod" type="Panel" parent="." unique_id=1227884303]
+[node name="PanelUvod" type="Panel" parent="."]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -229,7 +229,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("10_muem4")
 
-[node name="LabelUvod" type="Label" parent="PanelUvod" unique_id=27286933]
+[node name="LabelUvod" type="Label" parent="PanelUvod"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -244,7 +244,7 @@ text = "Izberi rastlino, ki je zapisana levo zgoraj.
 Zberi čim več rastlin v najkrajšem možnem času!"
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="PanelUvod" unique_id=2133087120]
+[node name="Label" type="Label" parent="PanelUvod"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -260,7 +260,7 @@ grow_vertical = 0
 text = "Pritisni ENTER!"
 horizontal_alignment = 2
 
-[node name="PanelOpisRastline" type="Panel" parent="." unique_id=1494817526]
+[node name="PanelOpisRastline" type="Panel" parent="."]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 8
@@ -279,7 +279,7 @@ theme = SubResource("Theme_0ld40")
 theme_override_styles/panel = SubResource("StyleBoxTexture_muem4")
 script = ExtResource("12_jbj1t")
 
-[node name="LabelOpisRastline" type="Label" parent="PanelOpisRastline" unique_id=41595459]
+[node name="LabelOpisRastline" type="Label" parent="PanelOpisRastline"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -296,7 +296,7 @@ horizontal_alignment = 3
 autowrap_mode = 3
 script = SubResource("GDScript_ya4ey")
 
-[node name="TextureRect" type="TextureRect" parent="PanelOpisRastline" unique_id=669092166]
+[node name="TextureRect" type="TextureRect" parent="PanelOpisRastline"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -313,7 +313,7 @@ expand_mode = 2
 stretch_mode = 5
 script = SubResource("GDScript_muem4")
 
-[node name="Label" type="Label" parent="PanelOpisRastline" unique_id=698909070]
+[node name="Label" type="Label" parent="PanelOpisRastline"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.95400006
@@ -328,7 +328,7 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Pritisni R!"
 
-[node name="LabelImeRastline" type="Label" parent="PanelOpisRastline" unique_id=491974710]
+[node name="LabelImeRastline" type="Label" parent="PanelOpisRastline"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -341,7 +341,7 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 22
 horizontal_alignment = 1
 
-[node name="LabelPritisni" type="Label" parent="." unique_id=837797798]
+[node name="LabelPritisni" type="Label" parent="."]
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -357,7 +357,7 @@ text = "Klikni na zaslon in premikaj miško!"
 vertical_alignment = 1
 script = ExtResource("13_0ld40")
 
-[node name="PanelUkazi" type="Panel" parent="." unique_id=469859515]
+[node name="PanelUkazi" type="Panel" parent="."]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -373,7 +373,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("13_trceg")
 
-[node name="Label" type="Label" parent="PanelUkazi" unique_id=1322541999]
+[node name="Label" type="Label" parent="PanelUkazi"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -390,7 +390,7 @@ text = "ESC - izpusti miško
 R - opis trenutne rastline"
 vertical_alignment = 1
 
-[node name="PanelKonec" type="Panel" parent="." unique_id=1408584429]
+[node name="PanelKonec" type="Panel" parent="."]
 unique_name_in_owner = true
 process_mode = 3
 visible = false
@@ -408,7 +408,7 @@ grow_vertical = 2
 theme = SubResource("Theme_muem4")
 script = ExtResource("15_gqmmt")
 
-[node name="PanelDeathText" type="Label" parent="PanelKonec" unique_id=534421740]
+[node name="PanelDeathText" type="Label" parent="PanelKonec"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -421,7 +421,7 @@ grow_horizontal = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="PanelKonec" unique_id=236974958]
+[node name="Label" type="Label" parent="PanelKonec"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -438,7 +438,7 @@ text = "Pritisni ENTER!"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="PanelIzberiDN" type="Panel" parent="." unique_id=460635684]
+[node name="PanelIzberiDN" type="Panel" parent="."]
 unique_name_in_owner = true
 offset_left = 525.0
 offset_top = 226.0
@@ -447,7 +447,7 @@ offset_bottom = 461.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_0ld40")
 script = ExtResource("16_dp3eg")
 
-[node name="LabelIzberiDN" type="Label" parent="PanelIzberiDN" unique_id=795822996]
+[node name="LabelIzberiDN" type="Label" parent="PanelIzberiDN"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -466,7 +466,7 @@ text = "Ali je to iskana rastlina?
 [D]a	
 [N]e"
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=2020577739]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 unique_name_in_owner = true
 offset_left = 113.0
 offset_top = 121.0
@@ -475,7 +475,8 @@ offset_bottom = 583.0
 alignment_horizontal = 0
 alignment_vertical = 0
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer" unique_id=2016906897]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer"]
+unique_name_in_owner = true
 material = SubResource("ShaderMaterial_dp3eg")
 layout_mode = 2
 stream = ExtResource("16_jbj1t")

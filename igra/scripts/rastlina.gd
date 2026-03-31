@@ -4,10 +4,12 @@ class_name Rastlina
 
 @export var ime: String = "Rastlina"
 @export_range(0,2) var strupenost = 0 #0, 1, 2
+@export var video: VideoStream = null
 
 @onready var aspect_ratio_container: AspectRatioContainer = %AspectRatioContainer
 @onready var game_manager = %GameManager
 @onready var panel_izberi_dn: Panel = %PanelIzberiDN
+@onready var video_stream_player: VideoStreamPlayer = %AspectRatioContainer/VideoStreamPlayer
 
 func _ready():
 	#pripravim video
@@ -16,16 +18,21 @@ func _ready():
 	#pripravim panel za izbiro
 	if(panel_izberi_dn != null):
 		panel_izberi_dn.visible = false;
+		
 	add_to_group("rastline") #rastlino dodam v "rastline", array, definiran v gamemanager
 	$Area3D.body_entered.connect(_on_body_entered)
 	
 func _on_body_entered(body: Node3D):
 	if body is CharacterBody3D:  #ce je igralec vstopil v okolico rastline
 		#pritisni enter da si ogledaš rastlino
+		video_stream_player.stream = self.video
 		aspect_ratio_container.visible = true #video
-		panel_izberi_dn.visible = true;	#panel da/než
+		panel_izberi_dn.visible = true;	#panel da/ne
 		
 		var odgovor = await panel_izberi_dn.odgovor_izbran
+		
+		panel_izberi_dn.visible = false
+		aspect_ratio_container.visible = false
 		#PRAVILEN ODGOVOR
 		if(self == game_manager.poisciRastlino && odgovor == "da"):
 			print("pravilno si našel " + ime +"!")
