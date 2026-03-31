@@ -9,14 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="8_85g3d"]
 [ext_resource type="Script" uid="uid://dsfjwrl0b5oj4" path="res://scripts/panel_tocke.gd" id="8_jbj1t"]
 [ext_resource type="Script" uid="uid://f8uifoal7oko" path="res://scripts/panel_uvod.gd" id="10_muem4"]
-[ext_resource type="Script" uid="uid://n7ufouy6utr1" path="res://scenes/panel_opis_rastline.gd" id="12_jbj1t"]
-[ext_resource type="Script" uid="uid://coc4kiauwdl4y" path="res://scenes/label_pritisni.gd" id="13_0ld40"]
+[ext_resource type="Script" uid="uid://n7ufouy6utr1" path="res://scripts/panel_opis_rastline.gd" id="12_jbj1t"]
+[ext_resource type="Script" uid="uid://coc4kiauwdl4y" path="res://scripts/label_pritisni.gd" id="13_0ld40"]
 [ext_resource type="Texture2D" uid="uid://klu75cta44u2" path="res://assets/textures/list.png" id="13_dp3eg"]
-[ext_resource type="Script" uid="uid://d3oq3s1dymers" path="res://scenes/panel_ukazi.gd" id="13_trceg"]
+[ext_resource type="Script" uid="uid://d3oq3s1dymers" path="res://scripts/panel_ukazi.gd" id="13_trceg"]
 [ext_resource type="Script" uid="uid://ddc87cpseu6vn" path="res://scripts/panel_konec.gd" id="15_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://bkaytoyfs58yr" path="res://assets/cemaz_koncna.blend" id="15_jkv2x"]
 [ext_resource type="Script" uid="uid://piapmjpe0m5q" path="res://scripts/panel_izberi_dn.gd" id="16_dp3eg"]
-[ext_resource type="Shader" uid="uid://cygrwf1o5r8kp" path="res://scenes/main.gdshader" id="16_muem4"]
+[ext_resource type="Shader" uid="uid://cygrwf1o5r8kp" path="res://main.gdshader" id="16_muem4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jkv2x"]
 sky_top_color = Color(0.12675866, 0.49858016, 0.72374344, 1)
@@ -40,6 +40,14 @@ glow_enabled = true
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jkv2x"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jkv2x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ld40"]
+texture = ExtResource("13_dp3eg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dp3eg"]
+shader = ExtResource("16_muem4")
+shader_parameter/radius = 0.5
+shader_parameter/center = Vector2(0.5, 0.5)
 
 [sub_resource type="Theme" id="Theme_0ld40"]
 
@@ -83,14 +91,6 @@ func _process(delta: float) -> void:
 "
 
 [sub_resource type="Theme" id="Theme_muem4"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ld40"]
-texture = ExtResource("13_dp3eg")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dp3eg"]
-shader = ExtResource("16_muem4")
-shader_parameter/radius = 0.5
-shader_parameter/center = Vector2(0.5, 0.5)
 
 [node name="main" type="Node3D" unique_id=2027404022]
 script = ExtResource("5_tbgi4")
@@ -211,6 +211,51 @@ unique_name_in_owner = true
 [node name="ProtoController" parent="." unique_id=785542806 instance=ExtResource("8_85g3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87365, -0.015081942, 0.44604683)
 
+[node name="PanelIzberiDN" type="Panel" parent="." unique_id=1483973435]
+unique_name_in_owner = true
+offset_left = 525.0
+offset_top = 226.0
+offset_right = 943.0
+offset_bottom = 461.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_0ld40")
+script = ExtResource("16_dp3eg")
+
+[node name="LabelIzberiDN" type="Label" parent="PanelIzberiDN" unique_id=93856199]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.5
+offset_top = -44.0
+offset_right = 172.5
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.2509804, 0.16078432, 0.10980392, 1)
+theme_override_font_sizes/font_size = 22
+text = "Ali je to iskana rastlina?
+[D]a	
+[N]e"
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=1545189648]
+unique_name_in_owner = true
+offset_left = 113.0
+offset_top = 139.0
+offset_right = 575.0
+offset_bottom = 601.0
+alignment_horizontal = 0
+alignment_vertical = 0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer" unique_id=536209208]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_dp3eg")
+layout_mode = 2
+autoplay = true
+expand = true
+loop = true
+
 [node name="PanelUvod" type="Panel" parent="." unique_id=767366150]
 visible = false
 anchors_preset = 8
@@ -261,7 +306,6 @@ horizontal_alignment = 2
 
 [node name="PanelOpisRastline" type="Panel" parent="." unique_id=319103877]
 unique_name_in_owner = true
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -302,10 +346,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -270.0
-offset_top = -131.90718
-offset_right = -74.0
-offset_bottom = 131.90717
+offset_left = -282.0
+offset_top = -183.0
+offset_right = 3.0
+offset_bottom = 181.90717
 grow_horizontal = 0
 grow_vertical = 2
 expand_mode = 2
@@ -436,51 +480,6 @@ grow_vertical = 0
 text = "Pritisni ENTER!"
 horizontal_alignment = 2
 vertical_alignment = 1
-
-[node name="PanelIzberiDN" type="Panel" parent="." unique_id=1483973435]
-unique_name_in_owner = true
-offset_left = 525.0
-offset_top = 226.0
-offset_right = 943.0
-offset_bottom = 461.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_0ld40")
-script = ExtResource("16_dp3eg")
-
-[node name="LabelIzberiDN" type="Label" parent="PanelIzberiDN" unique_id=93856199]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -124.5
-offset_top = -44.0
-offset_right = 172.5
-offset_bottom = 56.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.2509804, 0.16078432, 0.10980392, 1)
-theme_override_font_sizes/font_size = 22
-text = "Ali je to iskana rastlina?
-[D]a	
-[N]e"
-
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=1545189648]
-unique_name_in_owner = true
-offset_left = 113.0
-offset_top = 121.0
-offset_right = 575.0
-offset_bottom = 583.0
-alignment_horizontal = 0
-alignment_vertical = 0
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer" unique_id=536209208]
-unique_name_in_owner = true
-material = SubResource("ShaderMaterial_dp3eg")
-layout_mode = 2
-autoplay = true
-expand = true
-loop = true
 
 [editable path="Bezeg"]
 [editable path="Cemaz"]

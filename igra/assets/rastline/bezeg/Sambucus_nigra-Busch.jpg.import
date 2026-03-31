@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7sa4bxr5exho"
-path="res://.godot/imported/Sambucus_nigra-Busch.jpg-6a3973cff4130ba9c8d6e463a9140541.ctex"
+path="res://.godot/imported/Sambucus_nigra-Busch.jpg-0f1a94f7560949cfe0f390720382541c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/slikeRastlin/Sambucus_nigra-Busch.jpg"
-dest_files=["res://.godot/imported/Sambucus_nigra-Busch.jpg-6a3973cff4130ba9c8d6e463a9140541.ctex"]
+source_file="res://assets/rastline/bezeg/Sambucus_nigra-Busch.jpg"
+dest_files=["res://.godot/imported/Sambucus_nigra-Busch.jpg-0f1a94f7560949cfe0f390720382541c.ctex"]
 
 [params]
 

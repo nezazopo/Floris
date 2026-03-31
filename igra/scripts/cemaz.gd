@@ -4,13 +4,13 @@ extends "res://scripts/rastlina.gd"
 func _init() -> void:
 	ime = "Cemaz"
 	strupenost = 0 #0, 1, 2
-	video = preload("res://assets/slikeRastlin/cemaz_animacija.ogv")
+	video = preload("res://assets/rastline/cemaz/cemaz_animacija.ogv")
 
 func _ready() -> void:
 	super._ready()
 	
 func vrniSliko():
-	var slika = preload("res://assets/slikeRastlin/cemaz.jpg")
+	var slika = preload("res://assets/rastline/cemaz/cemaz.jpg")
 	return slika
 
 func vrniOpis():
