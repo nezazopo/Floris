@@ -30,13 +30,15 @@ func naslednjaRastlina():
 		panel_poisci_rastlino.updatePanel(poisciRastlino)
 		panel_opis_rastline.updateOpisRastline()
 	else:
+		konec = true
 		get_tree().paused = true
 		panel_konec.prikaziPanel("Zmaga!")
 	
 func odstej(st):
 	tocke -= st
 	panel_tocke.updateTocke()
-	if(tocke < 0):
+	if(tocke <= 0):
+		konec = true
 		panel_konec.prikaziPanel("Zmanjkalo ti je točk!")
 		
 func pristej():

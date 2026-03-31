@@ -25,15 +25,19 @@ func _ready():
 func _on_body_entered(body: Node3D):
 	if body is CharacterBody3D:  #ce je igralec vstopil v okolico rastline
 		#pritisni enter da si ogledaš rastlino
+		 
 		video_stream_player.stream = self.video
+		video_stream_player.play()
 		aspect_ratio_container.visible = true #video
 		panel_izberi_dn.visible = true;	#panel da/ne
 		
 		var odgovor = await panel_izberi_dn.odgovor_izbran
-		
+		print(odgovor)
+		print(ime)
 		panel_izberi_dn.visible = false
 		aspect_ratio_container.visible = false
-		#PRAVILEN ODGOVOR
+		
+		# TP: PRAVILEN ODGOVOR
 		if(self == game_manager.poisciRastlino && odgovor == "da"):
 			print("pravilno si našel " + ime +"!")
 			game_manager.pristej()
@@ -41,14 +45,20 @@ func _on_body_entered(body: Node3D):
 			game_manager.naslednjaRastlina()
 			if(!game_manager.konec):
 				print("sedaj poisci " + game_manager.poisciRastlino.ime)
+			odgovor = null
 		
+		#TF: PRAVILEN ODG
 		if(self != game_manager.poisciRastlino &&  odgovor == "ne"):
 			print("Res je, to ni " + ime +"!")
+			odgovor = null
 		
-		#NAPAČEN: iskana rastlina, odg NE
+		#FN: NAPAČEN: iskana rastlina, odg NE
 		if(self == game_manager.poisciRastlino &&  odgovor == "ne"):
 			print("napačen odgovor! -1 točka")
-		#NAPAČEN: napačna rastlina odg DA
+			game_manager.odstej(1)
+			odgovor = null
+		
+		#FP: NAPAČEN: napačna rastlina odg DA
 		if(self != game_manager.poisciRastlino && odgovor == "da"):
 			print("napačen odgovor! -", game_manager.tocke, "točke")
 			if strupenost == 2: #ce je smrtonosna
@@ -57,8 +67,8 @@ func _on_body_entered(body: Node3D):
 				game_manager.odstej(1 + strupenost);
 			if game_manager.tocke <= 0:
 				print("Ni ti uspelo :(")
-		panel_izberi_dn.visible = false
-		aspect_ratio_container.visible = false
+			odgovor = null
+		
 			
 		#if self == (game_manager.poisciRastlino):
 		#	print("pravilno si našel " + ime +"!")
