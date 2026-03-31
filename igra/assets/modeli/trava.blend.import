@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bkaytoyfs58yr"
-path="res://.godot/imported/cemaz_koncna.blend-6fbd0a4b0a51cd6a2b7d34e0383b9345.scn"
+uid="uid://lgsyx7uxio4o"
+path="res://.godot/imported/trava.blend-482e21d9c91480ad5690fe325e6d13e3.scn"
 
 [deps]
 
-source_file="res://assets/cemaz_koncna.blend"
-dest_files=["res://.godot/imported/cemaz_koncna.blend-6fbd0a4b0a51cd6a2b7d34e0383b9345.scn"]
+source_file="res://assets/modeli/trava.blend"
+dest_files=["res://.godot/imported/trava.blend-482e21d9c91480ad5690fe325e6d13e3.scn"]
 
 [params]
 

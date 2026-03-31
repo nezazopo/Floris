@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpeuwktrtodl4"
-path.s3tc="res://.godot/imported/seamless-grass-texture-free.png-f82e247729debc3c718161ac562a6d68.s3tc.ctex"
+uid="uid://klu75cta44u2"
+path.s3tc="res://.godot/imported/list.png-eaaafde161a256e07eff9d5de4b15a6e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/seamless-grass-texture-free.png"
-dest_files=["res://.godot/imported/seamless-grass-texture-free.png-f82e247729debc3c718161ac562a6d68.s3tc.ctex"]
+source_file="res://assets/teksture/list.png"
+dest_files=["res://.godot/imported/list.png-eaaafde161a256e07eff9d5de4b15a6e.s3tc.ctex"]
 
 [params]
 

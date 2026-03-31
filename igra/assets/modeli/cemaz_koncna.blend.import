@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cabjjpa5jf6f2"
-path="res://.godot/imported/cemaz_animacija.blend-89a623beb56adae5c8c95055e1af752c.scn"
+uid="uid://3n6j182l0v6r"
+path="res://.godot/imported/cemaz_koncna.blend-342ac2ca95abc89db24f6188eaac1a5f.scn"
 
 [deps]
 
-source_file="res://assets/cemaz_animacija.blend"
-dest_files=["res://.godot/imported/cemaz_animacija.blend-89a623beb56adae5c8c95055e1af752c.scn"]
+source_file="res://assets/modeli/cemaz_koncna.blend"
+dest_files=["res://.godot/imported/cemaz_koncna.blend-342ac2ca95abc89db24f6188eaac1a5f.scn"]
 
 [params]
 

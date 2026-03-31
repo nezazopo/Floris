@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d15mi33v7x8s3"
-path="res://.godot/imported/les.jpg-67a0ae2f25e9d6570f4119764632dd26.ctex"
+uid="uid://0liu1ndqqm6m"
+path="res://.godot/imported/v710-taus-32.jpg-83439e842d720d1f1182a4a862c7e06e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/les.jpg"
-dest_files=["res://.godot/imported/les.jpg-67a0ae2f25e9d6570f4119764632dd26.ctex"]
+source_file="res://assets/teksture/v710-taus-32.jpg"
+dest_files=["res://.godot/imported/v710-taus-32.jpg-83439e842d720d1f1182a4a862c7e06e.ctex"]
 
 [params]
 

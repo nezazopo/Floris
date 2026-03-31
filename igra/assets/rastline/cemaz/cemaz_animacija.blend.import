@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://rykq12qjrg2u"
-path="res://.godot/imported/trava.blend-604739b7cd138a28126253b6efb2c3ea.scn"
+uid="uid://u5a0107ut3bd"
+path="res://.godot/imported/cemaz_animacija.blend-2f256cab428c4a4cceedffc1ef6c71e1.scn"
 
 [deps]
 
-source_file="res://assets/trava.blend"
-dest_files=["res://.godot/imported/trava.blend-604739b7cd138a28126253b6efb2c3ea.scn"]
+source_file="res://assets/rastline/cemaz/cemaz_animacija.blend"
+dest_files=["res://.godot/imported/cemaz_animacija.blend-2f256cab428c4a4cceedffc1ef6c71e1.scn"]
 
 [params]
 
@@ -37,19 +37,7 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"meshes": {
-"trava_Plane_008": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "",
-"save_to_file/path": ""
-}
-}
-}
+_subresources={}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
