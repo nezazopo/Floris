@@ -2,11 +2,12 @@ extends Node
 
 var tocke = 3
 var rastline: Array[Rastlina] = []
+var trenutnaRastlina = null
 var poisciRastlino
 var poiskanoBool = false
 var indeksRastline = 0
 var konec = false
-var inventory: Array[Rastlina] = []
+var inventorij: Array[Rastlina] = []
 
 @onready var panel_poisci_rastlino: Panel = %PanelPoisciRastlino
 @onready var panel_tocke: Panel = %PanelTocke
@@ -23,7 +24,7 @@ func _ready():
 	panel_poisci_rastlino.updatePanel(poisciRastlino)
 	
 func naslednjaRastlina():
-	inventory.append(poisciRastlino)
+	inventorij.append(poisciRastlino)
 	indeksRastline += 1
 	if indeksRastline < rastline.size():
 		poisciRastlino = rastline[indeksRastline]
@@ -38,6 +39,7 @@ func odstej(st):
 	tocke -= st
 	panel_tocke.updateTocke()
 	if(tocke <= 0):
+		get_tree().paused = true
 		konec = true
 		panel_konec.prikaziPanel("Zmanjkalo ti je točk!")
 		
@@ -45,9 +47,12 @@ func pristej():
 	tocke += 3
 	panel_tocke.updateTocke()
 	
-	
 func poiskano():
 	if poiskanoBool == false:
 		poiskanoBool = true
 	else:
 		poiskanoBool = false
+
+func _process(delta: float) -> void:
+	if(Input.is_action_just_pressed("E") and trenutnaRastlina != null):
+		trenutnaRastlina.prikazi_dn()
