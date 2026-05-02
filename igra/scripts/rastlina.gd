@@ -5,7 +5,9 @@ class_name Rastlina
 @export var ime: String = "Rastlina"
 @export_range(0,2) var strupenost = 0 #0, 1, 2
 @export var video: VideoStream = null
-
+@export var opisi: Array[String]
+@export var slike: Array[Texture2D]
+ 
 var isPlayerInside = null
 @onready var aspect_ratio_container: AspectRatioContainer = %AspectRatioContainer
 @onready var game_manager = %GameManager
@@ -66,7 +68,7 @@ func prikazi_dn():
 	
 	#TF: PRAVILEN ODG
 	if(self != game_manager.poisciRastlino &&  odgovor == "ne"):
-		print("Res je, to ni " + ime +"!")
+		print("Res je, to ni " + game_manager.poisciRastlino.ime +"!")
 		odgovor = null
 	
 	#FN: NAPAČEN: iskana rastlina, odg NE
