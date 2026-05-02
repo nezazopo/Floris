@@ -15,7 +15,7 @@ var isPlayerInside = null
 
 func _ready():
 	add_to_group("rastline")
-	#panelE skrij
+	#panel skrij
 	panel_e.visible = false
 	#pripravim video
 	if(aspect_ratio_container != null):
