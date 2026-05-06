@@ -19,6 +19,7 @@ func _ready():
 	if get_tree().paused:
 		get_tree().paused = false
 	var rastline_nodes = get_tree().get_nodes_in_group("rastline")
+	print("gm", rastline_nodes)
 	rastline.assign(rastline_nodes)
 	poisciRastlino = rastline[0]
 	panel_poisci_rastlino.updatePanel(poisciRastlino)
