@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="inventorij_predmet" format=3 uid="uid://bmgp6oc64plle"]
+
+[ext_resource type="Script" uid="uid://880i3lw6dv5p" path="res://inventorij_obj.gd" id="1_4twqv"]
+[ext_resource type="Texture2D" uid="uid://dln2feowkkfo0" path="res://assets/rastline/cemaz/Photo_of_Allium_Ursinum,_wild_garlic,_north-west_Hampshire,_UK,_May_2014.jpg" id="2_h2oyw"]
+
+[resource]
+script = ExtResource("1_4twqv")
+ime = "Bezeg"
+tekstura = ExtResource("2_h2oyw")
+metadata/_custom_type_script = "uid://880i3lw6dv5p"

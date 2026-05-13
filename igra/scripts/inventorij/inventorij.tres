@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Inv" format=3 uid="uid://xka4awwnyy7b"]
+
+[ext_resource type="Script" uid="uid://880i3lw6dv5p" path="res://inventorij_obj.gd" id="1_ntn2t"]
+[ext_resource type="Resource" uid="uid://bmgp6oc64plle" path="res://scripts/inventorij/predmeti/bezeg.tres" id="2_0eh63"]
+[ext_resource type="Script" uid="uid://blrlux014kako" path="res://inventorij.gd" id="3_xc25g"]
+
+[resource]
+script = ExtResource("3_xc25g")
+objekti = Array[ExtResource("1_ntn2t")]([ExtResource("2_0eh63"), null, null, null, null, null, null, null, null])
+metadata/_custom_type_script = "uid://blrlux014kako"

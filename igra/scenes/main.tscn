@@ -29,6 +29,9 @@
 [ext_resource type="Shader" uid="uid://cygrwf1o5r8kp" path="res://main.gdshader" id="16_muem4"]
 [ext_resource type="PackedScene" uid="uid://s4tpmm5qddjg" path="res://assets/modeli/hrast2.blend" id="18_dp3eg"]
 [ext_resource type="Script" uid="uid://cm35tpmjlhwmm" path="res://scenes/dob.gd" id="22_pm3ni"]
+[ext_resource type="Script" uid="uid://cr8rutrfrxui7" path="res://scenes/panel_inv.gd" id="30_fv21b"]
+[ext_resource type="Script" uid="uid://d13w6h7wbm6nd" path="res://scenes/grid_container.gd" id="31_qkpxi"]
+[ext_resource type="PackedScene" uid="uid://j8obnlyj2qb6" path="res://scripts/inventorij/inv_celica.tscn" id="32_5q0nq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jkv2x"]
 sky_top_color = Color(0.12675866, 0.49858016, 0.72374344, 1)
@@ -112,6 +115,8 @@ func _process(delta: float) -> void:
 texture = ExtResource("13_dp3eg")
 
 [sub_resource type="GDScript" id="GDScript_dp3eg"]
+
+[sub_resource type="Theme" id="Theme_qkpxi"]
 
 [node name="main" type="Node3D" unique_id=2027404022]
 script = ExtResource("5_tbgi4")
@@ -585,6 +590,83 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.18888223, 0.1247795, 0.00037603354, 1)
 theme_override_font_sizes/font_size = 25
 text = "Pritisni ENTER"
+
+[node name="PanelInventorij" type="Control" parent="." unique_id=1502851779]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.5
+offset_top = -195.0
+offset_right = 231.5
+offset_bottom = 275.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_qkpxi")
+script = ExtResource("30_fv21b")
+
+[node name="TextureRect" type="TextureRect" parent="PanelInventorij" unique_id=1517964781]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.75
+offset_top = -234.25
+offset_right = 232.75
+offset_bottom = 234.25
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_dp3eg")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="PanelInventorij/TextureRect" unique_id=1676667956]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -185.0
+offset_right = 193.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 3
+script = ExtResource("31_qkpxi")
+
+[node name="Inv_celica1" parent="PanelInventorij/TextureRect/GridContainer" unique_id=899832782 instance=ExtResource("32_5q0nq")]
+layout_mode = 2
+
+[node name="Inv_celica2" parent="PanelInventorij/TextureRect/GridContainer" unique_id=1692513715 instance=ExtResource("32_5q0nq")]
+layout_mode = 2
+
+[node name="Inv_celica3" parent="PanelInventorij/TextureRect/GridContainer" unique_id=1434519370 instance=ExtResource("32_5q0nq")]
+layout_mode = 2
+
+[node name="Inv_celica4" parent="PanelInventorij/TextureRect/GridContainer" unique_id=1954866768 instance=ExtResource("32_5q0nq")]
+layout_mode = 2
+
+[node name="Inv_celica5" parent="PanelInventorij/TextureRect/GridContainer" unique_id=1847820000 instance=ExtResource("32_5q0nq")]
+layout_mode = 2
+
+[node name="Inv_celica6" parent="PanelInventorij/TextureRect/GridContainer" unique_id=397322859 instance=ExtResource("32_5q0nq")]
+layout_mode = 2
+
+[node name="Inv_celica7" parent="PanelInventorij/TextureRect/GridContainer" unique_id=44264793 instance=ExtResource("32_5q0nq")]
+layout_mode = 2
+
+[node name="Inv_celica8" parent="PanelInventorij/TextureRect/GridContainer" unique_id=755485737 instance=ExtResource("32_5q0nq")]
+layout_mode = 2
+
+[node name="Inv_celica9" parent="PanelInventorij/TextureRect/GridContainer" unique_id=395111378 instance=ExtResource("32_5q0nq")]
+layout_mode = 2
 
 [editable path="Bezeg"]
 [editable path="Cemaz"]

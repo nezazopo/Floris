@@ -7,7 +7,6 @@ var poisciRastlino
 var poiskanoBool = false
 var indeksRastline = 0
 var konec = false
-var inventorij: Array[Rastlina] = []
 
 @onready var panel_poisci_rastlino: Panel = %PanelPoisciRastlino
 @onready var panel_tocke: Panel = %PanelTocke
@@ -25,7 +24,7 @@ func _ready():
 	panel_poisci_rastlino.updatePanel(poisciRastlino)
 	
 func naslednjaRastlina():
-	inventorij.append(poisciRastlino)
+	
 	indeksRastline += 1
 	if indeksRastline < rastline.size():
 		poisciRastlino = rastline[indeksRastline]
