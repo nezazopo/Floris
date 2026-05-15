@@ -14,10 +14,31 @@ var isPlayerInside = null
 @onready var panel_izberi_dn: Panel = %PanelIzberiDN
 @onready var video_stream_player: VideoStreamPlayer = %AspectRatioContainer/VideoStreamPlayer
 @onready var panel_e: Panel = %PanelE
+var inv_celica = null
+
+const InvCelica = preload("res://InvCelica.tscn")
 
 func _ready():
 	add_to_group("rastline")
-	#panel skrij
+	
+	var nova_celica = InvCelica.instantiate()
+	
+	nova_celica.ime = name
+	nova_celica.ikona = video
+	
+	self.inv_celica = nova_celica
+	
+	var inv = get_parent().get_node("Inventorij/InvPanel/InvGridContainer")
+	inv.add_child(nova_celica)
+	
+	# Force update
+	nova_celica._ready()   # call it manually if needed
+	
+	# Debug
+	print("Added to inventory: ", name, " | Video: ", video != null)
+	
+	# Make sure the video player inside the cell is hidden at start
+
 	panel_e.visible = false
 	#pripravim video
 	if(aspect_ratio_container != null):

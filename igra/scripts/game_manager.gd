@@ -8,6 +8,7 @@ var poiskanoBool = false
 var indeksRastline = 0
 var konec = false
 
+
 @onready var panel_poisci_rastlino: Panel = %PanelPoisciRastlino
 @onready var panel_tocke: Panel = %PanelTocke
 @onready var timer: Timer = %Timer
@@ -23,7 +24,13 @@ func _ready():
 	poisciRastlino = rastline[0]
 	panel_poisci_rastlino.updatePanel(poisciRastlino)
 	
+	
 func naslednjaRastlina():
+	#ce ima trenutna rastlina celico,
+	#if poisciRastlino and poisciRastlino.inv_celica:
+	#	var celica = poisciRastlino.inv_celica
+	#	if celica.has_node("InvVideoStream"):
+	#		celica.get_node("InvVideoStream").visible = true
 	
 	indeksRastline += 1
 	if indeksRastline < rastline.size():

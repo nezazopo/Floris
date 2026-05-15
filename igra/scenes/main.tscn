@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://7sa4bxr5exho" path="res://assets/rastline/bezeg/Sambucus_nigra-Busch.jpg" id="5_yc10j"]
 [ext_resource type="PackedScene" uid="uid://uvxvo7svjy2o" path="res://assets/modeli/tla.blend" id="6_muem4"]
 [ext_resource type="PackedScene" uid="uid://b500uka7w3uvy" path="res://scenes/Bezeg.tscn" id="6_tefeu"]
+[ext_resource type="VideoStream" uid="uid://d0vosw74pluhg" path="res://assets/rastline/cemaz/cemaz_animacija.ogv" id="7_fv21b"]
 [ext_resource type="Script" uid="uid://bpai3xktmgbr7" path="res://scripts/panel_poisci_rastlino.gd" id="7_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://dln2feowkkfo0" path="res://assets/rastline/cemaz/Photo_of_Allium_Ursinum,_wild_garlic,_north-west_Hampshire,_UK,_May_2014.jpg" id="8_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="8_85g3d"]
@@ -29,9 +30,6 @@
 [ext_resource type="Shader" uid="uid://cygrwf1o5r8kp" path="res://main.gdshader" id="16_muem4"]
 [ext_resource type="PackedScene" uid="uid://s4tpmm5qddjg" path="res://assets/modeli/hrast2.blend" id="18_dp3eg"]
 [ext_resource type="Script" uid="uid://cm35tpmjlhwmm" path="res://scenes/dob.gd" id="22_pm3ni"]
-[ext_resource type="Script" uid="uid://cr8rutrfrxui7" path="res://scenes/panel_inv.gd" id="30_fv21b"]
-[ext_resource type="Script" uid="uid://d13w6h7wbm6nd" path="res://scenes/grid_container.gd" id="31_qkpxi"]
-[ext_resource type="PackedScene" uid="uid://j8obnlyj2qb6" path="res://scripts/inventorij/inv_celica.tscn" id="32_5q0nq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jkv2x"]
 sky_top_color = Color(0.12675866, 0.49858016, 0.72374344, 1)
@@ -116,7 +114,10 @@ texture = ExtResource("13_dp3eg")
 
 [sub_resource type="GDScript" id="GDScript_dp3eg"]
 
-[sub_resource type="Theme" id="Theme_qkpxi"]
+[sub_resource type="Theme" id="Theme_fv21b"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tel4y"]
+texture = ExtResource("13_dp3eg")
 
 [node name="main" type="Node3D" unique_id=2027404022]
 script = ExtResource("5_tbgi4")
@@ -128,6 +129,7 @@ camera_attributes = SubResource("CameraAttributesPractical_jkv2x")
 [node name="Bezeg" parent="." unique_id=1461718514 instance=ExtResource("6_tefeu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0833235, 1.104552, -4.5613894)
 ime = "Bezeg"
+video = ExtResource("7_fv21b")
 opisi = Array[String](["0: OPIS: Črni bezeg je grm s suličastimi listi zarezanih robov. Plod je jagoda črne ali temno modre barve. Socvetje je ploščate oblike, sestavlja ga veliko število  cvetov. Te so drobni, imajo pet listkov bele barve in pet izstopajočih rumenih prašnikov.", "1: KJE RASTE:Črni bezeg je zelo razširjena vrsta, avtohtona Evropi, nahaja pa se tudi v Aziji ter Severni Ameriki. Ker mu ustreza dušik, ki nastane med razkrajanjem organskih odpadkov, najbolje uspeva v bližini kmetij.", "2: UPORABA:Surovi plodovi so rahlo strupeni, kuhane pa se  ponavadi uporablja za izdelavo marmelad. Verjetno najbolj znana uporaba bezgovih cvetov v Sloveniji je v obliki napitka šabesa. Uporablja se tudi za čaje, v Nemčiji celo za tradicionalno juho po imenu Fliederbeersuppe."])
 slike = Array[Texture2D]([ExtResource("4_og1vs"), ExtResource("5_2wyq8"), ExtResource("5_yc10j")])
 
@@ -137,6 +139,7 @@ transform = Transform3D(4.974343, 0, 0, 0, 4.974343, 0, 0, 0, 4.974343, 0, -0.43
 [node name="Cemaz" parent="." unique_id=1290811992 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4, 0.1176697, -7.0587997)
 ime = "Cemaz"
+video = ExtResource("7_fv21b")
 opisi = Array[String](["OPIS: Čemaž je lukovka, raste od marca do junija. zraste do največ 30 cm. Njegovi listi so podolgovati in suličasti. Ima bel cvet, ki ga sestavlja šest listov in spominja na zvezdo. Socvetje vsebuje od šest do dvajset cvetov. Cveti od aprila do maja. Diši po česnu.", "Pazi! Podoben je strupenima rastlinama šmarnici ter in podlesku, ki nimata vonja česna. Listi šmarnice se ne razlikujejo od čemaževih, razlikujeta pa se po cvetju. Podlesek za razliko od čemaža raste v rozetah, ter raste bolj navpično.", "KJE RASTE:Različne vrste čemaža so avtohtone Evropi in Aziji. Najdemo jih v vlažnejših gozdovih.", "UPORABA:Čemaž ima blažji okus od česna in čebule. Lahko je začimba blažjega okusa v rižotah in solatah, iz njega se lahko skuha tudi juha ali celo čemažev pesto. Uporablja se v ljudski medicini, danes dokazano deluje protivnetno in protibakterijsko."])
 slike = Array[Texture2D]([ExtResource("4_gqmmt"), ExtResource("8_2wyq8"), ExtResource("9_vxglm"), ExtResource("10_2f3dj")])
 
@@ -356,9 +359,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -503.0
-offset_top = -212.0
+offset_top = -214.0
 offset_right = 503.0
-offset_bottom = 284.0
+offset_bottom = 282.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -591,82 +594,52 @@ theme_override_colors/font_color = Color(0.18888223, 0.1247795, 0.00037603354, 1
 theme_override_font_sizes/font_size = 25
 text = "Pritisni ENTER"
 
-[node name="PanelInventorij" type="Control" parent="." unique_id=1502851779]
+[node name="Inventorij" type="Control" parent="." unique_id=1249416181]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -231.5
-offset_top = -195.0
-offset_right = 231.5
-offset_bottom = 275.0
+offset_left = -215.0
+offset_top = -126.0
+offset_right = 215.0
+offset_bottom = 214.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_qkpxi")
-script = ExtResource("30_fv21b")
 
-[node name="TextureRect" type="TextureRect" parent="PanelInventorij" unique_id=1517964781]
+[node name="InvPanel" type="Panel" parent="Inventorij" unique_id=1803503058]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -232.75
-offset_top = -234.25
-offset_right = 232.75
-offset_bottom = 234.25
+offset_left = -329.0
+offset_top = -225.5
+offset_right = 329.0
+offset_bottom = 225.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("13_dp3eg")
-expand_mode = 1
+theme = SubResource("Theme_fv21b")
+theme_override_styles/panel = SubResource("StyleBoxTexture_tel4y")
 
-[node name="GridContainer" type="GridContainer" parent="PanelInventorij/TextureRect" unique_id=1676667956]
+[node name="InvGridContainer" type="GridContainer" parent="Inventorij/InvPanel" unique_id=1887040240]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -193.0
-offset_top = -185.0
-offset_right = 193.0
-offset_bottom = 185.0
+offset_left = -214.5
+offset_top = -179.5
+offset_right = 214.5
+offset_bottom = 179.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/h_separation = 20
-theme_override_constants/v_separation = 20
-columns = 3
-script = ExtResource("31_qkpxi")
-
-[node name="Inv_celica1" parent="PanelInventorij/TextureRect/GridContainer" unique_id=899832782 instance=ExtResource("32_5q0nq")]
-layout_mode = 2
-
-[node name="Inv_celica2" parent="PanelInventorij/TextureRect/GridContainer" unique_id=1692513715 instance=ExtResource("32_5q0nq")]
-layout_mode = 2
-
-[node name="Inv_celica3" parent="PanelInventorij/TextureRect/GridContainer" unique_id=1434519370 instance=ExtResource("32_5q0nq")]
-layout_mode = 2
-
-[node name="Inv_celica4" parent="PanelInventorij/TextureRect/GridContainer" unique_id=1954866768 instance=ExtResource("32_5q0nq")]
-layout_mode = 2
-
-[node name="Inv_celica5" parent="PanelInventorij/TextureRect/GridContainer" unique_id=1847820000 instance=ExtResource("32_5q0nq")]
-layout_mode = 2
-
-[node name="Inv_celica6" parent="PanelInventorij/TextureRect/GridContainer" unique_id=397322859 instance=ExtResource("32_5q0nq")]
-layout_mode = 2
-
-[node name="Inv_celica7" parent="PanelInventorij/TextureRect/GridContainer" unique_id=44264793 instance=ExtResource("32_5q0nq")]
-layout_mode = 2
-
-[node name="Inv_celica8" parent="PanelInventorij/TextureRect/GridContainer" unique_id=755485737 instance=ExtResource("32_5q0nq")]
-layout_mode = 2
-
-[node name="Inv_celica9" parent="PanelInventorij/TextureRect/GridContainer" unique_id=395111378 instance=ExtResource("32_5q0nq")]
-layout_mode = 2
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 39
+columns = 4
 
 [editable path="Bezeg"]
 [editable path="Cemaz"]

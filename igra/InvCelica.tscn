@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c7toowx5upyjc"]
+
+[ext_resource type="Script" uid="uid://b27sg5bu7laqn" path="res://panel_inv_celica.gd" id="1_fbpp2"]
+
+[node name="InvCelica" type="Panel" unique_id=739505791]
+custom_minimum_size = Vector2(120, 160)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_fbpp2")
+
+[node name="InvVideoStream" type="VideoStreamPlayer" parent="." unique_id=76016281]
+clip_contents = true
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_top = 5.0
+offset_right = 55.5
+offset_bottom = 115.0
+grow_horizontal = 2
+
+[node name="LabelIkona" type="Label" parent="." unique_id=1912112493]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -36.0
+offset_right = 20.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
