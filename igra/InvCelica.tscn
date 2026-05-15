@@ -20,6 +20,9 @@ offset_top = 5.0
 offset_right = 55.5
 offset_bottom = 115.0
 grow_horizontal = 2
+autoplay = true
+expand = true
+loop = true
 
 [node name="LabelIkona" type="Label" parent="." unique_id=1912112493]
 layout_mode = 1

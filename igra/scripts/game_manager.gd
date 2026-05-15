@@ -8,30 +8,29 @@ var poiskanoBool = false
 var indeksRastline = 0
 var konec = false
 
-
-@onready var panel_poisci_rastlino: Panel = %PanelPoisciRastlino
-@onready var panel_tocke: Panel = %PanelTocke
+@export var panel_poisci_rastlino_path: NodePath = "../PanelPoisciRastlino"
+@export var panel_tocke_path: NodePath = "../PanelTocke"
 @onready var timer: Timer = %Timer
 @onready var panel_konec: Panel = %PanelKonec
 @onready var panel_opis_rastline = %PanelOpisRastline
+
+@onready var panel_poisci_rastlino = get_tree().get_first_node_in_group("panel_poisci_rastlino")
+@onready var panel_tocke: Panel = get_tree().get_first_node_in_group("panel_tocke")
 
 func _ready():
 	if get_tree().paused:
 		get_tree().paused = false
 	var rastline_nodes = get_tree().get_nodes_in_group("rastline")
-	print("gm", rastline_nodes)
 	rastline.assign(rastline_nodes)
 	poisciRastlino = rastline[0]
 	panel_poisci_rastlino.updatePanel(poisciRastlino)
 	
-	
 func naslednjaRastlina():
-	#ce ima trenutna rastlina celico,
-	#if poisciRastlino and poisciRastlino.inv_celica:
-	#	var celica = poisciRastlino.inv_celica
-	#	if celica.has_node("InvVideoStream"):
-	#		celica.get_node("InvVideoStream").visible = true
-	
+	if poisciRastlino and poisciRastlino.inv_celica:
+		var celica = poisciRastlino.inv_celica
+		var video_player = celica.get_node_or_null("InvVideoStream")
+		if video_player:
+			video_player.visible = true
 	indeksRastline += 1
 	if indeksRastline < rastline.size():
 		poisciRastlino = rastline[indeksRastline]
@@ -42,7 +41,7 @@ func naslednjaRastlina():
 		get_tree().paused = true
 		panel_konec.prikaziPanel("Zmaga!")
 	
-func odstej(st):
+func odstej(st): 
 	tocke -= st
 	panel_tocke.updateTocke()
 	if(tocke <= 0):

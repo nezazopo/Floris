@@ -2,7 +2,7 @@ extends Panel
 @onready var label_ime_rastline: Label = $LabelImeRastline
 @onready var label_opis_rastline: Label = $LabelOpisRastline
 @onready var texture_rect: TextureRect = $TextureRect
-@onready var game_manager = %GameManager
+@onready var game_manager: Node = get_node("../GameManager")
 var stranOpisa = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,8 +17,6 @@ func _process(delta: float) -> void:
 		else:
 			self.visible = true
 	if self.visible and Input.is_action_just_pressed("ListNaprej"):
-		print("listam naprej")
-		print("trenutna stran", stranOpisa)
 		if(stranOpisa == game_manager.poisciRastlino.opisi.size() - 1):
 			stranOpisa = 0
 		else:
@@ -28,8 +26,6 @@ func _process(delta: float) -> void:
 		label_opis_rastline.text = game_manager.poisciRastlino.opisi[stranOpisa]
 		
 	if self.visible and Input.is_action_just_pressed("ListNazaj"):
-		print("listam nazaj")
-		print("trenutna stran", stranOpisa)
 		print(stranOpisa);
 		if(stranOpisa == 0):
 			stranOpisa = game_manager.poisciRastlino.opisi.size() -1

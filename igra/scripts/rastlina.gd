@@ -1,17 +1,16 @@
-@abstract
 extends Node3D
 class_name Rastlina
 
-@export var ime: String = "Rastlina"
-@export_range(0,2) var strupenost = 0 #0, 1, 2
+@export var ime: String
+@export_range(0,2) var strupenost = 0
 @export var video: VideoStream = null
 @export var opisi: Array[String]
 @export var slike: Array[Texture2D]
  
 var isPlayerInside = null
 @onready var aspect_ratio_container: AspectRatioContainer = %AspectRatioContainer
-@onready var game_manager = %GameManager
-@onready var panel_izberi_dn: Panel = %PanelIzberiDN
+@onready var game_manager: Node = get_node("../GameManager")
+@onready var panel_izberi_dn: Panel = get_node("../PanelIzberiDN")
 @onready var video_stream_player: VideoStreamPlayer = %AspectRatioContainer/VideoStreamPlayer
 @onready var panel_e: Panel = %PanelE
 var inv_celica = null
@@ -22,22 +21,12 @@ func _ready():
 	add_to_group("rastline")
 	
 	var nova_celica = InvCelica.instantiate()
-	
 	nova_celica.ime = name
 	nova_celica.ikona = video
-	
-	self.inv_celica = nova_celica
-	
-	var inv = get_parent().get_node("Inventorij/InvPanel/InvGridContainer")
+	self.inv_celica = nova_celica	
+	var inv = get_parent().get_node("PanelInv/InvGridContainer")
 	inv.add_child(nova_celica)
 	
-	# Force update
-	nova_celica._ready()   # call it manually if needed
-	
-	# Debug
-	print("Added to inventory: ", name, " | Video: ", video != null)
-	
-	# Make sure the video player inside the cell is hidden at start
 
 	panel_e.visible = false
 	#pripravim video
@@ -66,7 +55,6 @@ func _on_body_exited(body: Node3D):
 			
 func prikazi_dn():
 	panel_e.visible = false
-	print("rastlina: ", ime)
 	video_stream_player.stream = self.video
 	video_stream_player.play()
 	aspect_ratio_container.visible = true #video
