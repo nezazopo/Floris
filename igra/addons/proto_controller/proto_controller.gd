@@ -4,6 +4,7 @@
 # Happy prototyping!
 
 extends CharacterBody3D
+
 @onready var label_pritisni: Label = $"../LabelPritisni"
 ## Can we move around?
 @export var can_move : bool = true
@@ -143,13 +144,11 @@ func disable_freefly():
 
 
 func capture_mouse():
-	label_pritisni.skrij()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	mouse_captured = true
 
 
 func release_mouse():
-	label_pritisni.prikazi()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	mouse_captured = false
 
@@ -178,3 +177,9 @@ func check_input_mappings():
 	if can_freefly and not InputMap.has_action(input_freefly):
 		push_error("Freefly disabled. No InputAction found for input_freefly: " + input_freefly)
 		can_freefly = false
+
+func _process(delta: float):
+	if(!mouse_captured):
+		label_pritisni.prikazi()
+	else:
+		label_pritisni.skrij()

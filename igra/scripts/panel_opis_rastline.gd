@@ -2,7 +2,10 @@ extends Panel
 @onready var label_ime_rastline: Label = $LabelImeRastline
 @onready var label_opis_rastline: Label = $LabelOpisRastline
 @onready var texture_rect: TextureRect = $TextureRect
-@onready var game_manager: Node = get_node("../GameManager")
+@onready var game_manager: Node = $"../GameManager"
+@onready var label_pritisni: Label = $"../LabelPritisni"
+
+
 var stranOpisa = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,8 +17,12 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("R_pressed"):
 		if self.visible:
 			self.visible = false
+			
 		else:
 			self.visible = true
+			if(label_pritisni.visible):
+				label_pritisni.skrij()
+			
 	if self.visible and Input.is_action_just_pressed("ListNaprej"):
 		if(stranOpisa == game_manager.poisciRastlino.opisi.size() - 1):
 			stranOpisa = 0

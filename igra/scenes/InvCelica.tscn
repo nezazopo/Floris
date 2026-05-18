@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c7toowx5upyjc"]
 
-[ext_resource type="Script" uid="uid://b27sg5bu7laqn" path="res://panel_inv_celica.gd" id="1_fbpp2"]
+[ext_resource type="Script" uid="uid://b27sg5bu7laqn" path="res://scripts/panel_inv_celica.gd" id="1_fbpp2"]
 
 [node name="InvCelica" type="Panel" unique_id=739505791]
 custom_minimum_size = Vector2(120, 160)

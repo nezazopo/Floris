@@ -3,9 +3,6 @@ extends Label
 @onready var panel_inv: Panel = $"../PanelInv"
 @onready var panel_izberi_dn: Panel = $"../PanelIzberiDN"
 @onready var panel_opis_rastline: Panel = $"../PanelOpisRastline"
-
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass

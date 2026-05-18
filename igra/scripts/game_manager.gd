@@ -17,9 +17,6 @@ var konec = false
 @onready var panel_poisci_rastlino = get_tree().get_first_node_in_group("panel_poisci_rastlino")
 
 func _ready():
-	print("Sem na:", get_path())
-	if(panel_tocke == null):
-		print("!")
 	if get_tree().paused:
 		get_tree().paused = false
 	var rastline_nodes = get_tree().get_nodes_in_group("rastline")

@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://xel8ukbllc15" path="res://assets/rastline/cemaz/cemaz.jpg" id="4_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://3n6j182l0v6r" path="res://assets/modeli/cemaz_koncna.blend" id="4_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://c1c2r7wdpr4mw" path="res://assets/rastline/bezeg/Sambucus_nigra_RF.jpg" id="4_og1vs"]
-[ext_resource type="PackedScene" uid="uid://cb0qllbssnw34" path="res://scenes/static_body_3d.tscn" id="4_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://c2fd7ehfcg3pe" path="res://assets/rastline/bezeg/Sambucus_nigra2.jpg" id="5_2wyq8"]
 [ext_resource type="Script" uid="uid://dmnm30uihfj4r" path="res://scripts/game_manager.gd" id="5_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://7sa4bxr5exho" path="res://assets/rastline/bezeg/Sambucus_nigra-Busch.jpg" id="5_yc10j"]
@@ -27,8 +26,8 @@
 [ext_resource type="Script" uid="uid://d25f18nfp6bl6" path="res://scripts/panel_izberi_dn.gd" id="16_dp3eg"]
 [ext_resource type="Shader" uid="uid://cygrwf1o5r8kp" path="res://main.gdshader" id="16_muem4"]
 [ext_resource type="PackedScene" uid="uid://s4tpmm5qddjg" path="res://assets/modeli/hrast2.blend" id="18_dp3eg"]
-[ext_resource type="Script" uid="uid://cm35tpmjlhwmm" path="res://scenes/dob.gd" id="22_pm3ni"]
-[ext_resource type="Script" uid="uid://cvnmg6bs8oxr3" path="res://scenes/inv_panel.gd" id="31_tel4y"]
+[ext_resource type="Script" uid="uid://cm35tpmjlhwmm" path="res://scripts/dob.gd" id="22_pm3ni"]
+[ext_resource type="Script" uid="uid://cvnmg6bs8oxr3" path="res://scripts/inv_panel.gd" id="31_tel4y"]
 [ext_resource type="Script" uid="uid://h1odmwux86h6" path="res://scripts/cemaz.gd" id="32_5q0nq"]
 [ext_resource type="Texture2D" uid="uid://e3ssphoke4c8" path="res://assets/rastline/cemaz/Allium_ursinum,_Arum_maculatum.jpg" id="33_dgi5k"]
 
@@ -124,6 +123,9 @@ texture = ExtResource("13_dp3eg")
 
 [sub_resource type="GDScript" id="GDScript_dp3eg"]
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7iui7"]
+points = PackedVector3Array(-30, -0.5, -30, -30, 0.5, -30, 29.999996, -0.5, -30, -30, -0.5, 29.999996, -30, 0.5, 29.999996, 29.999996, 0.5, -30, 29.999996, -0.5, 29.999996, 29.999996, 0.5, 29.999996)
+
 [node name="main" type="Node3D" unique_id=2027404022]
 
 [node name="PanelInv" type="Panel" parent="." unique_id=1803503058]
@@ -142,7 +144,7 @@ theme = SubResource("Theme_fv21b")
 theme_override_styles/panel = SubResource("StyleBoxTexture_tel4y")
 script = ExtResource("31_tel4y")
 
-[node name="InvGridContainer" type="GridContainer" parent="PanelInv" unique_id=1887040240]
+[node name="GridContainerInv" type="GridContainer" parent="PanelInv" unique_id=1887040240]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -165,12 +167,12 @@ ime = "Dob"
 opisi = Array[String](["OPIS:  Pri nas najbolj pogost hrast je Dob. Zraste tudi preko 50 metrov v višino in ima močno deblo ter krošnjo nepravilne oblike. Lubje je sivo rjave barve z izrazitimi vertikalnimi režami. Ima značilne liste, ki so nepravilnih, zaobljenih oblik. Iz oplojenih cvetov se razvije želod, ki je sestavljen iz dveh delov: skledice ter oreška jajčaste oblike.", "KJE RASTE:Dob je razširjen po celi Evropi, razen na njenem skrajnem severu.", "UPORABA:Dobov les je izjemno trd in odporen. Sodi med gospodarsko izjemno pomembna drevesa, njegov les pa se uporablja za gradnjo plovil, sodov, stavbnega pohištva, pohištva, v gradbeništvu in za talne obloge."])
 slike = Array[Texture2D]([ExtResource("13_yq6so"), ExtResource("14_fv21b"), ExtResource("15_tel4y")])
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Dob" unique_id=1185020923]
+[node name="MeshInstance3D_dob" type="MeshInstance3D" parent="Dob" unique_id=1185020923]
 mesh = SubResource("ArrayMesh_jscy8")
 
 [node name="Area3D" type="Area3D" parent="Dob" unique_id=1393059179]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Dob/Area3D" unique_id=201086816]
+[node name="CollisionShape3D_dob" type="CollisionShape3D" parent="Dob/Area3D" unique_id=201086816]
 transform = Transform3D(7.900965, 0, 0, 0, 7.900965, 0, 0, 0, 7.900965, 0, 0, 0)
 shape = SubResource("SphereShape3D_pm3ni")
 
@@ -184,7 +186,7 @@ video = ExtResource("7_fv21b")
 opisi = Array[String](["OPIS: Čemaž je lukovka, raste od marca do junija. zraste do največ 30 cm. Njegovi listi so podolgovati in suličasti. Ima bel cvet, ki ga sestavlja šest listov in spominja na zvezdo. Socvetje vsebuje od šest do dvajset cvetov. Cveti od aprila do maja. Diši po česnu.", "Pazi! Podoben je strupenima rastlinama šmarnici ter in podlesku, ki nimata vonja česna. Listi šmarnice se ne razlikujejo od čemaževih, razlikujeta pa se po cvetju. Podlesek za razliko od čemaža raste v rozetah, ter raste bolj navpično.", "KJE RASTE:Različne vrste čemaža so avtohtone Evropi in Aziji. Najdemo jih v vlažnejših gozdovih.", "UPORABA:Čemaž ima blažji okus od česna in čebule. Lahko je začimba blažjega okusa v rižotah in solatah, iz njega se lahko skuha tudi juha ali celo čemažev pesto. Uporablja se v ljudski medicini, danes dokazano deluje protivnetno in protibakterijsko."])
 slike = Array[Texture2D]([ExtResource("4_gqmmt"), ExtResource("8_2wyq8"), ExtResource("9_vxglm"), ExtResource("33_dgi5k")])
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Cemaz" unique_id=298896123]
+[node name="MeshInstance3D_cemaz" type="MeshInstance3D" parent="Cemaz" unique_id=298896123]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.091917, 0, -3.806923)
 cast_shadow = 0
 gi_mode = 2
@@ -193,7 +195,7 @@ mesh = SubResource("ArrayMesh_jkv2x")
 [node name="Area3D" type="Area3D" parent="Cemaz" unique_id=769897866]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1693935, 0, -3.6478348)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cemaz/Area3D" unique_id=897611270]
+[node name="CollisionShape3D_cemaz" type="CollisionShape3D" parent="Cemaz/Area3D" unique_id=897611270]
 transform = Transform3D(9.245187, 0, 0, 0, 9.245187, 0, 0, 0, 9.245187, -0.42384148, 1.1245732, 0.84593964)
 shape = SubResource("SphereShape3D_c571f")
 
@@ -226,19 +228,6 @@ transform = Transform3D(-0.99139696, 0.113353625, -0.06544471, 2.780595e-08, 0.4
 shadow_enabled = true
 shadow_blur = 9.056
 directional_shadow_max_distance = 8192.0
-
-[node name="Tla" parent="." unique_id=1542798055 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(4.806617, 0, 0, 0, 4.806617, 0, 0, 0, 4.806617, 0, 2.8820708, -2.1983566)
-
-[node name="MeshInstance3D" parent="Tla" index="0"]
-transform = Transform3D(141.35352, 0, 0, 0, 141.35193, 0.67104447, 0, -0.67104447, 141.35193, -0.29828262, -0.42027873, -0.09346008)
-mesh = null
-
-[node name="CollisionShape3D" parent="Tla" index="1"]
-transform = Transform3D(4.861927, 0, 0, 0, 4.861927, 0, 0, 0, 4.861927, 0, -91.03984, 0)
-
-[node name="tla" parent="Tla" unique_id=513646750 instance=ExtResource("6_muem4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.81842566, 0)
 
 [node name="PanelPoisciRastlino" type="Panel" parent="." unique_id=1831486265]
 offset_right = 274.0
@@ -275,7 +264,6 @@ grow_horizontal = 0
 script = ExtResource("8_jbj1t")
 
 [node name="TextTocke" type="Label" parent="PanelTocke" unique_id=926321000]
-unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -629,5 +617,16 @@ theme_override_colors/font_color = Color(0.18888223, 0.1247795, 0.00037603354, 1
 theme_override_font_sizes/font_size = 25
 text = "Pritisni ENTER"
 
-[editable path="Tla"]
+[node name="Tla" type="StaticBody3D" parent="." unique_id=1618116805]
+transform = Transform3D(4.879475, 0, 0, 0, 4.879475, 0, 0, 0, 4.879475, 0, -1.398049, 0)
+
+[node name="tla_MeshInstance3D" type="MeshInstance3D" parent="Tla" unique_id=1276630722]
+
+[node name="tla_CollisionShape3D" type="CollisionShape3D" parent="Tla" unique_id=1036453257]
+transform = Transform3D(4.861927, 0, 0, 0, 4.861927, 0, 0, 0, 4.861927, 0, -91.03984, 0)
+shape = SubResource("ConvexPolygonShape3D_7iui7")
+
+[node name="tla" parent="Tla" unique_id=834141132 instance=ExtResource("6_muem4")]
+
+[editable path="Cemaz/cemaz_koncna"]
 [editable path="ProtoController"]

@@ -16,7 +16,7 @@ var isPlayerInside = null
 
 var inv_celica = null
 
-const InvCelica = preload("res://InvCelica.tscn")
+const InvCelica = preload("uid://c7toowx5upyjc")
 
 func _ready():
 	add_to_group("rastline")
@@ -25,7 +25,7 @@ func _ready():
 	nova_celica.ime = name
 	nova_celica.ikona = video
 	self.inv_celica = nova_celica	
-	var inv = get_parent().get_node("PanelInv/InvGridContainer")
+	var inv = get_parent().get_node("PanelInv/GridContainerInv")
 	inv.add_child(nova_celica)
 	
 
