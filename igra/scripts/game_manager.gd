@@ -8,9 +8,8 @@ var poiskanoBool = false
 var indeksRastline = 0
 var konec = false
 
-@export var panel_poisci_rastlino_path: NodePath = "../PanelPoisciRastlino"
 @onready var panel_tocke: Panel = $"../PanelTocke"
-@onready var timer: Timer = %Timer
+@onready var timer: Timer = $"../Timer"
 @onready var panel_konec: Panel = $"../PanelKonec"
 @onready var panel_opis_rastline: Panel = $"../PanelOpisRastline"
 
