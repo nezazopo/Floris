@@ -9,15 +9,18 @@ var indeksRastline = 0
 var konec = false
 
 @export var panel_poisci_rastlino_path: NodePath = "../PanelPoisciRastlino"
-@export var panel_tocke_path: NodePath = "../PanelTocke"
+@onready var panel_tocke: Panel = $"../PanelTocke"
 @onready var timer: Timer = %Timer
-@onready var panel_konec: Panel = %PanelKonec
-@onready var panel_opis_rastline = %PanelOpisRastline
+@onready var panel_konec: Panel = $"../PanelKonec"
+@onready var panel_opis_rastline: Panel = $"../PanelOpisRastline"
+
 
 @onready var panel_poisci_rastlino = get_tree().get_first_node_in_group("panel_poisci_rastlino")
-@onready var panel_tocke: Panel = get_tree().get_first_node_in_group("panel_tocke")
 
 func _ready():
+	print("Sem na:", get_path())
+	if(panel_tocke == null):
+		print("!")
 	if get_tree().paused:
 		get_tree().paused = false
 	var rastline_nodes = get_tree().get_nodes_in_group("rastline")

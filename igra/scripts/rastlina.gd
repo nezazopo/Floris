@@ -8,11 +8,12 @@ class_name Rastlina
 @export var slike: Array[Texture2D]
  
 var isPlayerInside = null
-@onready var aspect_ratio_container: AspectRatioContainer = %AspectRatioContainer
-@onready var game_manager: Node = get_node("../GameManager")
-@onready var panel_izberi_dn: Panel = get_node("../PanelIzberiDN")
-@onready var video_stream_player: VideoStreamPlayer = %AspectRatioContainer/VideoStreamPlayer
-@onready var panel_e: Panel = %PanelE
+@onready var aspect_ratio_container: AspectRatioContainer = $"../AspectRatioContainer"
+@onready var game_manager: Node = $"../GameManager"
+@onready var panel_izberi_dn: Panel = $"../PanelIzberiDN"
+@onready var video_stream_player: VideoStreamPlayer = $"../AspectRatioContainer/VideoStreamPlayer"
+@onready var panel_e: Panel = $"../PanelE"
+
 var inv_celica = null
 
 const InvCelica = preload("res://InvCelica.tscn")
