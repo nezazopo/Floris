@@ -4,6 +4,7 @@ extends Panel
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var game_manager: Node = $"../GameManager"
 @onready var label_pritisni: Label = $"../LabelPritisni"
+@onready var panel_inv: Panel = $"../PanelInv"
 
 
 var stranOpisa = 0
@@ -17,8 +18,8 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("R_pressed"):
 		if self.visible:
 			self.visible = false
-			
 		else:
+			panel_inv.visible = false
 			self.visible = true
 			if(label_pritisni.visible):
 				label_pritisni.skrij()

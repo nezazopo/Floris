@@ -1,4 +1,4 @@
-extends "res://scripts/rastlina.gd"
+extends "res://scripts/script_rastline/rastlina.gd"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

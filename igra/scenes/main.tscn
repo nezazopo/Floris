@@ -1,35 +1,35 @@
 [gd_scene format=3 uid="uid://b55hhny07f05t"]
 
-[ext_resource type="Texture2D" uid="uid://xel8ukbllc15" path="res://assets/rastline/cemaz/cemaz.jpg" id="4_gqmmt"]
+[ext_resource type="Script" uid="uid://cr8rutrfrxui7" path="res://scripts/script_panel/panel_inv.gd" id="2_fv21b"]
+[ext_resource type="Script" uid="uid://cm35tpmjlhwmm" path="res://scripts/script_rastline/dob.gd" id="3_jscy8"]
 [ext_resource type="PackedScene" uid="uid://3n6j182l0v6r" path="res://assets/modeli/cemaz_koncna.blend" id="4_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://c1c2r7wdpr4mw" path="res://assets/rastline/bezeg/Sambucus_nigra_RF.jpg" id="4_og1vs"]
 [ext_resource type="Texture2D" uid="uid://c2fd7ehfcg3pe" path="res://assets/rastline/bezeg/Sambucus_nigra2.jpg" id="5_2wyq8"]
+[ext_resource type="Script" uid="uid://h1odmwux86h6" path="res://scripts/script_rastline/cemaz.gd" id="5_pm3ni"]
 [ext_resource type="Script" uid="uid://dmnm30uihfj4r" path="res://scripts/game_manager.gd" id="5_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://7sa4bxr5exho" path="res://assets/rastline/bezeg/Sambucus_nigra-Busch.jpg" id="5_yc10j"]
+[ext_resource type="Texture2D" uid="uid://duydurnf21q5v" path="res://assets/rastline/dob/Quercus_robur.jpg" id="5_yq6so"]
+[ext_resource type="Texture2D" uid="uid://c08etj2lqpjjn" path="res://assets/rastline/dob/Duby_nad_Pozorkou_I.jpg" id="6_fv21b"]
 [ext_resource type="PackedScene" uid="uid://uvxvo7svjy2o" path="res://assets/modeli/tla.blend" id="6_muem4"]
+[ext_resource type="Texture2D" uid="uid://xel8ukbllc15" path="res://assets/rastline/cemaz/cemaz.jpg" id="7_2wyq8"]
 [ext_resource type="VideoStream" uid="uid://d0vosw74pluhg" path="res://assets/rastline/cemaz/cemaz_animacija.ogv" id="7_fv21b"]
-[ext_resource type="Script" uid="uid://bpai3xktmgbr7" path="res://scripts/panel_poisci_rastlino.gd" id="7_jkv2x"]
-[ext_resource type="Script" uid="uid://cgx3420clp5en" path="res://scripts/rastlina.gd" id="7_qkpxi"]
-[ext_resource type="Texture2D" uid="uid://dln2feowkkfo0" path="res://assets/rastline/cemaz/Photo_of_Allium_Ursinum,_wild_garlic,_north-west_Hampshire,_UK,_May_2014.jpg" id="8_2wyq8"]
+[ext_resource type="Script" uid="uid://cgx3420clp5en" path="res://scripts/script_rastline/rastlina.gd" id="7_qkpxi"]
+[ext_resource type="Texture2D" uid="uid://bef5fhgg78tra" path="res://assets/rastline/dob/Quercus_robur,_The_crown_of_the_Oak_-_geograph.org.uk_-_7016476.jpg" id="7_tel4y"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="8_85g3d"]
-[ext_resource type="Script" uid="uid://dsfjwrl0b5oj4" path="res://scripts/panel_tocke.gd" id="8_jbj1t"]
-[ext_resource type="Texture2D" uid="uid://bcuwxask8vu4b" path="res://assets/rastline/cemaz/AlliumUrsinumAspekt.jpg" id="9_vxglm"]
-[ext_resource type="Script" uid="uid://f8uifoal7oko" path="res://scripts/panel_uvod.gd" id="10_muem4"]
-[ext_resource type="Script" uid="uid://n7ufouy6utr1" path="res://scripts/panel_opis_rastline.gd" id="12_jbj1t"]
-[ext_resource type="Script" uid="uid://coc4kiauwdl4y" path="res://scripts/label_pritisni.gd" id="13_0ld40"]
+[ext_resource type="Texture2D" uid="uid://dqys536lb2mr3" path="res://assets/rastline/cemaz/Allium_ursinum_Bluete01.jpg" id="9_vxglm"]
+[ext_resource type="Texture2D" uid="uid://dln2feowkkfo0" path="res://assets/rastline/cemaz/Photo_of_Allium_Ursinum,_wild_garlic,_north-west_Hampshire,_UK,_May_2014.jpg" id="10_2f3dj"]
+[ext_resource type="Script" uid="uid://bpai3xktmgbr7" path="res://scripts/script_panel/panel_poisci_rastlino.gd" id="10_a8y0u"]
+[ext_resource type="Script" uid="uid://dsfjwrl0b5oj4" path="res://scripts/script_panel/panel_tocke.gd" id="11_yc10j"]
 [ext_resource type="Texture2D" uid="uid://klu75cta44u2" path="res://assets/teksture/list.png" id="13_dp3eg"]
-[ext_resource type="Script" uid="uid://d3oq3s1dymers" path="res://scripts/panel_ukazi.gd" id="13_trceg"]
-[ext_resource type="Texture2D" uid="uid://duydurnf21q5v" path="res://assets/rastline/dob/Quercus_robur.jpg" id="13_yq6so"]
-[ext_resource type="Texture2D" uid="uid://c08etj2lqpjjn" path="res://assets/rastline/dob/Duby_nad_Pozorkou_I.jpg" id="14_fv21b"]
-[ext_resource type="Script" uid="uid://ddc87cpseu6vn" path="res://scripts/panel_konec.gd" id="15_gqmmt"]
-[ext_resource type="Texture2D" uid="uid://bef5fhgg78tra" path="res://assets/rastline/dob/Quercus_robur,_The_crown_of_the_Oak_-_geograph.org.uk_-_7016476.jpg" id="15_tel4y"]
-[ext_resource type="Script" uid="uid://d25f18nfp6bl6" path="res://scripts/panel_izberi_dn.gd" id="16_dp3eg"]
+[ext_resource type="Script" uid="uid://coc4kiauwdl4y" path="res://scripts/script_panel/label_pritisni.gd" id="14_jkv2x"]
+[ext_resource type="Script" uid="uid://d25f18nfp6bl6" path="res://scripts/script_panel/panel_izberi_dn.gd" id="14_jscy8"]
 [ext_resource type="Shader" uid="uid://cygrwf1o5r8kp" path="res://main.gdshader" id="16_muem4"]
+[ext_resource type="Script" uid="uid://f8uifoal7oko" path="res://scripts/script_panel/panel_uvod.gd" id="16_pm3ni"]
+[ext_resource type="Script" uid="uid://n7ufouy6utr1" path="res://scripts/script_panel/panel_opis_rastline.gd" id="17_y6deb"]
 [ext_resource type="PackedScene" uid="uid://s4tpmm5qddjg" path="res://assets/modeli/hrast2.blend" id="18_dp3eg"]
-[ext_resource type="Script" uid="uid://cm35tpmjlhwmm" path="res://scripts/dob.gd" id="22_pm3ni"]
-[ext_resource type="Script" uid="uid://cvnmg6bs8oxr3" path="res://scripts/inv_panel.gd" id="31_tel4y"]
-[ext_resource type="Script" uid="uid://h1odmwux86h6" path="res://scripts/cemaz.gd" id="32_5q0nq"]
-[ext_resource type="Texture2D" uid="uid://e3ssphoke4c8" path="res://assets/rastline/cemaz/Allium_ursinum,_Arum_maculatum.jpg" id="33_dgi5k"]
+[ext_resource type="Script" uid="uid://d3oq3s1dymers" path="res://scripts/script_panel/panel_ukazi.gd" id="19_og1vs"]
+[ext_resource type="Script" uid="uid://ddc87cpseu6vn" path="res://scripts/script_panel/panel_konec.gd" id="20_2wyq8"]
+[ext_resource type="Script" uid="uid://bfdrr6n8lbp0v" path="res://scenes/panel_e.gd" id="29_fv21b"]
 
 [sub_resource type="Theme" id="Theme_fv21b"]
 
@@ -121,8 +121,6 @@ func _process(delta: float) -> void:
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dp3eg"]
 texture = ExtResource("13_dp3eg")
 
-[sub_resource type="GDScript" id="GDScript_dp3eg"]
-
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7iui7"]
 points = PackedVector3Array(-30, -0.5, -30, -30, 0.5, -30, 29.999996, -0.5, -30, -30, -0.5, 29.999996, -30, 0.5, 29.999996, 29.999996, 0.5, -30, 29.999996, -0.5, 29.999996, 29.999996, 0.5, 29.999996)
 
@@ -142,7 +140,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_fv21b")
 theme_override_styles/panel = SubResource("StyleBoxTexture_tel4y")
-script = ExtResource("31_tel4y")
+script = ExtResource("2_fv21b")
 
 [node name="GridContainerInv" type="GridContainer" parent="PanelInv" unique_id=1887040240]
 layout_mode = 1
@@ -161,11 +159,18 @@ theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 39
 columns = 4
 
+[node name="Label" type="Label" parent="PanelInv" unique_id=51274618]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "za izhod pritisni I"
+
 [node name="Dob" type="Node3D" parent="." unique_id=1475397641]
-script = ExtResource("22_pm3ni")
+script = ExtResource("3_jscy8")
 ime = "Dob"
+video = ExtResource("7_fv21b")
 opisi = Array[String](["OPIS:  Pri nas najbolj pogost hrast je Dob. Zraste tudi preko 50 metrov v višino in ima močno deblo ter krošnjo nepravilne oblike. Lubje je sivo rjave barve z izrazitimi vertikalnimi režami. Ima značilne liste, ki so nepravilnih, zaobljenih oblik. Iz oplojenih cvetov se razvije želod, ki je sestavljen iz dveh delov: skledice ter oreška jajčaste oblike.", "KJE RASTE:Dob je razširjen po celi Evropi, razen na njenem skrajnem severu.", "UPORABA:Dobov les je izjemno trd in odporen. Sodi med gospodarsko izjemno pomembna drevesa, njegov les pa se uporablja za gradnjo plovil, sodov, stavbnega pohištva, pohištva, v gradbeništvu in za talne obloge."])
-slike = Array[Texture2D]([ExtResource("13_yq6so"), ExtResource("14_fv21b"), ExtResource("15_tel4y")])
+slike = Array[Texture2D]([ExtResource("5_yq6so"), ExtResource("6_fv21b"), ExtResource("7_tel4y")])
 
 [node name="MeshInstance3D_dob" type="MeshInstance3D" parent="Dob" unique_id=1185020923]
 mesh = SubResource("ArrayMesh_jscy8")
@@ -180,11 +185,11 @@ shape = SubResource("SphereShape3D_pm3ni")
 
 [node name="Cemaz" type="Node3D" parent="." unique_id=1443877113]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4, 0.1176697, -7.0587997)
-script = ExtResource("32_5q0nq")
+script = ExtResource("5_pm3ni")
 ime = "Čemaž"
 video = ExtResource("7_fv21b")
 opisi = Array[String](["OPIS: Čemaž je lukovka, raste od marca do junija. zraste do največ 30 cm. Njegovi listi so podolgovati in suličasti. Ima bel cvet, ki ga sestavlja šest listov in spominja na zvezdo. Socvetje vsebuje od šest do dvajset cvetov. Cveti od aprila do maja. Diši po česnu.", "Pazi! Podoben je strupenima rastlinama šmarnici ter in podlesku, ki nimata vonja česna. Listi šmarnice se ne razlikujejo od čemaževih, razlikujeta pa se po cvetju. Podlesek za razliko od čemaža raste v rozetah, ter raste bolj navpično.", "KJE RASTE:Različne vrste čemaža so avtohtone Evropi in Aziji. Najdemo jih v vlažnejših gozdovih.", "UPORABA:Čemaž ima blažji okus od česna in čebule. Lahko je začimba blažjega okusa v rižotah in solatah, iz njega se lahko skuha tudi juha ali celo čemažev pesto. Uporablja se v ljudski medicini, danes dokazano deluje protivnetno in protibakterijsko."])
-slike = Array[Texture2D]([ExtResource("4_gqmmt"), ExtResource("8_2wyq8"), ExtResource("9_vxglm"), ExtResource("33_dgi5k")])
+slike = Array[Texture2D]([ExtResource("7_2wyq8"), ExtResource("5_yc10j"), ExtResource("9_vxglm"), ExtResource("10_2f3dj")])
 
 [node name="MeshInstance3D_cemaz" type="MeshInstance3D" parent="Cemaz" unique_id=298896123]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.091917, 0, -3.806923)
@@ -232,11 +237,10 @@ directional_shadow_max_distance = 8192.0
 [node name="PanelPoisciRastlino" type="Panel" parent="." unique_id=1831486265]
 offset_right = 274.0
 offset_bottom = 81.0
-script = ExtResource("7_jkv2x")
+script = ExtResource("10_a8y0u")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextPoisciRastlino" type="Label" parent="PanelPoisciRastlino" unique_id=865342677]
-unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -261,7 +265,7 @@ offset_left = -207.0
 offset_top = -1.0
 offset_bottom = 77.0
 grow_horizontal = 0
-script = ExtResource("8_jbj1t")
+script = ExtResource("11_yc10j")
 
 [node name="TextTocke" type="Label" parent="PanelTocke" unique_id=926321000]
 layout_mode = 1
@@ -294,7 +298,7 @@ offset_top = 226.0
 offset_right = 943.0
 offset_bottom = 461.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_0ld40")
-script = ExtResource("16_dp3eg")
+script = ExtResource("14_jscy8")
 
 [node name="LabelIzberiDN" type="Label" parent="PanelIzberiDN" unique_id=93856199]
 layout_mode = 1
@@ -315,20 +319,50 @@ text = "Ali je to iskana rastlina?
 [D]a	
 [N]e"
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=1545189648]
-offset_left = 113.0
-offset_top = 139.0
-offset_right = 575.0
-offset_bottom = 601.0
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="PanelIzberiDN" unique_id=1545189648]
+layout_mode = 0
+offset_left = -412.0
+offset_top = -87.0
+offset_right = 50.0
+offset_bottom = 375.0
 alignment_horizontal = 0
 alignment_vertical = 0
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer" unique_id=536209208]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="PanelIzberiDN/AspectRatioContainer" unique_id=536209208]
 material = SubResource("ShaderMaterial_dp3eg")
 layout_mode = 2
 autoplay = true
 expand = true
 loop = true
+
+[node name="ButtonDa" type="Button" parent="PanelIzberiDN" unique_id=1009619015]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -10.25
+offset_right = 32.0
+offset_bottom = 20.75
+grow_horizontal = 2
+grow_vertical = 2
+text = "Da"
+
+[node name="ButtonNe" type="Button" parent="PanelIzberiDN" unique_id=1904311227]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = 28.5
+offset_right = 31.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PanelUvod" type="Panel" parent="." unique_id=767366150]
 anchors_preset = 8
@@ -344,7 +378,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("10_muem4")
+script = ExtResource("16_pm3ni")
 
 [node name="LabelUvod" type="Label" parent="PanelUvod" unique_id=1648385015]
 layout_mode = 1
@@ -392,7 +426,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 theme = SubResource("Theme_0ld40")
 theme_override_styles/panel = SubResource("StyleBoxTexture_muem4")
-script = ExtResource("12_jbj1t")
+script = ExtResource("17_y6deb")
 
 [node name="LabelOpisRastline" type="Label" parent="PanelOpisRastline" unique_id=1242384129]
 layout_mode = 1
@@ -428,7 +462,7 @@ expand_mode = 4
 stretch_mode = 5
 script = SubResource("GDScript_muem4")
 
-[node name="LabelpPritisniR" type="Label" parent="PanelOpisRastline" unique_id=47478518]
+[node name="LabelPritisniR" type="Label" parent="PanelOpisRastline" unique_id=47478518]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -495,15 +529,16 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -269.5
-offset_top = -56.0
+offset_top = -106.0
 offset_right = 269.5
+offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 25
 text = "Klikni na zaslon in premikaj miško!"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("13_0ld40")
+script = ExtResource("14_jkv2x")
 
 [node name="PanelUkazi" type="Panel" parent="." unique_id=1686196634]
 anchors_preset = 8
@@ -519,7 +554,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("13_trceg")
+script = ExtResource("19_og1vs")
 
 [node name="Label" type="Label" parent="PanelUkazi" unique_id=1364510785]
 layout_mode = 1
@@ -552,7 +587,7 @@ offset_bottom = 97.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_muem4")
-script = ExtResource("15_gqmmt")
+script = ExtResource("20_2wyq8")
 
 [node name="PanelDeathText" type="Label" parent="PanelKonec" unique_id=1357084913]
 layout_mode = 1
@@ -598,7 +633,7 @@ offset_bottom = 62.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_dp3eg")
-script = SubResource("GDScript_dp3eg")
+script = ExtResource("29_fv21b")
 
 [node name="Label" type="Label" parent="PanelE" unique_id=1070310670]
 layout_mode = 1
