@@ -160,9 +160,15 @@ theme_override_constants/v_separation = 39
 columns = 4
 
 [node name="Label" type="Label" parent="PanelInv" unique_id=51274618]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -78.0
+offset_right = 215.0
+offset_bottom = -55.0
+grow_vertical = 0
 text = "za izhod pritisni I"
 
 [node name="Dob" type="Node3D" parent="." unique_id=1475397641]
@@ -392,7 +398,7 @@ offset_bottom = 190.0
 grow_horizontal = 2
 text = "Izberi rastlino, ki je zapisana levo zgoraj.
 Če potrebuješ opis rastline, pritisni R. 
-Zberi čim več rastlin v najkrajšem možnem času!"
+Zberi čim več rastlin in pazi, da se ne zmotiš!"
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="PanelUvod" unique_id=1205470377]
