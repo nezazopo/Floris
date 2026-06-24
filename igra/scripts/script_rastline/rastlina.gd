@@ -8,11 +8,11 @@ class_name Rastlina
 @export var slike: Array[Texture2D]
  
 var isPlayerInside = null
-@onready var aspect_ratio_container: AspectRatioContainer = $"../PanelIzberiDN/AspectRatioContainer"
+@onready var aspect_ratio_container: AspectRatioContainer = $"../Control/PanelIzberiDN/AspectRatioContainer"
 @onready var game_manager: Node = $"../GameManager"
-@onready var panel_izberi_dn: Panel = $"../PanelIzberiDN"
-@onready var video_stream_player: VideoStreamPlayer = $"../PanelIzberiDN/AspectRatioContainer/VideoStreamPlayer"
-@onready var panel_e: Panel = $"../PanelE"
+@onready var panel_izberi_dn: Panel = $"../Control/PanelIzberiDN"
+@onready var video_stream_player: VideoStreamPlayer = $"../Control/PanelIzberiDN/AspectRatioContainer/VideoStreamPlayer"
+@onready var panel_e: Panel = $"../Control/PanelE"
 
 
 var inv_celica = null
@@ -26,7 +26,7 @@ func _ready():
 	nova_celica.ime = name
 	nova_celica.ikona = video
 	self.inv_celica = nova_celica	
-	var inv = get_parent().get_node("PanelInv/GridContainerInv")
+	var inv = get_parent().get_node("Control/PanelInv/GridContainerInv")
 	inv.add_child(nova_celica)
 	
 
@@ -61,6 +61,7 @@ func prikazi_dn():
 	video_stream_player.play()
 	aspect_ratio_container.visible = true #video
 	panel_izberi_dn.visible = true;	#panel da/ne
+
 		
 	var odgovor = await panel_izberi_dn.odgovor_izbran
 		

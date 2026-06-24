@@ -5,7 +5,7 @@
 
 extends CharacterBody3D
 
-@onready var label_pritisni: Label = $"../LabelPritisni"
+@onready var label_pritisni: Label = $"../Control/LabelPritisni"
 ## Can we move around?
 @export var can_move : bool = true
 ## Are we affected by gravity?
@@ -17,7 +17,7 @@ extends CharacterBody3D
 ## Can we press to enter freefly mode (noclip)?
 @export var can_freefly : bool = false
 
-@onready var panel_uvod: Panel = $"../PanelUvod"
+@onready var panel_uvod: Panel = $"../Control/PanelUvod"
 
 @export_group("Speeds")
 ## Look around rotation speed.
