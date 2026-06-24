@@ -18,3 +18,7 @@ func _process(_delta: float) -> void:
 			self.visible = true
 		else:
 			self.visible = false
+
+
+func _on_button_pressed() -> void:
+	pass # Replace with function body.

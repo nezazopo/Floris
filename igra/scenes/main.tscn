@@ -31,11 +31,6 @@
 [ext_resource type="Script" uid="uid://ddc87cpseu6vn" path="res://scripts/script_panel/panel_konec.gd" id="20_2wyq8"]
 [ext_resource type="Script" uid="uid://bfdrr6n8lbp0v" path="res://scenes/panel_e.gd" id="29_fv21b"]
 
-[sub_resource type="Theme" id="Theme_fv21b"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tel4y"]
-texture = ExtResource("13_dp3eg")
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_jscy8"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pm3ni"]
@@ -67,6 +62,14 @@ glow_enabled = true
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jkv2x"]
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7iui7"]
+points = PackedVector3Array(-30, -0.5, -30, -30, 0.5, -30, 29.999996, -0.5, -30, -30, -0.5, 29.999996, -30, 0.5, 29.999996, 29.999996, 0.5, -30, 29.999996, -0.5, 29.999996, 29.999996, 0.5, 29.999996)
+
+[sub_resource type="Theme" id="Theme_muem4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dp3eg"]
+texture = ExtResource("13_dp3eg")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ld40"]
 texture = ExtResource("13_dp3eg")
 
@@ -85,7 +88,7 @@ region_rect = Rect2(-0.27322388, 0.08685303, 740.192, 465.00394)
 
 [sub_resource type="GDScript" id="GDScript_ya4ey"]
 script/source = "extends Label
-@onready var game_manager: Node = $\"../../GameManager\"
+@onready var game_manager: Node = $\"../../../GameManager\"
 
 
 
@@ -116,60 +119,12 @@ func _process(delta: float) -> void:
 	pass
 "
 
-[sub_resource type="Theme" id="Theme_muem4"]
+[sub_resource type="Theme" id="Theme_fv21b"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dp3eg"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tel4y"]
 texture = ExtResource("13_dp3eg")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7iui7"]
-points = PackedVector3Array(-30, -0.5, -30, -30, 0.5, -30, 29.999996, -0.5, -30, -30, -0.5, 29.999996, -30, 0.5, 29.999996, 29.999996, 0.5, -30, 29.999996, -0.5, 29.999996, 29.999996, 0.5, 29.999996)
-
 [node name="main" type="Node3D" unique_id=2027404022]
-
-[node name="PanelInv" type="Panel" parent="." unique_id=1803503058]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -329.0
-offset_top = -181.5
-offset_right = 329.0
-offset_bottom = 269.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_fv21b")
-theme_override_styles/panel = SubResource("StyleBoxTexture_tel4y")
-script = ExtResource("2_fv21b")
-
-[node name="GridContainerInv" type="GridContainer" parent="PanelInv" unique_id=1887040240]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -214.5
-offset_top = -179.5
-offset_right = 214.5
-offset_bottom = 179.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/h_separation = 30
-theme_override_constants/v_separation = 39
-columns = 4
-
-[node name="Label" type="Label" parent="PanelInv" unique_id=51274618]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 80.0
-offset_top = -78.0
-offset_right = 215.0
-offset_bottom = -55.0
-grow_vertical = 0
-text = "za izhod pritisni I"
 
 [node name="Dob" type="Node3D" parent="." unique_id=1475397641]
 script = ExtResource("3_jscy8")
@@ -187,7 +142,7 @@ mesh = SubResource("ArrayMesh_jscy8")
 transform = Transform3D(7.900965, 0, 0, 0, 7.900965, 0, 0, 0, 7.900965, 0, 0, 0)
 shape = SubResource("SphereShape3D_pm3ni")
 
-[node name="dob" parent="Dob" unique_id=2020917802 instance=ExtResource("18_dp3eg")]
+[node name="dob_mesh" parent="Dob" unique_id=2020917802 instance=ExtResource("18_dp3eg")]
 
 [node name="Cemaz" type="Node3D" parent="." unique_id=1443877113]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4, 0.1176697, -7.0587997)
@@ -210,7 +165,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1693935, 0, -3.6478348)
 transform = Transform3D(9.245187, 0, 0, 0, 9.245187, 0, 0, 0, 9.245187, -0.42384148, 1.1245732, 0.84593964)
 shape = SubResource("SphereShape3D_c571f")
 
-[node name="cemaz_koncna" parent="Cemaz" unique_id=1111112018 instance=ExtResource("4_jbj1t")]
+[node name="cemaz_mesh" parent="Cemaz" unique_id=1111112018 instance=ExtResource("4_jbj1t")]
 transform = Transform3D(9.576588, 0, 0, 0, 9.576588, 0, 0, 0, 9.576588, 1.9862776, 0.233984, -2.7211723)
 
 [node name="Bezeg" type="Node3D" parent="." unique_id=1781087234]
@@ -240,56 +195,6 @@ shadow_enabled = true
 shadow_blur = 9.056
 directional_shadow_max_distance = 8192.0
 
-[node name="PanelPoisciRastlino" type="Panel" parent="." unique_id=1831486265]
-offset_right = 274.0
-offset_bottom = 81.0
-script = ExtResource("10_a8y0u")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextPoisciRastlino" type="Label" parent="PanelPoisciRastlino" unique_id=865342677]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -83.0
-offset_top = -19.5
-offset_right = 83.0
-offset_bottom = 19.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 20
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PanelTocke" type="Panel" parent="." unique_id=1797290855]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -207.0
-offset_top = -1.0
-offset_bottom = 77.0
-grow_horizontal = 0
-script = ExtResource("11_yc10j")
-
-[node name="TextTocke" type="Label" parent="PanelTocke" unique_id=926321000]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -90.0
-offset_top = -19.0
-offset_right = 90.0
-offset_bottom = 19.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Točke:"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="GameManager" type="Node" parent="." unique_id=1287836430]
 script = ExtResource("5_tbgi4")
 
@@ -298,7 +203,133 @@ script = ExtResource("5_tbgi4")
 [node name="ProtoController" parent="." unique_id=785542806 instance=ExtResource("8_85g3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87365, -0.015081942, 0.44604683)
 
-[node name="PanelIzberiDN" type="Panel" parent="." unique_id=1483973435]
+[node name="Tla" type="StaticBody3D" parent="." unique_id=1618116805]
+transform = Transform3D(4.879475, 0, 0, 0, 4.879475, 0, 0, 0, 4.879475, 0, -1.398049, 0)
+
+[node name="tla_MeshInstance3D" type="MeshInstance3D" parent="Tla" unique_id=1276630722]
+
+[node name="tla_CollisionShape3D" type="CollisionShape3D" parent="Tla" unique_id=1036453257]
+transform = Transform3D(4.861927, 0, 0, 0, 4.861927, 0, 0, 0, 4.861927, 0, -91.03984, 0)
+shape = SubResource("ConvexPolygonShape3D_7iui7")
+
+[node name="tla_mesh" parent="Tla" unique_id=834141132 instance=ExtResource("6_muem4")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=269015738]
+follow_viewport_enabled = true
+
+[node name="PanelUkazi" type="Panel" parent="CanvasLayer" unique_id=1686196634]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.5
+offset_top = -31.5
+offset_right = 116.5
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("19_og1vs")
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelUkazi" unique_id=1364510785]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = -26.0
+offset_right = -23.0
+offset_bottom = 26.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "ESC - izpusti miško
+R - opis trenutne rastline"
+vertical_alignment = 1
+
+[node name="PanelKonec" type="Panel" parent="CanvasLayer" unique_id=1366515194]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -213.5
+offset_top = -97.0
+offset_right = 213.5
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_muem4")
+script = ExtResource("20_2wyq8")
+
+[node name="PanelDeathText" type="Label" parent="CanvasLayer/PanelKonec" unique_id=1357084913]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -166.0
+offset_top = 48.0
+offset_right = 166.0
+offset_bottom = 107.0
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelKonec" unique_id=673106045]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -142.5
+offset_top = -93.0
+offset_right = -23.5
+offset_bottom = -21.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Pritisni ENTER!"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PanelE" type="Panel" parent="CanvasLayer" unique_id=1655437667]
+z_index = -1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -62.0
+offset_right = 152.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dp3eg")
+script = ExtResource("29_fv21b")
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelE" unique_id=1070310670]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.18888223, 0.1247795, 0.00037603354, 1)
+theme_override_font_sizes/font_size = 25
+text = "Pritisni ENTER"
+
+[node name="PanelIzberiDN" type="Panel" parent="CanvasLayer" unique_id=1483973435]
 offset_left = 525.0
 offset_top = 226.0
 offset_right = 943.0
@@ -306,7 +337,7 @@ offset_bottom = 461.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_0ld40")
 script = ExtResource("14_jscy8")
 
-[node name="LabelIzberiDN" type="Label" parent="PanelIzberiDN" unique_id=93856199]
+[node name="LabelIzberiDN" type="Label" parent="CanvasLayer/PanelIzberiDN" unique_id=93856199]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -321,11 +352,25 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.2509804, 0.16078432, 0.10980392, 1)
 theme_override_font_sizes/font_size = 22
-text = "Ali je to iskana rastlina?
-[D]a	
-[N]e"
+text = "Ali je to iskana rastlina?"
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="PanelIzberiDN" unique_id=1545189648]
+[node name="ButtonDa" type="Button" parent="CanvasLayer/PanelIzberiDN/LabelIzberiDN" unique_id=257910348]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 61.0
+offset_right = 71.0
+offset_bottom = 92.0
+text = "Da"
+
+[node name="ButtonNe" type="Button" parent="CanvasLayer/PanelIzberiDN/LabelIzberiDN" unique_id=595265495]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 61.0
+offset_right = 112.0
+offset_bottom = 92.0
+text = "Ne"
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer/PanelIzberiDN" unique_id=1545189648]
 layout_mode = 0
 offset_left = -412.0
 offset_top = -87.0
@@ -334,43 +379,14 @@ offset_bottom = 375.0
 alignment_horizontal = 0
 alignment_vertical = 0
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="PanelIzberiDN/AspectRatioContainer" unique_id=536209208]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer/PanelIzberiDN/AspectRatioContainer" unique_id=536209208]
 material = SubResource("ShaderMaterial_dp3eg")
 layout_mode = 2
 autoplay = true
 expand = true
 loop = true
 
-[node name="ButtonDa" type="Button" parent="PanelIzberiDN" unique_id=1009619015]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -10.25
-offset_right = 32.0
-offset_bottom = 20.75
-grow_horizontal = 2
-grow_vertical = 2
-text = "Da"
-
-[node name="ButtonNe" type="Button" parent="PanelIzberiDN" unique_id=1904311227]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = 28.5
-offset_right = 31.0
-offset_bottom = 60.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="PanelUvod" type="Panel" parent="." unique_id=767366150]
+[node name="PanelUvod" type="Panel" parent="CanvasLayer" unique_id=767366150]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -386,7 +402,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("16_pm3ni")
 
-[node name="LabelUvod" type="Label" parent="PanelUvod" unique_id=1648385015]
+[node name="LabelUvod" type="Label" parent="CanvasLayer/PanelUvod" unique_id=1648385015]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -401,23 +417,21 @@ text = "Izberi rastlino, ki je zapisana levo zgoraj.
 Zberi čim več rastlin in pazi, da se ne zmotiš!"
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="PanelUvod" unique_id=1205470377]
+[node name="ButtonCloseUvod" type="Button" parent="CanvasLayer/PanelUvod" unique_id=1661570397]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -242.0
-offset_top = -76.0
-offset_right = -50.0
-offset_bottom = -33.0
+offset_left = -100.0
+offset_top = -31.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Pritisni ENTER!"
-horizontal_alignment = 2
+text = "Začni"
 
-[node name="PanelOpisRastline" type="Panel" parent="." unique_id=319103877]
+[node name="PanelOpisRastline" type="Panel" parent="CanvasLayer" unique_id=319103877]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -434,7 +448,7 @@ theme = SubResource("Theme_0ld40")
 theme_override_styles/panel = SubResource("StyleBoxTexture_muem4")
 script = ExtResource("17_y6deb")
 
-[node name="LabelOpisRastline" type="Label" parent="PanelOpisRastline" unique_id=1242384129]
+[node name="LabelOpisRastline" type="Label" parent="CanvasLayer/PanelOpisRastline" unique_id=1242384129]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -451,7 +465,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 script = SubResource("GDScript_ya4ey")
 
-[node name="TextureRect" type="TextureRect" parent="PanelOpisRastline" unique_id=1767934029]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelOpisRastline" unique_id=1767934029]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -468,7 +482,7 @@ expand_mode = 4
 stretch_mode = 5
 script = SubResource("GDScript_muem4")
 
-[node name="LabelPritisniR" type="Label" parent="PanelOpisRastline" unique_id=47478518]
+[node name="LabelPritisniR" type="Label" parent="CanvasLayer/PanelOpisRastline" unique_id=47478518]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -481,7 +495,7 @@ grow_horizontal = 0
 text = "Izhod: R"
 horizontal_alignment = 2
 
-[node name="LabelImeRastline" type="Label" parent="PanelOpisRastline" unique_id=385869614]
+[node name="LabelImeRastline" type="Label" parent="CanvasLayer/PanelOpisRastline" unique_id=385869614]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -495,14 +509,14 @@ theme_override_colors/font_color = Color(0.14509805, 0.105882354, 0, 1)
 theme_override_font_sizes/font_size = 29
 horizontal_alignment = 1
 
-[node name="J" type="Label" parent="PanelOpisRastline" unique_id=469102911]
+[node name="J" type="Label" parent="CanvasLayer/PanelOpisRastline" unique_id=65013824]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 57.0
+offset_left = 48.0
 offset_top = -35.0
-offset_right = 137.0
+offset_right = 128.0
 offset_bottom = 35.0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
@@ -510,7 +524,7 @@ text = "< J"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="K" type="Label" parent="PanelOpisRastline" unique_id=460304604]
+[node name="K" type="Label" parent="CanvasLayer/PanelOpisRastline" unique_id=460304604]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -528,146 +542,122 @@ text = "K >"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LabelPritisni" type="Label" parent="." unique_id=738609992]
+[node name="PanelInv" type="Panel" parent="CanvasLayer" unique_id=1803503058]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -329.0
+offset_top = -181.5
+offset_right = 329.0
+offset_bottom = 269.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_fv21b")
+theme_override_styles/panel = SubResource("StyleBoxTexture_tel4y")
+script = ExtResource("2_fv21b")
+
+[node name="GridContainerInv" type="GridContainer" parent="CanvasLayer/PanelInv" unique_id=1887040240]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -214.5
+offset_top = -179.5
+offset_right = 214.5
+offset_bottom = 179.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 39
+columns = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelInv" unique_id=51274618]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -78.0
+offset_right = 215.0
+offset_bottom = -55.0
+grow_vertical = 0
+text = "Izhod: I"
+
+[node name="PanelPoisciRastlino" type="Panel" parent="CanvasLayer" unique_id=1831486265]
+offset_right = 275.0
+offset_bottom = 80.0
+script = ExtResource("10_a8y0u")
+
+[node name="TextPoisciRastlino" type="Label" parent="CanvasLayer/PanelPoisciRastlino" unique_id=865342677]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = -19.5
+offset_right = 83.0
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelTocke" type="Panel" parent="CanvasLayer" unique_id=1797290855]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -207.0
+offset_top = -1.0
+offset_right = -2.0
+offset_bottom = 77.0
+grow_horizontal = 0
+script = ExtResource("11_yc10j")
+
+[node name="TextTocke" type="Label" parent="CanvasLayer/PanelTocke" unique_id=926321000]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -19.0
+offset_right = 90.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Točke:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelPritisni" type="Label" parent="CanvasLayer" unique_id=738609992]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -269.5
-offset_top = -106.0
+offset_top = -59.0
 offset_right = 269.5
-offset_bottom = -50.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 0
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 25
 text = "Klikni na zaslon in premikaj miško!"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("14_jkv2x")
 
-[node name="PanelUkazi" type="Panel" parent="." unique_id=1686196634]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -116.5
-offset_top = -31.5
-offset_right = 116.5
-offset_bottom = 31.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("19_og1vs")
+[connection signal="pressed" from="CanvasLayer/PanelUvod/ButtonCloseUvod" to="CanvasLayer/PanelUvod" method="_on_button_close_uvod_pressed"]
 
-[node name="Label" type="Label" parent="PanelUkazi" unique_id=1364510785]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -215.0
-offset_top = -26.0
-offset_right = -23.0
-offset_bottom = 26.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "ESC - izpusti miško
-R - opis trenutne rastline"
-vertical_alignment = 1
-
-[node name="PanelKonec" type="Panel" parent="." unique_id=1366515194]
-process_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -213.5
-offset_top = -97.0
-offset_right = 213.5
-offset_bottom = 97.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_muem4")
-script = ExtResource("20_2wyq8")
-
-[node name="PanelDeathText" type="Label" parent="PanelKonec" unique_id=1357084913]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -166.0
-offset_top = 48.0
-offset_right = 166.0
-offset_bottom = 107.0
-grow_horizontal = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label" type="Label" parent="PanelKonec" unique_id=673106045]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -142.5
-offset_top = -93.0
-offset_right = -23.5
-offset_bottom = -21.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Pritisni ENTER!"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="PanelE" type="Panel" parent="." unique_id=1655437667]
-z_index = -1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = -62.0
-offset_right = 152.0
-offset_bottom = 62.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_dp3eg")
-script = ExtResource("29_fv21b")
-
-[node name="Label" type="Label" parent="PanelE" unique_id=1070310670]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.18888223, 0.1247795, 0.00037603354, 1)
-theme_override_font_sizes/font_size = 25
-text = "Pritisni ENTER"
-
-[node name="Tla" type="StaticBody3D" parent="." unique_id=1618116805]
-transform = Transform3D(4.879475, 0, 0, 0, 4.879475, 0, 0, 0, 4.879475, 0, -1.398049, 0)
-
-[node name="tla_MeshInstance3D" type="MeshInstance3D" parent="Tla" unique_id=1276630722]
-
-[node name="tla_CollisionShape3D" type="CollisionShape3D" parent="Tla" unique_id=1036453257]
-transform = Transform3D(4.861927, 0, 0, 0, 4.861927, 0, 0, 0, 4.861927, 0, -91.03984, 0)
-shape = SubResource("ConvexPolygonShape3D_7iui7")
-
-[node name="tla" parent="Tla" unique_id=834141132 instance=ExtResource("6_muem4")]
-
-[editable path="Cemaz/cemaz_koncna"]
+[editable path="Cemaz/cemaz_mesh"]
 [editable path="ProtoController"]

@@ -1,6 +1,6 @@
 extends Panel
 @onready var text_tocke: Label = $TextTocke
-@onready var game_manager: Node = get_node("../GameManager")
+@onready var game_manager: Node = $"../../GameManager"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

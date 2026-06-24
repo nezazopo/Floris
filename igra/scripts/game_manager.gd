@@ -8,12 +8,14 @@ var poiskanoBool = false
 var indeksRastline = 0
 var konec = false
 
-@onready var panel_tocke: Panel = $"../PanelTocke"
+@onready var panel_tocke: Panel = $"../CanvasLayer/PanelTocke"
 @onready var timer: Timer = $"../Timer"
-@onready var panel_konec: Panel = $"../PanelKonec"
-@onready var panel_opis_rastline: Panel = $"../PanelOpisRastline"
+@onready var panel_konec: Panel = $"../CanvasLayer/PanelKonec"
+@onready var panel_opis_rastline: Panel = $"../CanvasLayer/PanelOpisRastline"
+@onready var panel_e: Panel = $"../CanvasLayer/PanelE"
+@onready var label_pritisni: Label = $"../CanvasLayer/LabelPritisni"
 
-@onready var panel_poisci_rastlino: Panel = $"../PanelPoisciRastlino"
+@onready var panel_poisci_rastlino: Panel = $"../CanvasLayer/PanelPoisciRastlino"
 
 func _ready():
 	if get_tree().paused:
@@ -59,4 +61,6 @@ func poiskano():
 
 func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("E") and trenutnaRastlina != null):
+		panel_e.visible = false
+		label_pritisni.visible = false
 		trenutnaRastlina.prikazi_dn()
