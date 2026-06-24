@@ -8,11 +8,11 @@ class_name Rastlina
 @export var slike: Array[Texture2D]
  
 var isPlayerInside = null
-@onready var aspect_ratio_container: AspectRatioContainer = $"../CanvasLayer/PanelIzberiDN/AspectRatioContainer"
+@onready var aspect_ratio_container: AspectRatioContainer = $"../PanelIzberiDN/AspectRatioContainer"
 @onready var game_manager: Node = $"../GameManager"
-@onready var panel_izberi_dn: Panel = $"../CanvasLayer/PanelIzberiDN"
-@onready var video_stream_player: VideoStreamPlayer = $"../CanvasLayer/PanelIzberiDN/AspectRatioContainer/VideoStreamPlayer"
-@onready var panel_e: Panel = $"../CanvasLayer/PanelE"
+@onready var panel_izberi_dn: Panel = $"../PanelIzberiDN"
+@onready var video_stream_player: VideoStreamPlayer = $"../PanelIzberiDN/AspectRatioContainer/VideoStreamPlayer"
+@onready var panel_e: Panel = $"../PanelE"
 
 
 var inv_celica = null
@@ -26,7 +26,7 @@ func _ready():
 	nova_celica.ime = name
 	nova_celica.ikona = video
 	self.inv_celica = nova_celica	
-	var inv = get_parent().get_node("CanvasLayer/PanelInv/GridContainerInv")
+	var inv = get_parent().get_node("PanelInv/GridContainerInv")
 	inv.add_child(nova_celica)
 	
 

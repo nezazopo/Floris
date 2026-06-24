@@ -88,10 +88,7 @@ region_rect = Rect2(-0.27322388, 0.08685303, 740.192, 465.00394)
 
 [sub_resource type="GDScript" id="GDScript_ya4ey"]
 script/source = "extends Label
-@onready var game_manager: Node = $\"../../../GameManager\"
-
-
-
+@onready var game_manager: Node = $\"../../GameManager\"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 		if (game_manager.poisciRastlino.ime == \"Bezeg\"):
@@ -214,26 +211,30 @@ shape = SubResource("ConvexPolygonShape3D_7iui7")
 
 [node name="tla_mesh" parent="Tla" unique_id=834141132 instance=ExtResource("6_muem4")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=269015738]
-follow_viewport_enabled = true
+[node name="Control" type="Control" parent="." unique_id=1370213331]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="PanelUkazi" type="Panel" parent="CanvasLayer" unique_id=1686196634]
+[node name="PanelUkazi" type="Panel" parent="Control" unique_id=1686196634]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -116.5
-offset_top = -31.5
-offset_right = 116.5
-offset_bottom = 31.5
+offset_left = 439.5
+offset_top = 272.5
+offset_right = 672.5
+offset_bottom = 335.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("19_og1vs")
 
-[node name="Label" type="Label" parent="CanvasLayer/PanelUkazi" unique_id=1364510785]
+[node name="Label" type="Label" parent="Control/PanelUkazi" unique_id=1364510785]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -250,23 +251,24 @@ text = "ESC - izpusti miško
 R - opis trenutne rastline"
 vertical_alignment = 1
 
-[node name="PanelKonec" type="Panel" parent="CanvasLayer" unique_id=1366515194]
+[node name="PanelKonec" type="Panel" parent="Control" unique_id=1366515194]
 process_mode = 3
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -213.5
-offset_top = -97.0
-offset_right = 213.5
-offset_bottom = 97.0
+offset_left = 342.5
+offset_top = 207.0
+offset_right = 769.5
+offset_bottom = 401.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_muem4")
 script = ExtResource("20_2wyq8")
 
-[node name="PanelDeathText" type="Label" parent="CanvasLayer/PanelKonec" unique_id=1357084913]
+[node name="PanelDeathText" type="Label" parent="Control/PanelKonec" unique_id=1357084913]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -279,7 +281,7 @@ grow_horizontal = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/PanelKonec" unique_id=673106045]
+[node name="Label" type="Label" parent="Control/PanelKonec" unique_id=673106045]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -296,23 +298,24 @@ text = "Pritisni ENTER!"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="PanelE" type="Panel" parent="CanvasLayer" unique_id=1655437667]
+[node name="PanelE" type="Panel" parent="Control" unique_id=1655437667]
 z_index = -1
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = -62.0
-offset_right = 152.0
-offset_bottom = 62.0
+offset_left = 404.0
+offset_top = 242.0
+offset_right = 708.0
+offset_bottom = 366.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_dp3eg")
 script = ExtResource("29_fv21b")
 
-[node name="Label" type="Label" parent="CanvasLayer/PanelE" unique_id=1070310670]
+[node name="Label" type="Label" parent="Control/PanelE" unique_id=1070310670]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -329,7 +332,8 @@ theme_override_colors/font_color = Color(0.18888223, 0.1247795, 0.00037603354, 1
 theme_override_font_sizes/font_size = 25
 text = "Pritisni ENTER"
 
-[node name="PanelIzberiDN" type="Panel" parent="CanvasLayer" unique_id=1483973435]
+[node name="PanelIzberiDN" type="Panel" parent="Control" unique_id=1483973435]
+layout_mode = 0
 offset_left = 525.0
 offset_top = 226.0
 offset_right = 943.0
@@ -337,7 +341,7 @@ offset_bottom = 461.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_0ld40")
 script = ExtResource("14_jscy8")
 
-[node name="LabelIzberiDN" type="Label" parent="CanvasLayer/PanelIzberiDN" unique_id=93856199]
+[node name="LabelIzberiDN" type="Label" parent="Control/PanelIzberiDN" unique_id=93856199]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -354,7 +358,7 @@ theme_override_colors/font_color = Color(0.2509804, 0.16078432, 0.10980392, 1)
 theme_override_font_sizes/font_size = 22
 text = "Ali je to iskana rastlina?"
 
-[node name="ButtonDa" type="Button" parent="CanvasLayer/PanelIzberiDN/LabelIzberiDN" unique_id=257910348]
+[node name="ButtonDa" type="Button" parent="Control/PanelIzberiDN/LabelIzberiDN" unique_id=257910348]
 layout_mode = 0
 offset_left = 41.0
 offset_top = 61.0
@@ -362,15 +366,15 @@ offset_right = 71.0
 offset_bottom = 92.0
 text = "Da"
 
-[node name="ButtonNe" type="Button" parent="CanvasLayer/PanelIzberiDN/LabelIzberiDN" unique_id=595265495]
+[node name="ButtonNe" type="Button" parent="Control/PanelIzberiDN/LabelIzberiDN" unique_id=595265495]
 layout_mode = 0
 offset_left = 82.0
-offset_top = 61.0
+offset_top = 62.0
 offset_right = 112.0
-offset_bottom = 92.0
+offset_bottom = 93.0
 text = "Ne"
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer/PanelIzberiDN" unique_id=1545189648]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Control/PanelIzberiDN" unique_id=1545189648]
 layout_mode = 0
 offset_left = -412.0
 offset_top = -87.0
@@ -379,30 +383,31 @@ offset_bottom = 375.0
 alignment_horizontal = 0
 alignment_vertical = 0
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer/PanelIzberiDN/AspectRatioContainer" unique_id=536209208]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control/PanelIzberiDN/AspectRatioContainer" unique_id=536209208]
 material = SubResource("ShaderMaterial_dp3eg")
 layout_mode = 2
 autoplay = true
 expand = true
 loop = true
 
-[node name="PanelUvod" type="Panel" parent="CanvasLayer" unique_id=767366150]
+[node name="PanelUvod" type="Panel" parent="Control" unique_id=767366150]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -234.0
-offset_top = -159.5
-offset_right = 234.0
-offset_bottom = 159.5
+offset_left = 322.0
+offset_top = 144.5
+offset_right = 790.0
+offset_bottom = 463.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("16_pm3ni")
 
-[node name="LabelUvod" type="Label" parent="CanvasLayer/PanelUvod" unique_id=1648385015]
+[node name="LabelUvod" type="Label" parent="Control/PanelUvod" unique_id=1648385015]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -417,7 +422,7 @@ text = "Izberi rastlino, ki je zapisana levo zgoraj.
 Zberi čim več rastlin in pazi, da se ne zmotiš!"
 vertical_alignment = 1
 
-[node name="ButtonCloseUvod" type="Button" parent="CanvasLayer/PanelUvod" unique_id=1661570397]
+[node name="ButtonCloseUvod" type="Button" parent="Control/PanelUvod" unique_id=1661570397]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -430,17 +435,17 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Začni"
 
-[node name="PanelOpisRastline" type="Panel" parent="CanvasLayer" unique_id=319103877]
-visible = false
+[node name="PanelOpisRastline" type="Panel" parent="Control" unique_id=319103877]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -503.0
-offset_top = -214.0
-offset_right = 503.0
-offset_bottom = 282.0
+offset_left = 53.0
+offset_top = 90.0
+offset_right = 1059.0
+offset_bottom = 586.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -448,7 +453,7 @@ theme = SubResource("Theme_0ld40")
 theme_override_styles/panel = SubResource("StyleBoxTexture_muem4")
 script = ExtResource("17_y6deb")
 
-[node name="LabelOpisRastline" type="Label" parent="CanvasLayer/PanelOpisRastline" unique_id=1242384129]
+[node name="LabelOpisRastline" type="Label" parent="Control/PanelOpisRastline" unique_id=1242384129]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -465,7 +470,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 script = SubResource("GDScript_ya4ey")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelOpisRastline" unique_id=1767934029]
+[node name="TextureRect" type="TextureRect" parent="Control/PanelOpisRastline" unique_id=1767934029]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -482,7 +487,7 @@ expand_mode = 4
 stretch_mode = 5
 script = SubResource("GDScript_muem4")
 
-[node name="LabelPritisniR" type="Label" parent="CanvasLayer/PanelOpisRastline" unique_id=47478518]
+[node name="LabelPritisniR" type="Label" parent="Control/PanelOpisRastline" unique_id=47478518]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -495,7 +500,7 @@ grow_horizontal = 0
 text = "Izhod: R"
 horizontal_alignment = 2
 
-[node name="LabelImeRastline" type="Label" parent="CanvasLayer/PanelOpisRastline" unique_id=385869614]
+[node name="LabelImeRastline" type="Label" parent="Control/PanelOpisRastline" unique_id=385869614]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -509,7 +514,7 @@ theme_override_colors/font_color = Color(0.14509805, 0.105882354, 0, 1)
 theme_override_font_sizes/font_size = 29
 horizontal_alignment = 1
 
-[node name="J" type="Label" parent="CanvasLayer/PanelOpisRastline" unique_id=65013824]
+[node name="J" type="Label" parent="Control/PanelOpisRastline" unique_id=65013824]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -524,7 +529,7 @@ text = "< J"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="K" type="Label" parent="CanvasLayer/PanelOpisRastline" unique_id=460304604]
+[node name="K" type="Label" parent="Control/PanelOpisRastline" unique_id=460304604]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -542,24 +547,24 @@ text = "K >"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PanelInv" type="Panel" parent="CanvasLayer" unique_id=1803503058]
-visible = false
+[node name="PanelInv" type="Panel" parent="Control" unique_id=1803503058]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -329.0
-offset_top = -181.5
-offset_right = 329.0
-offset_bottom = 269.5
+offset_left = 227.0
+offset_top = 122.5
+offset_right = 885.0
+offset_bottom = 573.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_fv21b")
 theme_override_styles/panel = SubResource("StyleBoxTexture_tel4y")
 script = ExtResource("2_fv21b")
 
-[node name="GridContainerInv" type="GridContainer" parent="CanvasLayer/PanelInv" unique_id=1887040240]
+[node name="GridContainerInv" type="GridContainer" parent="Control/PanelInv" unique_id=1887040240]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -576,7 +581,7 @@ theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 39
 columns = 4
 
-[node name="Label" type="Label" parent="CanvasLayer/PanelInv" unique_id=51274618]
+[node name="Label" type="Label" parent="Control/PanelInv" unique_id=51274618]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -588,12 +593,13 @@ offset_bottom = -55.0
 grow_vertical = 0
 text = "Izhod: I"
 
-[node name="PanelPoisciRastlino" type="Panel" parent="CanvasLayer" unique_id=1831486265]
+[node name="PanelPoisciRastlino" type="Panel" parent="Control" unique_id=1831486265]
+layout_mode = 0
 offset_right = 275.0
 offset_bottom = 80.0
 script = ExtResource("10_a8y0u")
 
-[node name="TextPoisciRastlino" type="Label" parent="CanvasLayer/PanelPoisciRastlino" unique_id=865342677]
+[node name="TextPoisciRastlino" type="Label" parent="Control/PanelPoisciRastlino" unique_id=865342677]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -610,18 +616,18 @@ theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PanelTocke" type="Panel" parent="CanvasLayer" unique_id=1797290855]
+[node name="PanelTocke" type="Panel" parent="Control" unique_id=1797290855]
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -207.0
-offset_top = -1.0
-offset_right = -2.0
-offset_bottom = 77.0
+offset_left = 907.0
+offset_right = 1112.0
+offset_bottom = 78.0
 grow_horizontal = 0
 script = ExtResource("11_yc10j")
 
-[node name="TextTocke" type="Label" parent="CanvasLayer/PanelTocke" unique_id=926321000]
+[node name="TextTocke" type="Label" parent="Control/PanelTocke" unique_id=926321000]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -638,16 +644,17 @@ text = "Točke:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LabelPritisni" type="Label" parent="CanvasLayer" unique_id=738609992]
+[node name="LabelPritisni" type="Label" parent="Control" unique_id=738609992]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -269.5
-offset_top = -59.0
-offset_right = 269.5
-offset_bottom = -3.0
+offset_left = 286.5
+offset_top = 549.0
+offset_right = 825.5
+offset_bottom = 605.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
@@ -657,7 +664,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("14_jkv2x")
 
-[connection signal="pressed" from="CanvasLayer/PanelUvod/ButtonCloseUvod" to="CanvasLayer/PanelUvod" method="_on_button_close_uvod_pressed"]
+[connection signal="pressed" from="Control/PanelIzberiDN/LabelIzberiDN/ButtonDa" to="Control/PanelIzberiDN" method="_on_button_da_pressed"]
+[connection signal="pressed" from="Control/PanelIzberiDN/LabelIzberiDN/ButtonNe" to="Control/PanelIzberiDN" method="_on_button_ne_pressed"]
+[connection signal="pressed" from="Control/PanelUvod/ButtonCloseUvod" to="Control/PanelUvod" method="_on_button_close_uvod_pressed"]
 
 [editable path="Cemaz/cemaz_mesh"]
 [editable path="ProtoController"]

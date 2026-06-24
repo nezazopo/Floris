@@ -1,3 +1,13 @@
 [gd_resource type="Theme" format=3 uid="uid://n2mk0v57k0sd"]
 
+[ext_resource type="FontFile" uid="uid://d1twkv33pe068" path="res://assets/leander/Leander.ttf" id="1_amlv4"]
+[ext_resource type="Texture2D" uid="uid://klu75cta44u2" path="res://assets/teksture/list.png" id="1_i7eh4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_78ylj"]
+texture = ExtResource("1_i7eh4")
+
 [resource]
+default_font = ExtResource("1_amlv4")
+Button/colors/font_color = Color(0.2509804, 0.16078432, 0.10980392, 1)
+Label/colors/font_color = Color(0.2509804, 0.16078432, 0.10980392, 1)
+Panel/styles/panel = SubResource("StyleBoxTexture_78ylj")

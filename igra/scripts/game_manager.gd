@@ -8,14 +8,14 @@ var poiskanoBool = false
 var indeksRastline = 0
 var konec = false
 
-@onready var panel_tocke: Panel = $"../CanvasLayer/PanelTocke"
+@onready var panel_tocke: Panel = $"../PanelTocke"
 @onready var timer: Timer = $"../Timer"
-@onready var panel_konec: Panel = $"../CanvasLayer/PanelKonec"
-@onready var panel_opis_rastline: Panel = $"../CanvasLayer/PanelOpisRastline"
-@onready var panel_e: Panel = $"../CanvasLayer/PanelE"
-@onready var label_pritisni: Label = $"../CanvasLayer/LabelPritisni"
+@onready var panel_konec: Panel = $"../PanelKonec"
+@onready var panel_opis_rastline: Panel = $"../PanelOpisRastline"
+@onready var panel_e: Panel = $"../PanelE"
+@onready var label_pritisni: Label = $"../LabelPritisni"
 
-@onready var panel_poisci_rastlino: Panel = $"../CanvasLayer/PanelPoisciRastlino"
+@onready var panel_poisci_rastlino: Panel = $"../PanelPoisciRastlino"
 
 func _ready():
 	if get_tree().paused:

@@ -1,8 +1,8 @@
 extends Panel
 
-@onready var game_manager: Node = $"../../GameManager"
+@onready var game_manager: Node = $"../GameManager"
 #@onready var text_poisci_rastlino: Label = $TextPoisciRastlino
-@onready var proto_controller: CharacterBody3D = $"../../ProtoController"
+@onready var proto_controller: CharacterBody3D = $"../ProtoController"
 
 
 

@@ -2,7 +2,7 @@ extends Panel
 @onready var label_ime_rastline: Label = $LabelImeRastline
 @onready var label_opis_rastline: Label = $LabelOpisRastline
 @onready var texture_rect: TextureRect = $TextureRect
-@onready var game_manager: Node = $"../../GameManager"
+@onready var game_manager: Node = $"../GameManager"
 @onready var label_pritisni: Label = $"../LabelPritisni"
 @onready var panel_inv: Panel = $"../PanelInv"
 
