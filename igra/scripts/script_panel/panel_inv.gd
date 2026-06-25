@@ -13,12 +13,17 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("I_pressed"):
 		if self.visible == false:
 			panel_opis_rastline.visible = false
-			if(label_pritisni.visible):
-				label_pritisni.skrij()
+			if label_pritisni.visible:
+				label_pritisni.visible = true
 			self.visible = true
 		else:
 			self.visible = false
 
-
-func _on_button_pressed() -> void:
-	pass # Replace with function body.
+func _on_button_inv_pressed() -> void:
+	if self.visible == false:
+		panel_opis_rastline.visible = false
+		if label_pritisni.visible:
+			label_pritisni.visible = false
+		self.visible = true
+	else:
+		self.visible = false

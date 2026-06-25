@@ -18,6 +18,7 @@ extends CharacterBody3D
 @export var can_freefly : bool = false
 
 @onready var panel_uvod: Panel = $"../Control/PanelUvod"
+@onready var panel_opis_rastline: Panel = $"../Control/PanelOpisRastline"
 
 @export_group("Speeds")
 ## Look around rotation speed.
@@ -181,10 +182,11 @@ func check_input_mappings():
 		can_freefly = false
 
 func _process(delta: float):
-	if can_move and panel_uvod.visible:
-		can_move = false 
-	if !can_move and !panel_uvod.visible:
+	if panel_uvod.visible or panel_opis_rastline.visible:
+		can_move = false
+	else:
 		can_move = true
+		
 	if(!mouse_captured):
 		label_pritisni.prikazi()
 	else:

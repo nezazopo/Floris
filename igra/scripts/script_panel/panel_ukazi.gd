@@ -13,3 +13,9 @@ func _process(delta: float) -> void:
 			self.visible = false
 		else:
 			self.visible = true
+
+func _on_button_ukazi_pressed() -> void:
+	if self.visible:
+		self.visible = false
+	else:
+		self.visible = true

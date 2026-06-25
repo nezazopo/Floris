@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://d1twkv33pe068" path="res://assets/leander/Leander.ttf" id="1_dha4e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dha4e"]
-bg_color = Color(0, 0, 0, 0.45882353)
+bg_color = Color(0, 0, 0, 0.41568628)
 
 [resource]
 default_font = ExtResource("1_dha4e")

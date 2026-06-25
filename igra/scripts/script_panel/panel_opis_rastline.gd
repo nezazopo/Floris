@@ -5,6 +5,7 @@ extends Panel
 @onready var game_manager: Node = $"../../GameManager"
 @onready var label_pritisni: Label = $"../LabelPritisni"
 @onready var panel_inv: Panel = $"../PanelInv"
+@onready var proto_controller: CharacterBody3D = $"../../ProtoController"
 
 
 var stranOpisa = 0
@@ -51,4 +52,11 @@ func updateOpisRastline():
 	label_opis_rastline.text = game_manager.poisciRastlino.opisi[stranOpisa]
 	texture_rect.texture = game_manager.poisciRastlino.slike[stranOpisa]
 
-	
+func _on_button_opis_pressed() -> void:
+	if self.visible:
+			self.visible = false
+	else:
+		self.visible = true
+		panel_inv.visible = false
+		if label_pritisni.visible:
+				label_pritisni.skrij()

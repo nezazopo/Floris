@@ -28,7 +28,6 @@
 [ext_resource type="Script" uid="uid://n7ufouy6utr1" path="res://scripts/script_panel/panel_opis_rastline.gd" id="17_y6deb"]
 [ext_resource type="PackedScene" uid="uid://s4tpmm5qddjg" path="res://assets/modeli/hrast2.blend" id="18_dp3eg"]
 [ext_resource type="Script" uid="uid://d3oq3s1dymers" path="res://scripts/script_panel/panel_ukazi.gd" id="19_og1vs"]
-[ext_resource type="Theme" uid="uid://n2mk0v57k0sd" path="res://new_theme.tres" id="19_qkpxi"]
 [ext_resource type="Script" uid="uid://ddc87cpseu6vn" path="res://scripts/script_panel/panel_konec.gd" id="20_2wyq8"]
 [ext_resource type="Script" uid="uid://bfdrr6n8lbp0v" path="res://scenes/panel_e.gd" id="29_fv21b"]
 [ext_resource type="Theme" uid="uid://tfhdn236x6mx" path="res://theme2.tres" id="29_qkpxi"]
@@ -93,10 +92,7 @@ script/source = "extends Label
 @onready var game_manager: Node = $\"../../../GameManager\"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-		if (game_manager.poisciRastlino.ime == \"Bezeg\"):
-			self.text = \"to je bezeg\"
-		else:
-			self.text = \"nic\"
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -122,9 +118,6 @@ func _process(delta: float) -> void:
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tel4y"]
 texture = ExtResource("13_dp3eg")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5q0nq"]
-bg_color = Color(0, 0, 0, 0.41568628)
 
 [node name="main" type="Node3D" unique_id=2027404022]
 
@@ -224,9 +217,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("19_qkpxi")
+theme = ExtResource("29_qkpxi")
 
 [node name="PanelUkazi" type="Panel" parent="Control" unique_id=1686196634]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -417,6 +411,18 @@ size_flags_vertical = 4
 theme = ExtResource("29_qkpxi")
 script = ExtResource("16_pm3ni")
 
+[node name="Control" type="Control" parent="Control/PanelUvod" unique_id=1674071182]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -340.0
+offset_top = -203.75
+offset_right = 349.0
+offset_bottom = 194.75
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="ButtonCloseUvod" type="Button" parent="Control/PanelUvod" unique_id=1661570397]
 layout_mode = 1
 anchors_preset = 3
@@ -561,6 +567,18 @@ text = "K >"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Control" type="Control" parent="Control/PanelOpisRastline" unique_id=366797818]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -76.0
+offset_top = -75.0
+offset_right = 76.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="PanelInv" type="Panel" parent="Control" unique_id=1803503058]
 layout_mode = 1
 anchors_preset = 8
@@ -612,7 +630,6 @@ layout_mode = 0
 offset_right = 275.0
 offset_bottom = 80.0
 theme = ExtResource("29_qkpxi")
-theme_override_styles/panel = SubResource("StyleBoxFlat_5q0nq")
 script = ExtResource("10_a8y0u")
 
 [node name="TextPoisciRastlino" type="Label" parent="Control/PanelPoisciRastlino" unique_id=865342677]
@@ -677,15 +694,86 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
 theme = ExtResource("29_qkpxi")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 16
 text = "Klikni na zaslon in premikaj miško!"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("14_jkv2x")
 
+[node name="PanelRez" type="Panel" parent="Control" unique_id=1700715762]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelRez" type="Label" parent="Control/PanelRez" unique_id=716681490]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="TimerRez" type="Timer" parent="Control/PanelRez" unique_id=2142714277]
+wait_time = 2.0
+one_shot = true
+
+[node name="ButtonOpis" type="Button" parent="Control" unique_id=750927981]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 375.785
+offset_right = 455.785
+offset_bottom = 80.0
+focus_mode = 0
+theme = ExtResource("29_qkpxi")
+text = "[R]
+Opis"
+
+[node name="ButtonInv" type="Button" parent="Control" unique_id=2107039864]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 283.79
+offset_right = 363.79022
+offset_bottom = 80.0
+focus_mode = 0
+theme = ExtResource("29_qkpxi")
+text = "[I]
+Inv"
+
+[node name="ButtonUkazi" type="Button" parent="Control" unique_id=416427517]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_top = 88.84
+offset_bottom = 138.84006
+grow_horizontal = 0
+focus_mode = 0
+theme = ExtResource("29_qkpxi")
+text = "[P]"
+
 [connection signal="pressed" from="Control/PanelIzberiDN/LabelIzberiDN/ButtonDa" to="Control/PanelIzberiDN" method="_on_button_da_pressed"]
 [connection signal="pressed" from="Control/PanelIzberiDN/LabelIzberiDN/ButtonNe" to="Control/PanelIzberiDN" method="_on_button_ne_pressed"]
 [connection signal="pressed" from="Control/PanelUvod/ButtonCloseUvod" to="Control/PanelUvod" method="_on_button_close_uvod_pressed"]
+[connection signal="pressed" from="Control/ButtonOpis" to="Control/PanelOpisRastline" method="_on_button_opis_pressed"]
+[connection signal="pressed" from="Control/ButtonInv" to="Control/PanelInv" method="_on_button_inv_pressed"]
+[connection signal="pressed" from="Control/ButtonUkazi" to="Control/PanelUkazi" method="_on_button_ukazi_pressed"]
 
 [editable path="Cemaz/cemaz_mesh"]
 [editable path="ProtoController"]

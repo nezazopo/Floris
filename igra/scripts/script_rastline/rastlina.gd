@@ -13,6 +13,10 @@ var isPlayerInside = null
 @onready var panel_izberi_dn: Panel = $"../Control/PanelIzberiDN"
 @onready var video_stream_player: VideoStreamPlayer = $"../Control/PanelIzberiDN/AspectRatioContainer/VideoStreamPlayer"
 @onready var panel_e: Panel = $"../Control/PanelE"
+@onready var panel_rez: Panel = $"../Control/PanelRez"
+@onready var label_rez: Label = $"../Control/PanelRez/LabelRez"
+@onready var timer_rez: Timer = $"../Control/PanelRez/TimerRez"
+
 
 
 var inv_celica = null
@@ -31,6 +35,7 @@ func _ready():
 	
 
 	panel_e.visible = false
+	panel_rez.visible = false
 	#pripravim video
 	if(aspect_ratio_container != null):
 		aspect_ratio_container.visible = false
@@ -70,6 +75,7 @@ func prikazi_dn():
 	
 	# TP: PRAVILEN ODGOVOR
 	if(self == game_manager.poisciRastlino && odgovor == "da"):
+		label_rez.text = "Pravilno!"
 		print("pravilno si našel " + ime +"!")
 		game_manager.pristej()
 		print("st tock: ", game_manager.tocke)
@@ -80,17 +86,20 @@ func prikazi_dn():
 	
 	#TF: PRAVILEN ODG
 	if(self != game_manager.poisciRastlino &&  odgovor == "ne"):
+		label_rez.text = "Res je!"
 		print("Res je, to ni " + game_manager.poisciRastlino.ime +"!")
 		odgovor = null
 	
 	#FN: NAPAČEN: iskana rastlina, odg NE
 	if(self == game_manager.poisciRastlino &&  odgovor == "ne"):
+		label_rez.text = "Narobe!"
 		print("napačen odgovor! -1 točka")
 		game_manager.odstej(1)
 		odgovor = null
 	
 	#FP: NAPAČEN: napačna rastlina odg DA
 	if(self != game_manager.poisciRastlino && odgovor == "da"):
+		label_rez.text = "Narobe!"
 		print("napačen odgovor! -", game_manager.tocke, "točke")
 		if strupenost == 2: #ce je smrtonosna
 			game_manager.umre()
@@ -99,3 +108,8 @@ func prikazi_dn():
 		if game_manager.tocke <= 0:
 			print("Ni ti uspelo :(")
 		odgovor = null	
+		
+	panel_rez.visible = true
+	timer_rez.start()
+	await timer_rez.timeout
+	panel_rez.visible = false
