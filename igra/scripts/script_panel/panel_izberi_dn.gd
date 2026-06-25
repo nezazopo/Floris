@@ -8,6 +8,11 @@ signal odgovor_izbran(odgovor: String)
 
 
 func _process(delta: float) -> void:
+	if(Input.is_action_just_pressed("Ne")):
+		emit_signal("odgovor_izbran", "ne")
+	if(Input.is_action_just_pressed("Da")):
+		emit_signal("odgovor_izbran", "da")
+		
 	if(self.visible):
 		proto_controller.release_mouse()
 	pass

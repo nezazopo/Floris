@@ -28,6 +28,7 @@
 [ext_resource type="Script" uid="uid://n7ufouy6utr1" path="res://scripts/script_panel/panel_opis_rastline.gd" id="17_y6deb"]
 [ext_resource type="PackedScene" uid="uid://s4tpmm5qddjg" path="res://assets/modeli/hrast2.blend" id="18_dp3eg"]
 [ext_resource type="Script" uid="uid://d3oq3s1dymers" path="res://scripts/script_panel/panel_ukazi.gd" id="19_og1vs"]
+[ext_resource type="Theme" uid="uid://n2mk0v57k0sd" path="res://new_theme.tres" id="19_qkpxi"]
 [ext_resource type="Script" uid="uid://ddc87cpseu6vn" path="res://scripts/script_panel/panel_konec.gd" id="20_2wyq8"]
 [ext_resource type="Script" uid="uid://bfdrr6n8lbp0v" path="res://scenes/panel_e.gd" id="29_fv21b"]
 [ext_resource type="Theme" uid="uid://tfhdn236x6mx" path="res://theme2.tres" id="29_qkpxi"]
@@ -401,9 +402,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -234.0
-offset_top = -126.25
+offset_top = -113.0
 offset_right = 234.0
-offset_bottom = 126.25
+offset_bottom = 113.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -545,7 +546,7 @@ offset_right = 128.0
 offset_bottom = 35.0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
-text = "< J"
+text = "<"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -563,7 +564,7 @@ offset_bottom = 35.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
-text = "K >"
+text = ">"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -629,7 +630,6 @@ text = "Izhod: I"
 layout_mode = 0
 offset_right = 275.0
 offset_bottom = 80.0
-theme = ExtResource("29_qkpxi")
 script = ExtResource("10_a8y0u")
 
 [node name="TextPoisciRastlino" type="Label" parent="Control/PanelPoisciRastlino" unique_id=865342677]
@@ -659,7 +659,6 @@ anchor_right = 1.0
 offset_left = -205.0
 offset_bottom = 78.0
 grow_horizontal = 0
-theme = ExtResource("29_qkpxi")
 script = ExtResource("11_yc10j")
 
 [node name="TextTocke" type="Label" parent="Control/PanelTocke" unique_id=926321000]
@@ -675,6 +674,7 @@ offset_right = 90.0
 offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 20
 text = "Točke:"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -714,6 +714,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("19_qkpxi")
 
 [node name="LabelRez" type="Label" parent="Control/PanelRez" unique_id=716681490]
 layout_mode = 1
@@ -733,22 +734,24 @@ wait_time = 2.0
 one_shot = true
 
 [node name="ButtonOpis" type="Button" parent="Control" unique_id=750927981]
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 0
 offset_left = 375.785
-offset_right = 455.785
-offset_bottom = 80.0
+offset_top = 9.0
+offset_right = 435.785
+offset_bottom = 69.0
 focus_mode = 0
 theme = ExtResource("29_qkpxi")
 text = "[R]
 Opis"
 
 [node name="ButtonInv" type="Button" parent="Control" unique_id=2107039864]
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 0
-offset_left = 283.79
-offset_right = 363.79022
-offset_bottom = 80.0
+offset_left = 299.79
+offset_top = 9.0
+offset_right = 359.79
+offset_bottom = 69.0
 focus_mode = 0
 theme = ExtResource("29_qkpxi")
 text = "[I]
