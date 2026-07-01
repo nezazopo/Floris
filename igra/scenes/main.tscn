@@ -32,6 +32,8 @@
 [ext_resource type="Theme" uid="uid://n2mk0v57k0sd" path="res://new_theme.tres" id="19_qkpxi"]
 [ext_resource type="Script" uid="uid://ddc87cpseu6vn" path="res://scripts/script_panel/panel_konec.gd" id="20_2wyq8"]
 [ext_resource type="Theme" uid="uid://tfhdn236x6mx" path="res://theme2.tres" id="29_qkpxi"]
+[ext_resource type="Texture2D" uid="uid://mltsmea480lf" path="res://assets/knjiga.png" id="33_dgi5k"]
+[ext_resource type="Texture2D" uid="uid://bpfuspbc5kd6s" path="res://assets/backpack_white.png" id="34_j8jky"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jscy8"]
 
@@ -64,8 +66,6 @@ glow_enabled = true
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7iui7"]
 points = PackedVector3Array(-30, -0.5, -30, -30, 0.5, -30, 29.999996, -0.5, -30, -30, -0.5, 29.999996, -30, 0.5, 29.999996, 29.999996, 0.5, -30, 29.999996, -0.5, 29.999996, 29.999996, 0.5, 29.999996)
-
-[sub_resource type="Theme" id="Theme_muem4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dp3eg"]
 texture = ExtResource("13_dp3eg")
@@ -191,6 +191,7 @@ slike = Array[Texture2D]([ExtResource("4_og1vs"), ExtResource("5_yc10j"), ExtRes
 transform = Transform3D(4.974343, 0, 0, 0, 4.974343, 0, 0, 0, 4.974343, 0, -0.43687993, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bezeg/Area3D" unique_id=1031840315]
+transform = Transform3D(2.9371924, 0, 2.3841858e-07, 0, 2.9371922, 0, -2.3841858e-07, 0, 2.9371924, 0.36224842, 0, 0.2041328)
 shape = SubResource("SphereShape3D_c571f")
 
 [node name="bezeg9" parent="Bezeg" unique_id=426019485 instance=ExtResource("16_qkpxi")]
@@ -309,6 +310,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("29_qkpxi")
 script = ExtResource("19_og1vs")
 
 [node name="Label" type="Label" parent="Control/PanelUkazi" unique_id=1364510785]
@@ -330,50 +332,43 @@ vertical_alignment = 1
 
 [node name="PanelKonec" type="Panel" parent="Control" unique_id=1366515194]
 process_mode = 3
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -213.5
-offset_top = -97.0
-offset_right = 213.5
-offset_bottom = 97.0
+offset_left = -165.0
+offset_top = -67.0
+offset_right = 165.0
+offset_bottom = 67.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_muem4")
 script = ExtResource("20_2wyq8")
 
-[node name="PanelDeathText" type="Label" parent="Control/PanelKonec" unique_id=1357084913]
+[node name="MarginContainer" type="MarginContainer" parent="Control/PanelKonec" unique_id=2029486754]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -166.0
-offset_top = 48.0
-offset_right = 166.0
-offset_bottom = 107.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelDeathText" type="Label" parent="Control/PanelKonec/MarginContainer" unique_id=1357084913]
+layout_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="Control/PanelKonec" unique_id=673106045]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -142.5
-offset_top = -93.0
-offset_right = -23.5
-offset_bottom = -21.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Pritisni ENTER!"
-horizontal_alignment = 2
-vertical_alignment = 1
+[node name="Button" type="Button" parent="Control/PanelKonec/MarginContainer" unique_id=754836135]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Ponovi"
 
 [node name="PanelE" type="Panel" parent="Control" unique_id=1655437667]
 z_index = -1
@@ -484,6 +479,36 @@ size_flags_vertical = 4
 theme = ExtResource("29_qkpxi")
 script = ExtResource("16_pm3ni")
 
+[node name="MarginContainer" type="MarginContainer" parent="Control/PanelUvod" unique_id=829795163]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ButtonCloseUvod" type="Button" parent="Control/PanelUvod/MarginContainer" unique_id=1661570397]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("29_qkpxi")
+text = "Začni"
+autowrap_trim_flags = 0
+
+[node name="LabelUvod" type="Label" parent="Control/PanelUvod/MarginContainer" unique_id=1648385015]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "Izberi rastlino, ki je zapisana levo zgoraj.
+Če potrebuješ opis rastline, pritisni R. 
+Zberi čim več rastlin in pazi, da se ne zmotiš!"
+vertical_alignment = 1
+
 [node name="Control" type="Control" parent="Control/PanelUvod" unique_id=1674071182]
 layout_mode = 1
 anchors_preset = 15
@@ -495,38 +520,6 @@ offset_right = 349.0
 offset_bottom = 194.75
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ButtonCloseUvod" type="Button" parent="Control/PanelUvod" unique_id=1661570397]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -166.0
-offset_top = -81.0
-offset_right = -66.0
-offset_bottom = -50.0
-grow_horizontal = 0
-grow_vertical = 0
-theme = ExtResource("29_qkpxi")
-text = "Začni"
-
-[node name="LabelUvod" type="Label" parent="Control/PanelUvod" unique_id=1648385015]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -176.5
-offset_top = 70.0
-offset_right = 176.5
-offset_bottom = 138.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 16
-text = "Izberi rastlino, ki je zapisana levo zgoraj.
-Če potrebuješ opis rastline, pritisni R. 
-Zberi čim več rastlin in pazi, da se ne zmotiš!"
-vertical_alignment = 1
 
 [node name="PanelOpisRastline" type="Panel" parent="Control" unique_id=319103877]
 layout_mode = 1
@@ -711,9 +704,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelPoisciRastlino" type="Panel" parent="Control" unique_id=1831486265]
-layout_mode = 0
+layout_mode = 1
 offset_right = 275.0
 offset_bottom = 80.0
+theme = ExtResource("29_qkpxi")
 script = ExtResource("10_a8y0u")
 
 [node name="TextPoisciRastlino" type="Label" parent="Control/PanelPoisciRastlino" unique_id=865342677]
@@ -787,17 +781,14 @@ script = ExtResource("14_jkv2x")
 [node name="PanelRez" type="Panel" parent="Control" unique_id=1700715762]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -50.0
+offset_top = 20.0
+offset_right = 50.0
+offset_bottom = 60.0
 grow_horizontal = 2
-grow_vertical = 2
 theme = ExtResource("19_qkpxi")
 
 [node name="LabelRez" type="Label" parent="Control/PanelRez" unique_id=716681490]
@@ -820,26 +811,29 @@ one_shot = true
 [node name="ButtonOpis" type="Button" parent="Control" unique_id=750927981]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 0
-offset_left = 375.785
+offset_left = 379.0
 offset_top = 9.0
-offset_right = 435.785
+offset_right = 439.0
 offset_bottom = 69.0
 focus_mode = 0
 theme = ExtResource("29_qkpxi")
-text = "[R]
-Opis"
+icon = ExtResource("33_dgi5k")
+expand_icon = true
 
 [node name="ButtonInv" type="Button" parent="Control" unique_id=2107039864]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 0
 offset_left = 299.79
 offset_top = 9.0
-offset_right = 359.79
+offset_right = 362.0
 offset_bottom = 69.0
 focus_mode = 0
 theme = ExtResource("29_qkpxi")
-text = "[I]
-Inv"
+text = "
+"
+icon = ExtResource("34_j8jky")
+icon_alignment = 1
+expand_icon = true
 
 [node name="ButtonUkazi" type="Button" parent="Control" unique_id=416427517]
 custom_minimum_size = Vector2(50, 50)
@@ -861,7 +855,7 @@ autostart = true
 
 [connection signal="pressed" from="Control/PanelIzberiDN/LabelIzberiDN/ButtonDa" to="Control/PanelIzberiDN" method="_on_button_da_pressed"]
 [connection signal="pressed" from="Control/PanelIzberiDN/LabelIzberiDN/ButtonNe" to="Control/PanelIzberiDN" method="_on_button_ne_pressed"]
-[connection signal="pressed" from="Control/PanelUvod/ButtonCloseUvod" to="Control/PanelUvod" method="_on_button_close_uvod_pressed"]
+[connection signal="pressed" from="Control/PanelUvod/MarginContainer/ButtonCloseUvod" to="Control/PanelUvod" method="_on_button_close_uvod_pressed"]
 [connection signal="pressed" from="Control/ButtonOpis" to="Control/PanelOpisRastline" method="_on_button_opis_pressed"]
 [connection signal="pressed" from="Control/ButtonInv" to="Control/PanelInv" method="_on_button_inv_pressed"]
 [connection signal="pressed" from="Control/ButtonUkazi" to="Control/PanelUkazi" method="_on_button_ukazi_pressed"]

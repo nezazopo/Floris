@@ -1,6 +1,7 @@
 extends Panel
-@onready var panel_death_text: Label = $PanelDeathText
+@onready var panel_death_text: Label = $MarginContainer/PanelDeathText
 @onready var proto_controller: CharacterBody3D = $"../../ProtoController"
+@onready var panel_ukazi: Panel = $"../PanelUkazi"
 
 func _ready() -> void:
 	self.visible = false
