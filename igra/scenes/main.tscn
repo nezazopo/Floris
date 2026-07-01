@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cr8rutrfrxui7" path="res://scripts/script_panel/panel_inv.gd" id="2_fv21b"]
 [ext_resource type="Script" uid="uid://cm35tpmjlhwmm" path="res://scripts/script_rastline/dob.gd" id="3_jscy8"]
-[ext_resource type="PackedScene" uid="uid://3n6j182l0v6r" path="res://assets/modeli/cemaz_koncna.blend" id="4_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://c1c2r7wdpr4mw" path="res://assets/rastline/bezeg/Sambucus_nigra_RF.jpg" id="4_og1vs"]
 [ext_resource type="Texture2D" uid="uid://c2fd7ehfcg3pe" path="res://assets/rastline/bezeg/Sambucus_nigra2.jpg" id="5_2wyq8"]
 [ext_resource type="Script" uid="uid://h1odmwux86h6" path="res://scripts/script_rastline/cemaz.gd" id="5_pm3ni"]
@@ -11,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://duydurnf21q5v" path="res://assets/rastline/dob/Quercus_robur.jpg" id="5_yq6so"]
 [ext_resource type="Texture2D" uid="uid://c08etj2lqpjjn" path="res://assets/rastline/dob/Duby_nad_Pozorkou_I.jpg" id="6_fv21b"]
 [ext_resource type="PackedScene" uid="uid://uvxvo7svjy2o" path="res://assets/modeli/tla.blend" id="6_muem4"]
+[ext_resource type="PackedScene" uid="uid://s5n5y51xoplq" path="res://assets/modeli/hrast_lowp.blend" id="6_tel4y"]
 [ext_resource type="Texture2D" uid="uid://xel8ukbllc15" path="res://assets/rastline/cemaz/cemaz.jpg" id="7_2wyq8"]
 [ext_resource type="VideoStream" uid="uid://d0vosw74pluhg" path="res://assets/rastline/cemaz/cemaz_animacija.ogv" id="7_fv21b"]
 [ext_resource type="Script" uid="uid://cgx3420clp5en" path="res://scripts/script_rastline/rastlina.gd" id="7_qkpxi"]
@@ -20,17 +20,17 @@
 [ext_resource type="Texture2D" uid="uid://dln2feowkkfo0" path="res://assets/rastline/cemaz/Photo_of_Allium_Ursinum,_wild_garlic,_north-west_Hampshire,_UK,_May_2014.jpg" id="10_2f3dj"]
 [ext_resource type="Script" uid="uid://bpai3xktmgbr7" path="res://scripts/script_panel/panel_poisci_rastlino.gd" id="10_a8y0u"]
 [ext_resource type="Script" uid="uid://dsfjwrl0b5oj4" path="res://scripts/script_panel/panel_tocke.gd" id="11_yc10j"]
+[ext_resource type="PackedScene" uid="uid://ch4e5gb2kag7p" path="res://assets/modeli/cemaz_lowp3.blend" id="12_tel4y"]
 [ext_resource type="Texture2D" uid="uid://klu75cta44u2" path="res://assets/teksture/list.png" id="13_dp3eg"]
 [ext_resource type="Script" uid="uid://coc4kiauwdl4y" path="res://scripts/script_panel/label_pritisni.gd" id="14_jkv2x"]
 [ext_resource type="Script" uid="uid://d25f18nfp6bl6" path="res://scripts/script_panel/panel_izberi_dn.gd" id="14_jscy8"]
 [ext_resource type="Shader" uid="uid://cygrwf1o5r8kp" path="res://main.gdshader" id="16_muem4"]
 [ext_resource type="Script" uid="uid://f8uifoal7oko" path="res://scripts/script_panel/panel_uvod.gd" id="16_pm3ni"]
+[ext_resource type="PackedScene" uid="uid://0hhiw2uhqhqy" path="res://assets/modeli/bezeg9.blend" id="16_qkpxi"]
 [ext_resource type="Script" uid="uid://n7ufouy6utr1" path="res://scripts/script_panel/panel_opis_rastline.gd" id="17_y6deb"]
-[ext_resource type="PackedScene" uid="uid://s4tpmm5qddjg" path="res://assets/modeli/hrast2.blend" id="18_dp3eg"]
 [ext_resource type="Script" uid="uid://d3oq3s1dymers" path="res://scripts/script_panel/panel_ukazi.gd" id="19_og1vs"]
 [ext_resource type="Theme" uid="uid://n2mk0v57k0sd" path="res://new_theme.tres" id="19_qkpxi"]
 [ext_resource type="Script" uid="uid://ddc87cpseu6vn" path="res://scripts/script_panel/panel_konec.gd" id="20_2wyq8"]
-[ext_resource type="Script" uid="uid://bfdrr6n8lbp0v" path="res://scenes/panel_e.gd" id="29_fv21b"]
 [ext_resource type="Theme" uid="uid://tfhdn236x6mx" path="res://theme2.tres" id="29_qkpxi"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jscy8"]
@@ -40,8 +40,6 @@
 [sub_resource type="ArrayMesh" id="ArrayMesh_jkv2x"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_c571f"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_d6yt8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jkv2x"]
 sky_top_color = Color(0.12675866, 0.49858016, 0.72374344, 1)
@@ -71,6 +69,21 @@ points = PackedVector3Array(-30, -0.5, -30, -30, 0.5, -30, 29.999996, -0.5, -30,
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dp3eg"]
 texture = ExtResource("13_dp3eg")
+
+[sub_resource type="GDScript" id="GDScript_tel4y"]
+script/source = "extends Panel
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	
+	pass
+"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ld40"]
 texture = ExtResource("13_dp3eg")
@@ -138,10 +151,10 @@ mesh = SubResource("ArrayMesh_jscy8")
 transform = Transform3D(7.900965, 0, 0, 0, 7.900965, 0, 0, 0, 7.900965, 0, 0, 0)
 shape = SubResource("SphereShape3D_pm3ni")
 
-[node name="dob_mesh" parent="Dob" unique_id=2020917802 instance=ExtResource("18_dp3eg")]
+[node name="hrast_lowp" parent="Dob" unique_id=1671695598 instance=ExtResource("6_tel4y")]
 
 [node name="Cemaz" type="Node3D" parent="." unique_id=1443877113]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4, 0.1176697, -7.0587997)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -15.085905, 0.54433095, -7.0587997)
 script = ExtResource("5_pm3ni")
 ime = "Čemaž"
 video = ExtResource("7_fv21b")
@@ -149,23 +162,23 @@ opisi = Array[String](["OPIS: Čemaž je lukovka, raste od marca do junija. zras
 slike = Array[Texture2D]([ExtResource("7_2wyq8"), ExtResource("5_yc10j"), ExtResource("9_vxglm"), ExtResource("10_2f3dj")])
 
 [node name="MeshInstance3D_cemaz" type="MeshInstance3D" parent="Cemaz" unique_id=298896123]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.091917, 0, -3.806923)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1200504, 0, 1.8409023)
 cast_shadow = 0
 gi_mode = 2
 mesh = SubResource("ArrayMesh_jkv2x")
 
 [node name="Area3D" type="Area3D" parent="Cemaz" unique_id=769897866]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1693935, 0, -3.6478348)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5771141, 0, 1.4696951)
 
 [node name="CollisionShape3D_cemaz" type="CollisionShape3D" parent="Cemaz/Area3D" unique_id=897611270]
-transform = Transform3D(9.245187, 0, 0, 0, 9.245187, 0, 0, 0, 9.245187, -0.42384148, 1.1245732, 0.84593964)
+transform = Transform3D(9.245187, 0, 0, 0, 9.245187, 0, 0, 0, 9.245187, -0.012138367, 1.1245732, 0.9683752)
 shape = SubResource("SphereShape3D_c571f")
 
-[node name="cemaz_mesh" parent="Cemaz" unique_id=1111112018 instance=ExtResource("4_jbj1t")]
-transform = Transform3D(9.576588, 0, 0, 0, 9.576588, 0, 0, 0, 9.576588, 1.9862776, 0.233984, -2.7211723)
+[node name="cemaz_lowp3" parent="Cemaz" unique_id=807773915 instance=ExtResource("12_tel4y")]
+transform = Transform3D(4.597794, 0, 0, 0, 4.5437684, -0.7027629, 0, 0.7027629, 4.5437684, 0, 0.22638941, 1.5438623)
 
 [node name="Bezeg" type="Node3D" parent="." unique_id=1781087234]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5330081, 8.824217)
+transform = Transform3D(0.26781246, 0, -0.4752517, 0, 0.54551595, 0, 0.4752517, 0, 0.26781246, 0, 0.5330081, 21.84195)
 script = ExtResource("7_qkpxi")
 ime = "Bezeg"
 video = ExtResource("7_fv21b")
@@ -173,13 +186,72 @@ opisi = Array[String](["OPIS: Črni bezeg je grm s suličastimi listi zarezanih 
 slike = Array[Texture2D]([ExtResource("4_og1vs"), ExtResource("5_yc10j"), ExtResource("5_2wyq8")])
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Bezeg" unique_id=1003330317]
-mesh = SubResource("CylinderMesh_d6yt8")
 
 [node name="Area3D" type="Area3D" parent="Bezeg" unique_id=1861390713]
 transform = Transform3D(4.974343, 0, 0, 0, 4.974343, 0, 0, 0, 4.974343, 0, -0.43687993, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bezeg/Area3D" unique_id=1031840315]
 shape = SubResource("SphereShape3D_c571f")
+
+[node name="bezeg9" parent="Bezeg" unique_id=426019485 instance=ExtResource("16_qkpxi")]
+transform = Transform3D(0.17012715, 0, -7.450581e-09, 0, 0.17012714, 0, 7.450581e-09, 0, 0.17012715, 0.9912987, -1.0594965, -0.033348083)
+
+[node name="bezeg10" parent="Bezeg" unique_id=1900186259 instance=ExtResource("16_qkpxi")]
+transform = Transform3D(0.061721653, 0.002810423, 0.17428426, 0.015949667, 0.18910855, -0.008460874, -0.17469384, 0.018258702, 0.06080448, 0, -1.0594965, 2.746993)
+
+[node name="bezeg9" parent="Bezeg/bezeg10" unique_id=1417210943 instance=ExtResource("16_qkpxi")]
+transform = Transform3D(0.89217776, 9.313226e-09, -4.4703484e-08, 6.519258e-09, 0.8921779, -3.7252903e-09, 1.4901161e-08, 7.450581e-09, 0.89217794, 3.1230202, -3.7621365, -6.1141663)
+
+[node name="bezeg10" parent="Bezeg/bezeg10" unique_id=1115421857 instance=ExtResource("16_qkpxi")]
+transform = Transform3D(0.32367963, 0.014738388, 0.9139785, 0.08364298, 0.99171996, -0.04437037, -0.91612655, 0.09575198, 0.3188698, -2.0755272, -3.7621393, 8.466415)
+
+[node name="bezeg11" parent="Bezeg/bezeg10" unique_id=1569891454 instance=ExtResource("16_qkpxi")]
+transform = Transform3D(-0.64070463, 0.046033178, 0.53140867, -0.005992491, 0.75726646, -0.09317942, -0.5268585, -0.059958097, -0.6521575, 0.41958237, 6.2561493, 1.8460541)
+
+[node name="bezeg9" parent="Bezeg/bezeg10/bezeg11" unique_id=24281000 instance=ExtResource("16_qkpxi")]
+transform = Transform3D(0.8909099, -0.031177094, -0.00084765255, 0.03207274, 0.83368415, 0.16600764, -0.005851835, -0.17728408, 0.7808054, 0.3388977, 7.533474, -1.118927)
+
+[node name="bezeg10" parent="Bezeg/bezeg10/bezeg11" unique_id=1729953696 instance=ExtResource("16_qkpxi")]
+transform = Transform3D(0.29083332, -0.020979099, 0.99356675, -0.08788602, 0.96026504, 0.060639642, -0.82858455, -0.1092166, 0.34231028, -9.580048, -9.573986, 9.297531)
+
+[node name="bezeg11" parent="Bezeg/bezeg10/bezeg11" unique_id=1729384417 instance=ExtResource("16_qkpxi")]
+transform = Transform3D(-0.76736724, -0.18850674, 0.74585986, -0.14996901, 0.9872545, 0.13086015, -0.7225211, 0.0010182783, -0.8279751, -6.716736, 0.53771305, 6.487999)
+
+[node name="bezeg12" parent="Bezeg/bezeg10/bezeg11" unique_id=702214855 instance=ExtResource("16_qkpxi")]
+transform = Transform3D(-0.1709591, -0.13449582, -0.8974811, 0.08916436, 1.025169, -0.14303963, 0.7877896, -0.14521864, -0.17857394, -5.115509, -12.640483, 5.03508)
+
+[node name="bezeg13" parent="Bezeg/bezeg10/bezeg11" unique_id=1971691861 instance=ExtResource("16_qkpxi")]
+transform = Transform3D(0.42051098, -0.26442173, -0.48330206, 0.13477316, 1.1357374, 0.0074738218, 0.24927118, -0.16798812, 0.81127113, -21.052185, -14.819551, 3.9176788)
+
+[node name="bezeg14" parent="Bezeg/bezeg10/bezeg11" unique_id=291988538 instance=ExtResource("16_qkpxi")]
+transform = Transform3D(0.7288144, -0.051617444, 0.5048039, 0.005689851, 0.7958912, 0.064200744, -0.58625036, -0.051512375, 0.6214739, -15.528198, -2.9264584, 5.2553673)
+
+[node name="bezeg9" parent="Bezeg/bezeg10/bezeg11/bezeg14" unique_id=118082264 instance=ExtResource("16_qkpxi")]
+transform = Transform3D(1.3418276, -0.18688759, -0.031502932, 0.19453478, 1.2839012, -0.028742272, 0.03943211, 0.025551736, 1.2138042, 2.5675964, -8.116047, 9.658157)
+
+[node name="bezeg11" parent="Bezeg" unique_id=178732121 instance=ExtResource("16_qkpxi")]
+transform = Transform3D(-0.12217437, 0.008777951, 0.10133299, -0.0011426926, 0.14440122, -0.01776815, -0.10046532, -0.011433258, -0.12435826, 0.4757843, 0.8508659, 1.484581)
+
+[node name="bezeg9" parent="Bezeg/bezeg11" unique_id=465599570 instance=ExtResource("16_qkpxi")]
+transform = Transform3D(0.8909099, -0.031177094, -0.00084765255, 0.03207274, 0.83368415, 0.16600764, -0.005851835, -0.17728408, 0.7808054, 0.3388977, 7.533474, -1.118927)
+
+[node name="bezeg10" parent="Bezeg/bezeg11" unique_id=1156148869 instance=ExtResource("16_qkpxi")]
+transform = Transform3D(0.29083332, -0.020979099, 0.99356675, -0.08788602, 0.96026504, 0.060639642, -0.82858455, -0.1092166, 0.34231028, -9.580048, -9.573986, 9.297531)
+
+[node name="bezeg11" parent="Bezeg/bezeg11" unique_id=194137481 instance=ExtResource("16_qkpxi")]
+transform = Transform3D(-0.76736724, -0.18850674, 0.74585986, -0.14996901, 0.9872545, 0.13086015, -0.7225211, 0.0010182783, -0.8279751, -6.716736, 0.53771305, 6.487999)
+
+[node name="bezeg12" parent="Bezeg/bezeg11" unique_id=1021397324 instance=ExtResource("16_qkpxi")]
+transform = Transform3D(-0.1709591, -0.13449582, -0.8974811, 0.08916436, 1.025169, -0.14303963, 0.7877896, -0.14521864, -0.17857394, -5.115509, -12.640483, 5.03508)
+
+[node name="bezeg13" parent="Bezeg/bezeg11" unique_id=1838665945 instance=ExtResource("16_qkpxi")]
+transform = Transform3D(0.42051098, -0.26442173, -0.48330206, 0.13477316, 1.1357374, 0.0074738218, 0.24927118, -0.16798812, 0.81127113, -21.052185, -14.819551, 3.9176788)
+
+[node name="bezeg14" parent="Bezeg/bezeg11" unique_id=1713795246 instance=ExtResource("16_qkpxi")]
+transform = Transform3D(0.7288144, -0.051617444, 0.5048039, 0.005689851, 0.7958912, 0.064200744, -0.58625036, -0.051512375, 0.6214739, -15.528198, -2.9264584, 5.2553673)
+
+[node name="bezeg9" parent="Bezeg/bezeg11/bezeg14" unique_id=698703035 instance=ExtResource("16_qkpxi")]
+transform = Transform3D(1.3418276, -0.18688759, -0.031502932, 0.19453478, 1.2839012, -0.028742272, 0.03943211, 0.025551736, 1.2138042, 2.5675964, -8.116047, 9.658157)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1864792197]
 environment = SubResource("Environment_jkv2x")
@@ -209,6 +281,7 @@ transform = Transform3D(4.861927, 0, 0, 0, 4.861927, 0, 0, 0, 4.861927, 0, -91.0
 shape = SubResource("ConvexPolygonShape3D_7iui7")
 
 [node name="tla_mesh" parent="Tla" unique_id=834141132 instance=ExtResource("6_muem4")]
+transform = Transform3D(1.0028243, 0, 0, 0, 1.0028243, 0, 0, 0, 1.0028243, 0, 0, 0)
 
 [node name="Control" type="Control" parent="." unique_id=1370213331]
 layout_mode = 3
@@ -305,19 +378,17 @@ vertical_alignment = 1
 [node name="PanelE" type="Panel" parent="Control" unique_id=1655437667]
 z_index = -1
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = -62.0
-offset_right = 152.0
-offset_bottom = 62.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 159.0
+offset_top = -108.0
+offset_right = 314.0
+offset_bottom = -68.0
+grow_vertical = 0
+theme = ExtResource("19_qkpxi")
 theme_override_styles/panel = SubResource("StyleBoxTexture_dp3eg")
-script = ExtResource("29_fv21b")
+script = SubResource("GDScript_tel4y")
 
 [node name="Label" type="Label" parent="Control/PanelE" unique_id=1070310670]
 layout_mode = 1
@@ -326,15 +397,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
+offset_left = -60.0
 offset_top = -11.5
-offset_right = 20.0
+offset_right = 60.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.18888223, 0.1247795, 0.00037603354, 1)
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 16
 text = "Pritisni ENTER"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PanelIzberiDN" type="Panel" parent="Control" unique_id=1483973435]
 layout_mode = 0
@@ -626,6 +698,18 @@ offset_bottom = -55.0
 grow_vertical = 0
 text = "Izhod: I"
 
+[node name="Control" type="Control" parent="Control/PanelInv" unique_id=475942625]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -244.0
+offset_top = -99.5
+offset_right = 244.0
+offset_bottom = 99.5
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="PanelPoisciRastlino" type="Panel" parent="Control" unique_id=1831486265]
 layout_mode = 0
 offset_right = 275.0
@@ -771,6 +855,10 @@ focus_mode = 0
 theme = ExtResource("29_qkpxi")
 text = "[P]"
 
+[node name="TimerZakljucek" type="Timer" parent="." unique_id=1117565578]
+wait_time = 2.5
+autostart = true
+
 [connection signal="pressed" from="Control/PanelIzberiDN/LabelIzberiDN/ButtonDa" to="Control/PanelIzberiDN" method="_on_button_da_pressed"]
 [connection signal="pressed" from="Control/PanelIzberiDN/LabelIzberiDN/ButtonNe" to="Control/PanelIzberiDN" method="_on_button_ne_pressed"]
 [connection signal="pressed" from="Control/PanelUvod/ButtonCloseUvod" to="Control/PanelUvod" method="_on_button_close_uvod_pressed"]
@@ -778,5 +866,4 @@ text = "[P]"
 [connection signal="pressed" from="Control/ButtonInv" to="Control/PanelInv" method="_on_button_inv_pressed"]
 [connection signal="pressed" from="Control/ButtonUkazi" to="Control/PanelUkazi" method="_on_button_ukazi_pressed"]
 
-[editable path="Cemaz/cemaz_mesh"]
 [editable path="ProtoController"]
