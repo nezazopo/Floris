@@ -1,5 +1,5 @@
 extends Panel
-@onready var label_pritisni: Label = $"../LabelPritisni"
+@onready var label_pritisni: Label = $"../../LabelPritisni"
 
 
 

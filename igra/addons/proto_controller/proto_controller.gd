@@ -17,7 +17,7 @@ extends CharacterBody3D
 ## Can we press to enter freefly mode (noclip)?
 @export var can_freefly : bool = false
 
-@onready var panel_uvod: Panel = $"../Control/PanelUvod"
+@onready var panel_uvod: Panel = $"../Control/CanvasLayerUvod/PanelUvod"
 @onready var panel_opis_rastline: Panel = $"../Control/PanelOpisRastline"
 @onready var panel_inv: Panel = $"../Control/PanelInv"
 

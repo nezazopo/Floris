@@ -1,0 +1,31 @@
+[gd_resource type="Theme" format=3 uid="uid://tfhdn236x6mx"]
+
+[ext_resource type="FontFile" uid="uid://bjpewfhdpoguk" path="res://assets/IM_Fell_English/IMFellEnglish-Regular.ttf" id="1_i1vcn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hktir"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0, 0, 0, 0.41568628)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rgm6y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dha4e"]
+bg_color = Color(0, 0, 0, 0.4509804)
+
+[resource]
+default_font = ExtResource("1_i1vcn")
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_i1vcn")
+Button/icons/icon = null
+Button/styles/normal = SubResource("StyleBoxFlat_hktir")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/font_sizes/font_size = 23
+Label/styles/normal = SubResource("StyleBoxEmpty_rgm6y")
+Panel/styles/panel = SubResource("StyleBoxFlat_dha4e")

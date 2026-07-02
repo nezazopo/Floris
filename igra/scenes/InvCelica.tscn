@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://c7toowx5upyjc"]
 
-[ext_resource type="Script" uid="uid://b27sg5bu7laqn" path="res://scripts/panel_inv_celica.gd" id="1_fbpp2"]
+[ext_resource type="Script" uid="uid://b27sg5bu7laqn" path="res://scripts/script_panel/panel_inv_celica.gd" id="1_fbpp2"]
+[ext_resource type="Theme" uid="uid://tfhdn236x6mx" path="res://theme1.tres" id="1_k36x5"]
 
 [node name="InvCelica" type="Panel" unique_id=739505791]
-custom_minimum_size = Vector2(120, 160)
-offset_right = 40.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(100, 128.51)
+offset_right = 120.0
+offset_bottom = 160.0
+theme = ExtResource("1_k36x5")
 script = ExtResource("1_fbpp2")
 
 [node name="InvVideoStream" type="VideoStreamPlayer" parent="." unique_id=76016281]

@@ -3,7 +3,7 @@ extends Label
 @onready var panel_inv: Panel = $"../PanelInv"
 @onready var panel_izberi_dn: Panel = $"../PanelIzberiDN"
 @onready var panel_opis_rastline: Panel = $"../PanelOpisRastline"
-@onready var panel_uvod: Panel = $"../PanelUvod"
+@onready var panel_uvod: Panel = $"../CanvasLayerUvod/PanelUvod"
 
 
 var speed := 3.0
