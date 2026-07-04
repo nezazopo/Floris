@@ -17,7 +17,7 @@ func _process(delta):
 	modulate.a = 0.5 + 0.5 * sin(t * speed)
 	
 func prikazi():
-	if (!panel_uvod.visible and !panel_inv.visible and !panel_izberi_dn.visible and !panel_opis_rastline.visible):
+	if (!panel_uvod.visible and !panel_inv.visible and !panel_izberi_dn.visible and !panel_opis_rastline.visible and !panel_uvod.visible):
 		self.visible = true
 	
 func skrij():

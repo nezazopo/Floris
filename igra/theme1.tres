@@ -16,7 +16,7 @@ corner_radius_bottom_left = 10
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rgm6y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dha4e"]
-bg_color = Color(0, 0, 0, 0.4509804)
+bg_color = Color(0, 0, 0, 0.42352942)
 
 [resource]
 default_font = ExtResource("1_i1vcn")
@@ -25,7 +25,7 @@ Button/font_sizes/font_size = 16
 Button/fonts/font = ExtResource("1_i1vcn")
 Button/icons/icon = null
 Button/styles/normal = SubResource("StyleBoxFlat_hktir")
-Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_color = Color(5.4402213, 3.820355, 2.9047782, 1)
 Label/font_sizes/font_size = 23
 Label/styles/normal = SubResource("StyleBoxEmpty_rgm6y")
 Panel/styles/panel = SubResource("StyleBoxFlat_dha4e")
