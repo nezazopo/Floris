@@ -3,7 +3,6 @@ extends "res://scripts/script_rastline/rastlina.gd"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _init() -> void:
-
 	video = preload("res://assets/rastline/cemaz/cemaz_animacija.ogv")
 
 func _ready() -> void:

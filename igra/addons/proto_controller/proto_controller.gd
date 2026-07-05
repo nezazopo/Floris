@@ -17,10 +17,10 @@ extends CharacterBody3D
 ## Can we press to enter freefly mode (noclip)?
 @export var can_freefly : bool = false
 
-@onready var panel_uvod: Panel = $"../Control/CanvasLayerUvod/PanelUvod"
+@onready var panel_pomoc: Panel = $"../Control/PanelPomoc"
 @onready var panel_opis_rastline: Panel = $"../Control/PanelOpisRastline"
 @onready var panel_inv: Panel = $"../Control/PanelInv"
-
+@onready var panel_izberi_dn: Panel = $"../Control/PanelIzberiDN"
 
 @export_group("Speeds")
 ## Look around rotation speed.
@@ -97,9 +97,9 @@ func _physics_process(delta: float) -> void:
 			velocity += get_gravity() * delta
 
 	# Apply jumping
-	if can_jump:
-		if Input.is_action_just_pressed(input_jump) and is_on_floor():
-			velocity.y = jump_velocity
+	#if can_jump:
+	#	if Input.is_action_just_pressed(input_jump) and is_on_floor():
+	#		velocity.y = jump_velocity
 
 	# Modify speed based on sprinting
 	if can_sprint and Input.is_action_pressed(input_sprint):
@@ -184,12 +184,11 @@ func check_input_mappings():
 		can_freefly = false
 
 func _process(delta: float):
-	if panel_uvod.visible or panel_opis_rastline.visible or panel_inv.visible:
-		can_move = false
-	else:
+	if !mouse_captured:
+		label_pritisni.visible = true
 		can_move = true
-		
-	if(!mouse_captured):
-		label_pritisni.prikazi()
+		if panel_pomoc.visible or panel_opis_rastline.visible or panel_inv.visible or panel_izberi_dn.visible:
+			can_move = false
+			label_pritisni.visible = false
 	else:
-		label_pritisni.skrij()
+		label_pritisni.visible = false

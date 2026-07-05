@@ -6,6 +6,10 @@ extends Panel
 @onready var label_pritisni: Label = $"../LabelPritisni"
 @onready var panel_inv: Panel = $"../PanelInv"
 @onready var proto_controller: CharacterBody3D = $"../../ProtoController"
+@onready var panel_izberi_dn: Panel = $"../PanelIzberiDN"
+@onready var panel_rez: Panel = $"../PanelRez"
+@onready var label_rez: Label = $"../PanelRez/LabelRez"
+@onready var timer_rez: Timer = $"../PanelRez/TimerRez"
 
 
 var stranOpisa = 0
@@ -17,13 +21,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var poisciRastlino = game_manager.poisciRastlino
 	if Input.is_action_just_pressed("R_pressed"):
-		if self.visible:
-			self.visible = false
-		else:
-			self.visible = true
-			panel_inv.visible = false
-			if label_pritisni.visible:
-				label_pritisni.skrij()
+		toggle()
 			
 	if self.visible and Input.is_action_just_pressed("ListNaprej"):
 		if(stranOpisa == game_manager.poisciRastlino.opisi.size() - 1):
@@ -53,10 +51,21 @@ func updateOpisRastline():
 	texture_rect.texture = game_manager.poisciRastlino.slike[stranOpisa]
 
 func _on_button_opis_pressed() -> void:
-	if self.visible:
-			self.visible = false
+	toggle()
+				
+func toggle():
+	if panel_izberi_dn.visible:
+		label_rez.text = "X"
+		panel_rez.visible = true
+		timer_rez.start()
+		await timer_rez.timeout
+		panel_rez.visible = false
 	else:
-		self.visible = true
-		panel_inv.visible = false
-		if label_pritisni.visible:
-				label_pritisni.skrij()
+		if self.visible:
+				self.visible = false
+		else:
+			self.visible = true
+			panel_inv.visible = false
+			if label_pritisni.visible:
+					label_pritisni.visible = false
+	

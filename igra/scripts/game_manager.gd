@@ -15,12 +15,10 @@ var konec = false
 @onready var panel_e: Panel = $"../Control/PanelE"
 @onready var label_pritisni: Label = $"../Control/LabelPritisni"
 @onready var timer_zakljucek: Timer = $"../TimerZakljucek"
-@onready var canvas_layer_uvod: CanvasLayer = $"../Control/CanvasLayerUvod"
 
 @onready var panel_poisci_rastlino: Panel = $"../Control/PanelPoisciRastlino"
 
 func _ready():
-	canvas_layer_uvod.layer = -1;
 	if get_tree().paused:
 		get_tree().paused = false
 	var rastline_nodes = get_tree().get_nodes_in_group("rastline")

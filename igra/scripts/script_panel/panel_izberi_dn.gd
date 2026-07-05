@@ -2,10 +2,7 @@ extends Panel
 #gleda, uporabnikovo odločitev glede rastline
 signal odgovor_izbran(odgovor: String)
 @onready var proto_controller: CharacterBody3D = $"../../ProtoController"
- #Called every frame. 'delta' is the elapsed time since the previous frame.
-@onready var panel_rez: Panel = $"../PanelRez"
-@onready var label_rez: Label = $"../PanelRez/LabelRez"
-
+ 
 
 func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("Ne")):

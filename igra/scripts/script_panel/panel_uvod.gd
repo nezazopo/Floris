@@ -1,7 +1,9 @@
 extends Panel
-@onready var label_pritisni: Label = $"../../LabelPritisni"
-@onready var control_uvod: Control = $"../../ControlUvod"
-
+@onready var label_pritisni: Label = $"../LabelPritisni"
+@onready var control_pomoc: Control = $"../ControlPomoc"
+@onready var panel_opis_rastline: Panel = $"../PanelOpisRastline"
+@onready var panel_inv: Panel = $"../PanelInv"
+@onready var button_close_pomoc: Button = $"../ButtonClosePomoc"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,22 +13,28 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if (Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("P_pressed")):
-		if self.visible:
-			control_uvod.visible = false
-			visible = false	
-		else:
-			self.visible = true
-			control_uvod.visible = true
+	if Input.is_action_just_pressed("E") and self.visible:
+		toggle()
+	if Input.is_action_just_pressed("P_pressed"):
+		toggle()
 
-func _on_button_close_uvod_pressed() -> void:
-	self.visible = false
-	control_uvod.visible = false
-	label_pritisni.visible = false
+func _on_button_close_pomoc_pressed() -> void:
+	toggle()
 
-func _on_button_ukazi_pressed() -> void:
+func _on_button_pomoc_pressed() -> void:
+	toggle()
+		
+func toggle():
 	if self.visible:
+		button_close_pomoc.visible = false
 		self.visible = false
 	else:
 		self.visible = true
+		button_close_pomoc.visible = true
+		if panel_inv.visible:
+			button_close_pomoc.visible = false
+		if panel_opis_rastline.visible:
+			panel_opis_rastline.visible = false	
+	
+	
 	

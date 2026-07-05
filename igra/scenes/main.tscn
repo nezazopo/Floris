@@ -74,23 +74,8 @@ glow_enabled = true
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7iui7"]
 points = PackedVector3Array(-30, -0.5, -30, -30, 0.5, -30, 29.999996, -0.5, -30, -30, -0.5, 29.999996, -30, 0.5, 29.999996, 29.999996, 0.5, -30, 29.999996, -0.5, 29.999996, 29.999996, 0.5, 29.999996)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dp3eg"]
-texture = ExtResource("13_dp3eg")
-
-[sub_resource type="GDScript" id="GDScript_tel4y"]
-script/source = "extends Panel
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	
-	pass
-"
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5poiv"]
+bg_color = Color(0, 0, 0, 0.7254902)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dp3eg"]
 shader = ExtResource("16_muem4")
@@ -132,12 +117,40 @@ func _process(delta: float) -> void:
 	pass
 "
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5poiv"]
-bg_color = Color(0, 0, 0, 0.7254902)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cjbq"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.20321983, 0.22341043, 9.62615e-08, 0.41960785)
+shadow_size = 17
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chjal"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(1, 1, 1, 0.08235294)
+shadow_size = 23
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dp3eg"]
+texture = ExtResource("13_dp3eg")
 
 [node name="main" type="Node3D" unique_id=2027404022]
 
 [node name="Dob" type="Node3D" parent="." unique_id=1475397641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.71579, 0, 0)
 script = ExtResource("3_jscy8")
 ime = "Dob"
 video = ExtResource("7_fv21b")
@@ -150,7 +163,7 @@ mesh = SubResource("ArrayMesh_jscy8")
 [node name="Area3D" type="Area3D" parent="Dob" unique_id=1393059179]
 
 [node name="CollisionShape3D_dob" type="CollisionShape3D" parent="Dob/Area3D" unique_id=201086816]
-transform = Transform3D(7.900965, 0, 0, 0, 7.900965, 0, 0, 0, 7.900965, 0, 0, 0)
+transform = Transform3D(11.895375, 0, 0, 0, 11.895375, 0, 0, 0, 11.895375, 0, 0, 0)
 shape = SubResource("SphereShape3D_pm3ni")
 
 [node name="hrast_lowp" parent="Dob" unique_id=1671695598 instance=ExtResource("6_tel4y")]
@@ -173,7 +186,7 @@ mesh = SubResource("ArrayMesh_jkv2x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5771141, 0, 1.4696951)
 
 [node name="CollisionShape3D_cemaz" type="CollisionShape3D" parent="Cemaz/Area3D" unique_id=897611270]
-transform = Transform3D(9.245187, 0, 0, 0, 9.245187, 0, 0, 0, 9.245187, -0.012138367, 1.1245732, 0.9683752)
+transform = Transform3D(16.9437, 0, 0, 0, 16.9437, 0, 0, 0, 16.9437, -0.012138367, 1.1245732, 0.9683752)
 shape = SubResource("SphereShape3D_c571f")
 
 [node name="cemaz_lowp3" parent="Cemaz" unique_id=807773915 instance=ExtResource("12_tel4y")]
@@ -278,6 +291,9 @@ script = ExtResource("5_tbgi4")
 [node name="ProtoController" parent="." unique_id=785542806 instance=ExtResource("8_85g3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87365, -0.015081942, 0.44604683)
 
+[node name="Camera3D" parent="ProtoController/Head" index="0"]
+fov = 50.0
+
 [node name="Tla" type="StaticBody3D" parent="." unique_id=1618116805]
 transform = Transform3D(4.879475, 0, 0, 0, 4.879475, 0, 0, 0, 4.879475, 0, -1.398049, 0)
 
@@ -299,6 +315,322 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("20_j8jky")
+
+[node name="PanelPomoc" type="Panel" parent="Control" unique_id=767366150]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("20_j8jky")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5poiv")
+script = ExtResource("16_pm3ni")
+
+[node name="LabelPomocPoisci" type="Label" parent="Control/PanelPomoc" unique_id=1648385015]
+layout_mode = 1
+offset_left = 84.0
+offset_top = 143.0
+offset_right = 241.0
+offset_bottom = 188.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Poišči to rastlino"
+vertical_alignment = 1
+
+[node name="IconInv" type="TextureRect" parent="Control/PanelPomoc" unique_id=1840863157]
+layout_mode = 1
+offset_left = 336.0
+offset_top = 138.0
+offset_right = 395.0
+offset_bottom = 200.0
+texture = ExtResource("38_5he1u")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="LabelInv" type="Label" parent="Control/PanelPomoc/IconInv" unique_id=174290281]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 57.0
+offset_top = -11.5
+offset_right = 152.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "Inventorij"
+vertical_alignment = 1
+
+[node name="LabelI" type="Label" parent="Control/PanelPomoc/IconInv" unique_id=95586219]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -18.0
+offset_right = 19.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "I"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IconOpis" type="TextureRect" parent="Control/PanelPomoc" unique_id=1358414868]
+layout_mode = 1
+offset_left = 490.0
+offset_top = 87.0
+offset_right = 547.0
+offset_bottom = 143.46155
+texture = ExtResource("38_5he1u")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="LabelOpis" type="Label" parent="Control/PanelPomoc/IconOpis" unique_id=302966142]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 62.0
+offset_top = -11.5
+offset_right = 207.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "Opis rastline"
+vertical_alignment = 1
+
+[node name="LabelR" type="Label" parent="Control/PanelPomoc/IconOpis" unique_id=1523556368]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -15.0
+offset_right = 20.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "O"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IconPomoc" type="TextureRect" parent="Control/PanelPomoc" unique_id=1930015614]
+layout_mode = 1
+offset_left = 978.0
+offset_top = 175.07693
+offset_right = 1043.0
+offset_bottom = 235.07693
+texture = ExtResource("38_5he1u")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="LabelPomoc" type="Label" parent="Control/PanelPomoc/IconPomoc" unique_id=361295683]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 62.0
+offset_top = -10.5
+offset_right = 236.0
+offset_bottom = 12.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "Pomoč"
+vertical_alignment = 1
+
+[node name="LabelR" type="Label" parent="Control/PanelPomoc/IconPomoc" unique_id=2042624315]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -14.0
+offset_right = 18.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IconPremik" type="TextureRect" parent="Control/PanelPomoc" unique_id=113578586]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 334.0
+offset_right = 469.0
+offset_bottom = 477.9511
+texture = ExtResource("38_pibwh")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="LabelPremik" type="Label" parent="Control/PanelPomoc/IconPremik" unique_id=1344936956]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -87.0
+offset_top = 1.019867
+offset_right = 87.0
+offset_bottom = 24.019867
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "Premikanje"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OpisZasuk" type="TextureRect" parent="Control/PanelPomoc" unique_id=1527331647]
+layout_mode = 0
+offset_left = 713.0
+offset_top = 338.0
+offset_right = 888.0
+offset_bottom = 471.18585
+texture = ExtResource("39_c6pm6")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="LabelZasuk" type="Label" parent="Control/PanelPomoc/OpisZasuk" unique_id=1901280108]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = 7.9710083
+offset_right = 99.0
+offset_bottom = 30.971008
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "Sukanje "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelESC" type="Label" parent="Control/PanelPomoc" unique_id=996439429]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -73.5
+offset_top = 514.0
+offset_right = 73.5
+offset_bottom = 544.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 17
+text = "[ESC] Izpusti miško"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelTocke" type="Label" parent="Control/PanelPomoc" unique_id=2051542571]
+layout_mode = 0
+offset_left = 775.0
+offset_top = 135.0
+offset_right = 958.0
+offset_bottom = 180.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Zberi čim več točk!"
+vertical_alignment = 1
+
+[node name="puscica" type="TextureRect" parent="Control/PanelPomoc" unique_id=1928363016]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 80.61328
+offset_right = 171.0
+offset_bottom = 173.61325
+rotation = -0.33293796
+scale = Vector2(0.740792, 0.81201255)
+texture = ExtResource("41_2cjbq")
+expand_mode = 1
+stretch_mode = 4
+flip_h = true
+
+[node name="puscica2" type="TextureRect" parent="Control/PanelPomoc" unique_id=1194053459]
+layout_mode = 0
+offset_left = 438.00006
+offset_top = 58.000034
+offset_right = 479.00006
+offset_bottom = 151.00006
+rotation = -1.0034041
+scale = Vector2(0.74079174, 0.8120125)
+texture = ExtResource("41_5poiv")
+expand_mode = 1
+stretch_mode = 4
+flip_h = true
+
+[node name="puscica3" type="TextureRect" parent="Control/PanelPomoc" unique_id=1961561638]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 72.99998
+offset_right = 368.0
+offset_bottom = 166.0
+rotation = -0.44440895
+scale = Vector2(0.740792, 0.81201255)
+texture = ExtResource("41_5poiv")
+expand_mode = 1
+stretch_mode = 4
+flip_h = true
+
+[node name="puscica4" type="TextureRect" parent="Control/PanelPomoc" unique_id=634917078]
+layout_mode = 0
+offset_left = 908.0
+offset_top = 139.00006
+offset_right = 949.0
+offset_bottom = 232.00008
+rotation = -2.4915743
+scale = Vector2(0.74079174, 0.8120125)
+texture = ExtResource("41_5poiv")
+expand_mode = 1
+stretch_mode = 4
+flip_h = true
+flip_v = true
+
+[node name="puscica5" type="TextureRect" parent="Control/PanelPomoc" unique_id=472448300]
+layout_mode = 0
+offset_left = 1068.0001
+offset_top = 120.00008
+offset_right = 1109.0001
+offset_bottom = 213.0001
+rotation = 0.88236964
+scale = Vector2(0.74079174, 0.8120125)
+texture = ExtResource("41_5poiv")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="LabelNavodila" type="Label" parent="Control/PanelPomoc" unique_id=255803970]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = -61.75
+offset_right = 198.0
+offset_bottom = 1.25
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("20_j8jky")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Približaj se rastlini in ugotovi, če je prava...
+Pazi, da se ne zmotiš!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PanelKonec" type="Panel" parent="Control" unique_id=1366515194]
 process_mode = 3
@@ -340,40 +672,8 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "Ponovi"
 
-[node name="PanelE" type="Panel" parent="Control" unique_id=1655437667]
-z_index = -1
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 159.0
-offset_top = -108.0
-offset_right = 314.0
-offset_bottom = -68.0
-grow_vertical = 0
-theme = ExtResource("29_qkpxi")
-theme_override_styles/panel = SubResource("StyleBoxTexture_dp3eg")
-script = SubResource("GDScript_tel4y")
-
-[node name="Label" type="Label" parent="Control/PanelE" unique_id=1070310670]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -11.5
-offset_right = 60.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 16
-text = "Pritisni ENTER"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="PanelIzberiDN" type="Panel" parent="Control" unique_id=1483973435]
+z_index = -2
 layout_mode = 0
 offset_left = 525.0
 offset_top = 226.0
@@ -456,6 +756,85 @@ offset_bottom = 65.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Ne"
+
+[node name="PanelPoisciRastlino" type="Panel" parent="Control" unique_id=1831486265]
+layout_mode = 1
+offset_right = 275.0
+offset_bottom = 80.0
+script = ExtResource("10_a8y0u")
+
+[node name="TextPoisciRastlino" type="Label" parent="Control/PanelPoisciRastlino" unique_id=865342677]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = -19.5
+offset_right = 83.0
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelPritisni" type="Label" parent="Control" unique_id=738609992]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -269.5
+offset_top = -118.0
+offset_right = 269.5
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Klikni na zaslon in premikaj miško!"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("14_jkv2x")
+
+[node name="PanelTocke" type="Panel" parent="Control" unique_id=1797290855]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -205.0
+offset_bottom = 78.0
+grow_horizontal = 0
+script = ExtResource("11_yc10j")
+
+[node name="TextTocke" type="Label" parent="Control/PanelTocke" unique_id=926321000]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -19.0
+offset_right = 90.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ControlPomoc" type="Control" parent="Control" unique_id=1853698419]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PanelOpisRastline" type="Panel" parent="Control" unique_id=319103877]
 layout_mode = 1
@@ -639,426 +1018,22 @@ offset_bottom = 99.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelPoisciRastlino" type="Panel" parent="Control" unique_id=1831486265]
-layout_mode = 1
-offset_right = 275.0
-offset_bottom = 80.0
-script = ExtResource("10_a8y0u")
-
-[node name="TextPoisciRastlino" type="Label" parent="Control/PanelPoisciRastlino" unique_id=865342677]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -83.0
-offset_top = -19.5
-offset_right = 83.0
-offset_bottom = 19.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("29_qkpxi")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 20
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LabelPritisni" type="Label" parent="Control" unique_id=738609992]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -269.5
-offset_top = -118.0
-offset_right = 269.5
-offset_bottom = -62.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 20
-text = "Klikni na zaslon in premikaj miško!"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("14_jkv2x")
-
-[node name="PanelTocke" type="Panel" parent="Control" unique_id=1797290855]
+[node name="ButtonPomoc" type="Button" parent="Control" unique_id=416427517]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -205.0
-offset_bottom = 78.0
+offset_left = -62.0
+offset_top = 104.0
+offset_right = -12.0
+offset_bottom = 154.0
 grow_horizontal = 0
-script = ExtResource("11_yc10j")
-
-[node name="TextTocke" type="Label" parent="Control/PanelTocke" unique_id=926321000]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -90.0
-offset_top = -19.0
-offset_right = 90.0
-offset_bottom = 19.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 20
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CanvasLayerUvod" type="CanvasLayer" parent="Control" unique_id=251942026]
-layer = 0
-
-[node name="PanelUvod" type="Panel" parent="Control/CanvasLayerUvod" unique_id=767366150]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("20_j8jky")
-theme_override_styles/panel = SubResource("StyleBoxFlat_5poiv")
-script = ExtResource("16_pm3ni")
-
-[node name="ButtonCloseUvod" type="Button" parent="Control/CanvasLayerUvod/PanelUvod" unique_id=1661570397]
-z_index = 3
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -75.0
-offset_top = -57.0
-offset_right = -25.0
-offset_bottom = -24.0
-grow_horizontal = 0
-grow_vertical = 0
-size_flags_horizontal = 8
-size_flags_vertical = 8
-size_flags_stretch_ratio = 0.0
+focus_mode = 0
 theme = ExtResource("29_qkpxi")
-text = "Začni"
-autowrap_trim_flags = 0
-
-[node name="LabelUvodPoisci" type="Label" parent="Control/CanvasLayerUvod/PanelUvod" unique_id=1648385015]
-layout_mode = 1
-offset_left = 84.0
-offset_top = 143.0
-offset_right = 241.0
-offset_bottom = 188.0
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 20
-text = "Poišči to rastlino"
-vertical_alignment = 1
-
-[node name="IconInv" type="TextureRect" parent="Control/CanvasLayerUvod/PanelUvod" unique_id=1840863157]
-layout_mode = 1
-offset_left = 336.0
-offset_top = 138.0
-offset_right = 395.0
-offset_bottom = 200.0
-texture = ExtResource("38_5he1u")
-expand_mode = 5
-stretch_mode = 4
-
-[node name="LabelInv" type="Label" parent="Control/CanvasLayerUvod/PanelUvod/IconInv" unique_id=174290281]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 57.0
-offset_top = -11.5
-offset_right = 152.0
-offset_bottom = 11.5
-grow_vertical = 2
-theme_override_font_sizes/font_size = 16
-text = "Inventorij"
-vertical_alignment = 1
-
-[node name="LabelI" type="Label" parent="Control/CanvasLayerUvod/PanelUvod/IconInv" unique_id=95586219]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -21.0
-offset_top = -18.0
-offset_right = 19.0
-offset_bottom = 12.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 16
-text = "I"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="IconOpis" type="TextureRect" parent="Control/CanvasLayerUvod/PanelUvod" unique_id=1358414868]
-layout_mode = 1
-offset_left = 490.0
-offset_top = 87.0
-offset_right = 547.0
-offset_bottom = 143.46155
-texture = ExtResource("38_5he1u")
-expand_mode = 5
-stretch_mode = 4
-
-[node name="LabelOpis" type="Label" parent="Control/CanvasLayerUvod/PanelUvod/IconOpis" unique_id=302966142]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 62.0
-offset_top = -11.5
-offset_right = 207.0
-offset_bottom = 11.5
-grow_vertical = 2
-theme_override_font_sizes/font_size = 16
-text = "Opis rastline"
-vertical_alignment = 1
-
-[node name="LabelR" type="Label" parent="Control/CanvasLayerUvod/PanelUvod/IconOpis" unique_id=1523556368]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -15.0
-offset_right = 20.0
-offset_bottom = 15.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 16
-text = "O"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="IconPomoc" type="TextureRect" parent="Control/CanvasLayerUvod/PanelUvod" unique_id=1930015614]
-layout_mode = 1
-offset_left = 978.0
-offset_top = 175.07693
-offset_right = 1043.0
-offset_bottom = 235.07693
-texture = ExtResource("38_5he1u")
-expand_mode = 5
-stretch_mode = 4
-
-[node name="LabelPomoc" type="Label" parent="Control/CanvasLayerUvod/PanelUvod/IconPomoc" unique_id=361295683]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 62.0
-offset_top = -10.5
-offset_right = 236.0
-offset_bottom = 12.5
-grow_vertical = 2
-theme_override_font_sizes/font_size = 16
-text = "Pomoč"
-vertical_alignment = 1
-
-[node name="LabelR" type="Label" parent="Control/CanvasLayerUvod/PanelUvod/IconPomoc" unique_id=2042624315]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -22.0
-offset_top = -14.0
-offset_right = 18.0
-offset_bottom = 16.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 16
-text = "P"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="IconPremik" type="TextureRect" parent="Control/CanvasLayerUvod/PanelUvod" unique_id=113578586]
-layout_mode = 0
-offset_left = 309.0
-offset_top = 396.0
-offset_right = 557.0
-offset_bottom = 539.9511
-texture = ExtResource("38_pibwh")
-expand_mode = 5
-stretch_mode = 4
-
-[node name="LabelPremik" type="Label" parent="Control/CanvasLayerUvod/PanelUvod/IconPremik" unique_id=1344936956]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -87.0
-offset_top = 1.019867
-offset_right = 87.0
-offset_bottom = 24.019867
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 16
-text = "Premikanje"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="OpisZasuk" type="TextureRect" parent="Control/CanvasLayerUvod/PanelUvod" unique_id=1527331647]
-layout_mode = 0
-offset_left = 625.0
-offset_top = 394.0
-offset_right = 795.0
-offset_bottom = 529.0
-texture = ExtResource("39_c6pm6")
-expand_mode = 5
-stretch_mode = 4
-
-[node name="LabelZasuk" type="Label" parent="Control/CanvasLayerUvod/PanelUvod/OpisZasuk" unique_id=1901280108]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -75.0
-offset_top = 9.970993
-offset_right = 99.0
-offset_bottom = 32.970993
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 16
-text = "Sukanje "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LabelESC" type="Label" parent="Control/CanvasLayerUvod/PanelUvod" unique_id=996439429]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 150.0
-offset_top = 156.0
-offset_right = 288.0
-offset_bottom = 186.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 12
-text = "[ESC] Izpusti miško"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LabelTocke" type="Label" parent="Control/CanvasLayerUvod/PanelUvod" unique_id=2051542571]
-layout_mode = 0
-offset_left = 775.0
-offset_top = 135.0
-offset_right = 958.0
-offset_bottom = 180.0
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 20
-text = "Zberi čim več točk!"
-vertical_alignment = 1
-
-[node name="puscica" type="TextureRect" parent="Control/CanvasLayerUvod/PanelUvod" unique_id=1928363016]
-layout_mode = 0
-offset_left = 130.0
-offset_top = 80.61328
-offset_right = 171.0
-offset_bottom = 173.61325
-rotation = -0.33293796
-scale = Vector2(0.740792, 0.81201255)
-texture = ExtResource("41_2cjbq")
-expand_mode = 1
-stretch_mode = 4
-flip_h = true
-
-[node name="puscica2" type="TextureRect" parent="Control/CanvasLayerUvod/PanelUvod" unique_id=1194053459]
-layout_mode = 0
-offset_left = 438.00006
-offset_top = 58.000034
-offset_right = 479.00006
-offset_bottom = 151.00006
-rotation = -1.0034041
-scale = Vector2(0.74079174, 0.8120125)
-texture = ExtResource("41_5poiv")
-expand_mode = 1
-stretch_mode = 4
-flip_h = true
-
-[node name="puscica3" type="TextureRect" parent="Control/CanvasLayerUvod/PanelUvod" unique_id=1961561638]
-layout_mode = 0
-offset_left = 327.0
-offset_top = 72.99998
-offset_right = 368.0
-offset_bottom = 166.0
-rotation = -0.44440895
-scale = Vector2(0.740792, 0.81201255)
-texture = ExtResource("41_5poiv")
-expand_mode = 1
-stretch_mode = 4
-flip_h = true
-
-[node name="puscica4" type="TextureRect" parent="Control/CanvasLayerUvod/PanelUvod" unique_id=634917078]
-layout_mode = 0
-offset_left = 908.0
-offset_top = 139.00006
-offset_right = 949.0
-offset_bottom = 232.00008
-rotation = -2.4915743
-scale = Vector2(0.74079174, 0.8120125)
-texture = ExtResource("41_5poiv")
-expand_mode = 1
-stretch_mode = 4
-flip_h = true
-flip_v = true
-
-[node name="puscica5" type="TextureRect" parent="Control/CanvasLayerUvod/PanelUvod" unique_id=472448300]
-layout_mode = 0
-offset_left = 1068.0001
-offset_top = 120.00008
-offset_right = 1109.0001
-offset_bottom = 213.0001
-rotation = 0.88236964
-scale = Vector2(0.74079174, 0.8120125)
-texture = ExtResource("41_5poiv")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="LabelNavodila" type="Label" parent="Control/CanvasLayerUvod/PanelUvod" unique_id=255803970]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -198.0
-offset_top = -32.75
-offset_right = 198.0
-offset_bottom = 30.25
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("20_j8jky")
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-text = "Približaj se rastlini in ugotovi, če je prava...
-Pazi, da se ne zmotiš!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ControlUvod" type="Control" parent="Control" unique_id=1853698419]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+icon = ExtResource("36_fuf3a")
+icon_alignment = 1
+expand_icon = true
 
 [node name="ButtonOpis" type="Button" parent="Control" unique_id=750927981]
 custom_minimum_size = Vector2(60, 60)
@@ -1088,22 +1063,81 @@ icon = ExtResource("34_j8jky")
 icon_alignment = 1
 expand_icon = true
 
-[node name="ButtonUkazi" type="Button" parent="Control" unique_id=416427517]
-custom_minimum_size = Vector2(50, 50)
+[node name="ButtonClosePomoc" type="Button" parent="Control" unique_id=1661570397]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -62.0
-offset_top = 104.0
-offset_right = -12.0
-offset_bottom = 154.0
-grow_horizontal = 0
-focus_mode = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = 54.5
+offset_right = 54.0
+offset_bottom = 115.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+size_flags_stretch_ratio = 0.0
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_2cjbq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chjal")
+text = "Igraj"
+autowrap_trim_flags = 0
+
+[node name="PanelE" type="Panel" parent="Control" unique_id=1655437667]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 212.0
+offset_top = -134.0
+offset_right = 367.0
+offset_bottom = -94.0
+grow_vertical = 0
 theme = ExtResource("29_qkpxi")
-icon = ExtResource("36_fuf3a")
-icon_alignment = 1
-expand_icon = true
+theme_override_styles/panel = SubResource("StyleBoxTexture_dp3eg")
+
+[node name="Label" type="Label" parent="Control/PanelE" unique_id=1070310670]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -11.5
+offset_right = 60.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "Pritisni ENTER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Control/PanelE" unique_id=1205221100]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -313.0
+offset_top = -84.25
+offset_right = -144.5
+offset_bottom = 84.25
+grow_horizontal = 0
+grow_vertical = 2
+alignment_horizontal = 0
+alignment_vertical = 0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control/PanelE/AspectRatioContainer" unique_id=1711571095]
+material = SubResource("ShaderMaterial_dp3eg")
+layout_mode = 2
+autoplay = true
+expand = true
+loop = true
 
 [node name="PanelRez" type="Panel" parent="Control" unique_id=1700715762]
 custom_minimum_size = Vector2(100, 0)
@@ -1145,9 +1179,9 @@ autostart = true
 
 [connection signal="pressed" from="Control/PanelIzberiDN/ButtonDa" to="Control/PanelIzberiDN" method="_on_button_da_pressed"]
 [connection signal="pressed" from="Control/PanelIzberiDN/ButtonNe" to="Control/PanelIzberiDN" method="_on_button_ne_pressed"]
-[connection signal="pressed" from="Control/CanvasLayerUvod/PanelUvod/ButtonCloseUvod" to="Control/CanvasLayerUvod/PanelUvod" method="_on_button_close_uvod_pressed"]
+[connection signal="pressed" from="Control/ButtonPomoc" to="Control/PanelPomoc" method="_on_button_pomoc_pressed"]
 [connection signal="pressed" from="Control/ButtonOpis" to="Control/PanelOpisRastline" method="_on_button_opis_pressed"]
 [connection signal="pressed" from="Control/ButtonInv" to="Control/PanelInv" method="_on_button_inv_pressed"]
-[connection signal="pressed" from="Control/ButtonUkazi" to="Control/CanvasLayerUvod/PanelUvod" method="_on_button_ukazi_pressed"]
+[connection signal="pressed" from="Control/ButtonClosePomoc" to="Control/PanelPomoc" method="_on_button_close_pomoc_pressed"]
 
 [editable path="ProtoController"]

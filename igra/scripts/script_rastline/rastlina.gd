@@ -16,7 +16,7 @@ var isPlayerInside = null
 @onready var panel_rez: Panel = $"../Control/PanelRez"
 @onready var label_rez: Label = $"../Control/PanelRez/LabelRez"
 @onready var timer_rez: Timer = $"../Control/PanelRez/TimerRez"
-
+@onready var video_stream_playerE: VideoStreamPlayer = $"../Control/PanelE/AspectRatioContainer/VideoStreamPlayer"
 
 
 var inv_celica = null
@@ -50,6 +50,10 @@ func _ready():
 	
 func _on_body_entered(body: Node3D):
 	if body is CharacterBody3D:  #ce je igralec vstopil v okolico rastline
+		## video
+		print(video_stream_playerE)
+		video_stream_playerE.stream = self.video
+		video_stream_playerE.play()
 		isPlayerInside = true
 		panel_e.visible = true
 		game_manager.trenutnaRastlina = self
@@ -66,7 +70,6 @@ func prikazi_dn():
 	video_stream_player.play()
 	aspect_ratio_container.visible = true #video
 	panel_izberi_dn.visible = true;	#panel da/ne
-
 		
 	var odgovor = await panel_izberi_dn.odgovor_izbran
 		
