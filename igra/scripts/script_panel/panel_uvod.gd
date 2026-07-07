@@ -28,13 +28,11 @@ func toggle():
 	if self.visible:
 		button_close_pomoc.visible = false
 		self.visible = false
+		control_pomoc.visible = false
 	else:
 		self.visible = true
 		button_close_pomoc.visible = true
-		if panel_inv.visible:
-			button_close_pomoc.visible = false
-		if panel_opis_rastline.visible:
-			panel_opis_rastline.visible = false	
+		control_pomoc.visible = false
 	
 	
 	
