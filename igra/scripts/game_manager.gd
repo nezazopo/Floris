@@ -14,7 +14,6 @@ var konec = false
 @onready var panel_opis_rastline: Panel = $"../Control/PanelOpisRastline"
 @onready var panel_e: Panel = $"../Control/PanelE"
 @onready var label_pritisni: Label = $"../Control/LabelPritisni"
-@onready var timer_zakljucek: Timer = $"../TimerZakljucek"
 
 @onready var panel_poisci_rastlino: Panel = $"../Control/PanelPoisciRastlino"
 
@@ -39,8 +38,6 @@ func naslednjaRastlina():
 		panel_opis_rastline.updateOpisRastline()
 	else:
 		konec = true
-		timer_zakljucek.start()
-		await timer_zakljucek.timeout
 		get_tree().paused = true
 		panel_konec.prikaziPanel("Zmaga!")
 	
