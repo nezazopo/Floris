@@ -7,14 +7,15 @@
 [ext_resource type="Script" uid="uid://h1odmwux86h6" path="res://scripts/script_rastline/cemaz.gd" id="5_pm3ni"]
 [ext_resource type="Script" uid="uid://dmnm30uihfj4r" path="res://scripts/game_manager.gd" id="5_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://7sa4bxr5exho" path="res://assets/rastline/bezeg/Sambucus_nigra-Busch.jpg" id="5_yc10j"]
-[ext_resource type="Texture2D" uid="uid://duydurnf21q5v" path="res://assets/rastline/dob/Quercus_robur.jpg" id="5_yq6so"]
-[ext_resource type="Texture2D" uid="uid://c08etj2lqpjjn" path="res://assets/rastline/dob/Duby_nad_Pozorkou_I.jpg" id="6_fv21b"]
+[ext_resource type="Texture2D" uid="uid://duydurnf21q5v" path="res://dob/Quercus_robur.jpg" id="5_yq6so"]
+[ext_resource type="Texture2D" uid="uid://c08etj2lqpjjn" path="res://dob/Duby_nad_Pozorkou_I.jpg" id="6_fv21b"]
 [ext_resource type="PackedScene" uid="uid://uvxvo7svjy2o" path="res://assets/modeli/tla.blend" id="6_muem4"]
 [ext_resource type="PackedScene" uid="uid://s5n5y51xoplq" path="res://assets/modeli/hrast_lowp.blend" id="6_tel4y"]
 [ext_resource type="Texture2D" uid="uid://xel8ukbllc15" path="res://assets/rastline/cemaz/cemaz.jpg" id="7_2wyq8"]
+[ext_resource type="PackedScene" uid="uid://cqyf7o8ieov4w" path="res://assets/modeli/dob_koncni_siv.gltf" id="7_5poiv"]
 [ext_resource type="VideoStream" uid="uid://d0vosw74pluhg" path="res://assets/rastline/cemaz/cemaz_animacija.ogv" id="7_fv21b"]
 [ext_resource type="Script" uid="uid://cgx3420clp5en" path="res://scripts/script_rastline/rastlina.gd" id="7_qkpxi"]
-[ext_resource type="Texture2D" uid="uid://bef5fhgg78tra" path="res://assets/rastline/dob/Quercus_robur,_The_crown_of_the_Oak_-_geograph.org.uk_-_7016476.jpg" id="7_tel4y"]
+[ext_resource type="Texture2D" uid="uid://bef5fhgg78tra" path="res://dob/Quercus_robur,_The_crown_of_the_Oak_-_geograph.org.uk_-_7016476.jpg" id="7_tel4y"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="8_85g3d"]
 [ext_resource type="Texture2D" uid="uid://dqys536lb2mr3" path="res://assets/rastline/cemaz/Allium_ursinum_Bluete01.jpg" id="9_vxglm"]
 [ext_resource type="Texture2D" uid="uid://dln2feowkkfo0" path="res://assets/rastline/cemaz/Photo_of_Allium_Ursinum,_wild_garlic,_north-west_Hampshire,_UK,_May_2014.jpg" id="10_2f3dj"]
@@ -30,6 +31,7 @@
 [ext_resource type="Script" uid="uid://n7ufouy6utr1" path="res://scripts/script_panel/panel_opis_rastline.gd" id="17_y6deb"]
 [ext_resource type="Script" uid="uid://ddc87cpseu6vn" path="res://scripts/script_panel/panel_konec.gd" id="20_2wyq8"]
 [ext_resource type="Theme" uid="uid://tfhdn236x6mx" path="res://theme1.tres" id="20_j8jky"]
+[ext_resource type="PackedScene" uid="uid://dtiglucf40uy6" path="res://assets/modeli/gaber_koncni.gltf" id="21_cjqg0"]
 [ext_resource type="Texture2D" uid="uid://dwm4mgg0dac22" path="res://assets/teksture/sukaj.png" id="24_c6pm6"]
 [ext_resource type="Texture2D" uid="uid://c0wxb40hb0vii" path="res://assets/teksture/puscice_desno_white.png" id="29_j8jky"]
 [ext_resource type="Theme" uid="uid://bfwlny1oxbfb7" path="res://theme2.tres" id="29_qkpxi"]
@@ -40,6 +42,8 @@
 [ext_resource type="Texture2D" uid="uid://cutts2oms0x4l" path="res://assets/teksture/pomoc.png" id="36_fuf3a"]
 [ext_resource type="Texture2D" uid="uid://c5ibd3bh67obi" path="res://assets/teksture/tipka.png" id="38_5he1u"]
 [ext_resource type="Texture2D" uid="uid://bwqbletuulutm" path="res://assets/teksture/puscice_white.png" id="38_pibwh"]
+[ext_resource type="PackedScene" uid="uid://nul0a2xesek6" path="res://assets/modeli/bezeg_veja_png.gltf" id="42_2cjbq"]
+[ext_resource type="PackedScene" uid="uid://d0nwt1bunxe2u" path="res://assets/modeli/dob_koncni_siv_foto.gltf" id="43_chjal"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jscy8"]
 
@@ -145,19 +149,6 @@ func _process(delta: float) -> void:
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dp3eg"]
 texture = ExtResource("13_dp3eg")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6pm6"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-shadow_color = Color(1, 1, 1, 0.08627451)
-shadow_size = 10
-
 [node name="main" type="Node3D" unique_id=2027404022]
 
 [node name="Dob" type="Node3D" parent="." unique_id=1475397641]
@@ -178,6 +169,9 @@ transform = Transform3D(11.895375, 0, 0, 0, 11.895375, 0, 0, 0, 11.895375, 0, 0,
 shape = SubResource("SphereShape3D_pm3ni")
 
 [node name="hrast_lowp" parent="Dob" unique_id=1671695598 instance=ExtResource("6_tel4y")]
+visible = false
+
+[node name="dob_koncni_siv" parent="Dob" unique_id=1174611914 instance=ExtResource("7_5poiv")]
 
 [node name="Cemaz" type="Node3D" parent="." unique_id=1443877113]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -15.085905, 0.54433095, -7.0587997)
@@ -353,10 +347,10 @@ vertical_alignment = 1
 
 [node name="IconInv" type="TextureRect" parent="Control/PanelPomoc" unique_id=1840863157]
 layout_mode = 1
-offset_left = 104.0
-offset_top = 117.0
-offset_right = 163.0
-offset_bottom = 179.0
+offset_left = 102.0
+offset_top = 100.0
+offset_right = 161.0
+offset_bottom = 162.0
 texture = ExtResource("38_5he1u")
 expand_mode = 5
 stretch_mode = 4
@@ -395,10 +389,10 @@ vertical_alignment = 1
 
 [node name="IconOpis" type="TextureRect" parent="Control/PanelPomoc" unique_id=1358414868]
 layout_mode = 1
-offset_left = 103.0
-offset_top = 197.0
-offset_right = 162.0
-offset_bottom = 255.0
+offset_left = 101.0
+offset_top = 180.0
+offset_right = 160.0
+offset_bottom = 238.0
 texture = ExtResource("38_5he1u")
 expand_mode = 5
 stretch_mode = 4
@@ -440,10 +434,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -1049.0
-offset_top = 274.0
-offset_right = -989.0
-offset_bottom = 334.0
+offset_left = -163.0
+offset_top = 99.0
+offset_right = -103.0
+offset_bottom = 159.0
 grow_horizontal = 0
 texture = ExtResource("38_5he1u")
 expand_mode = 5
@@ -451,19 +445,17 @@ stretch_mode = 4
 
 [node name="LabelPomoc" type="Label" parent="Control/PanelPomoc/IconPomoc" unique_id=361295683]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 2.0
+offset_left = -178.0
 offset_top = -11.5
-offset_right = 176.0
+offset_right = -4.0
 offset_bottom = 11.5
-grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 16
 text = "Pomoč"
+horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="LabelR" type="Label" parent="Control/PanelPomoc/IconPomoc" unique_id=2042624315]
@@ -491,9 +483,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -876.1815
-offset_top = -141.0
-offset_right = -709.1814
+offset_left = -172.18152
+offset_top = -141.00006
+offset_right = -5.1813965
 offset_bottom = -44.065186
 grow_horizontal = 0
 grow_vertical = 0
@@ -526,9 +518,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1135.6311
+offset_left = -431.6311
 offset_top = -143.88031
-offset_right = -1030.1818
+offset_right = -326.18176
 offset_bottom = -55.222168
 grow_horizontal = 0
 grow_vertical = 0
@@ -557,18 +549,12 @@ vertical_alignment = 1
 
 [node name="LabelNavodila" type="Label" parent="Control/PanelPomoc" unique_id=255803970]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 22.0
-offset_top = -263.0
-offset_right = 412.0
-offset_bottom = -200.0
-grow_vertical = 0
+offset_left = 224.0
+offset_right = 614.0
+offset_bottom = 63.0
 theme = ExtResource("20_j8jky")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-text = "Približaj se rastlini in ugotovi, če je prava.
-Reši kviz in zberi še več točk!"
+text = "Približaj se rastlini in ugotovi, če je prava."
 vertical_alignment = 1
 
 [node name="IconESC" type="TextureRect" parent="Control/PanelPomoc" unique_id=919666726]
@@ -578,10 +564,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -977.1815
-offset_top = -126.04883
-offset_right = -912.1815
-offset_bottom = -59.356506
+offset_left = -273.18152
+offset_top = -126.04889
+offset_right = -208.18152
+offset_bottom = -59.356567
 grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("38_5he1u")
@@ -753,7 +739,7 @@ text = "Ne"
 
 [node name="PanelPoisciRastlino" type="Panel" parent="Control" unique_id=1831486265]
 layout_mode = 1
-offset_right = 205.0
+offset_right = 208.0
 offset_bottom = 80.0
 script = ExtResource("10_a8y0u")
 
@@ -846,16 +832,16 @@ grow_vertical = 2
 
 [node name="ButtonClosePomoc" type="Button" parent="Control" unique_id=1661570397]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -417.08197
-offset_top = -70.5
-offset_right = -248.0
-offset_bottom = 1.0
-grow_horizontal = 0
+offset_left = -84.540985
+offset_top = -35.75
+offset_right = 84.540985
+offset_bottom = 35.75
+grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
@@ -1051,15 +1037,15 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ButtonPomoc" type="Button" parent="Control" unique_id=416427517]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -1132.0
-offset_top = 273.0
-offset_right = -1072.0
-offset_bottom = 333.0
+offset_left = -88.0
+offset_top = 96.0
+offset_right = -24.0
+offset_bottom = 160.0
 grow_horizontal = 0
 focus_mode = 0
 theme = ExtResource("29_qkpxi")
@@ -1070,10 +1056,10 @@ expand_icon = true
 [node name="ButtonOpis" type="Button" parent="Control" unique_id=750927981]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 0
-offset_left = 20.0
-offset_top = 194.0
-offset_right = 80.0
-offset_bottom = 254.0
+offset_left = 24.0
+offset_top = 176.0
+offset_right = 88.0
+offset_bottom = 240.0
 focus_mode = 0
 theme = ExtResource("29_qkpxi")
 icon = ExtResource("33_dgi5k")
@@ -1083,10 +1069,10 @@ expand_icon = true
 [node name="ButtonInv" type="Button" parent="Control" unique_id=2107039864]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 0
-offset_left = 19.79004
-offset_top = 114.0
-offset_right = 79.79004
-offset_bottom = 174.0
+offset_left = 24.0
+offset_top = 96.0
+offset_right = 88.0
+offset_bottom = 160.0
 focus_mode = 0
 theme = ExtResource("29_qkpxi")
 text = "
@@ -1184,30 +1170,14 @@ grow_vertical = 2
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="TimerZakljucek" type="Timer" parent="." unique_id=1117565578]
-wait_time = 2.5
-autostart = true
+[node name="bezeg_veja_png" parent="." unique_id=1030779052 instance=ExtResource("42_2cjbq")]
+transform = Transform3D(2.0039327, 0, 0, 0, 2.0039327, 0, 0, 0, 2.0039327, 19.126274, -0.48333883, 7.8453875)
 
-[node name="Panel" type="Panel" parent="." unique_id=862081478]
-offset_left = 19.0
-offset_top = 113.0
-offset_right = 81.0
-offset_bottom = 175.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_c6pm6")
+[node name="dob_koncni_siv_foto" parent="." unique_id=490414985 instance=ExtResource("43_chjal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.08775, -0.7921076, 34.164772)
 
-[node name="Panel" type="Panel" parent="Panel" unique_id=1643968933]
-layout_mode = 0
-offset_top = 80.0
-offset_right = 62.0
-offset_bottom = 142.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_c6pm6")
-
-[node name="Panel" type="Panel" parent="Panel/Panel" unique_id=481714475]
-layout_mode = 0
-offset_top = 80.0
-offset_right = 62.0
-offset_bottom = 142.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_c6pm6")
+[node name="gaber_koncni" parent="." unique_id=839878909 instance=ExtResource("21_cjqg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.129257, -0.2103585, 42.12262)
 
 [connection signal="pressed" from="Control/PanelIzberiDN/ButtonDa" to="Control/PanelIzberiDN" method="_on_button_da_pressed"]
 [connection signal="pressed" from="Control/PanelIzberiDN/ButtonNe" to="Control/PanelIzberiDN" method="_on_button_ne_pressed"]
@@ -1216,4 +1186,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_c6pm6")
 [connection signal="pressed" from="Control/ButtonOpis" to="Control/PanelOpisRastline" method="_on_button_opis_pressed"]
 [connection signal="pressed" from="Control/ButtonInv" to="Control/PanelInv" method="_on_button_inv_pressed"]
 
+[editable path="Dob/dob_koncni_siv"]
 [editable path="ProtoController"]
+[editable path="bezeg_veja_png"]
+[editable path="dob_koncni_siv_foto"]
+[editable path="gaber_koncni"]

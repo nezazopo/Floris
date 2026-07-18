@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cyi0x5mjwvo4"]
+
+[ext_resource type="Texture2D" uid="uid://u07gbqeymmhk" path="res://assets/modeli/dob_koncni_relief-texture-brown-bark-tree-close-up.jpg" id="1_30q1v"]
+
+[resource]
+resource_name = "Material.003"
+cull_mode = 2
+albedo_texture = ExtResource("1_30q1v")

@@ -1,0 +1,30 @@
+[remap]
+
+importer="3d_texture"
+type="CompressedTexture3D"
+uid="uid://c2u77hkw2ytvs"
+path.s3tc="res://.godot/imported/bitmap.png-16c7eeabfad63dc0bd84b38b3ff2630c.s3tc.ctex3d"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={}
+
+[deps]
+
+source_file="res://assets/rastline/dob/bitmap.png"
+dest_files=["res://.godot/imported/bitmap.png-16c7eeabfad63dc0bd84b38b3ff2630c.s3tc.ctex3d"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+slices/horizontal=8
+slices/vertical=8

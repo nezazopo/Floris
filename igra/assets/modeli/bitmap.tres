@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cwitbk8nom4dw"]
+
+[ext_resource type="Texture2D" uid="uid://spj1pn7uvprs" path="res://assets/modeli/dob_koncni_bitmap.png" id="1_pa73o"]
+
+[resource]
+resource_name = "bitmap"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_pa73o")
+texture_filter = 2
+texture_repeat = false
