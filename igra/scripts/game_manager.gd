@@ -14,6 +14,7 @@ var konec = false
 @onready var panel_opis_rastline: Panel = $"../Control/PanelOpisRastline"
 @onready var panel_e: Panel = $"../Control/PanelE"
 @onready var label_pritisni: Label = $"../Control/LabelPritisni"
+@onready var panel_kviz: Panel = $"../Control/PanelKviz"
 
 @onready var panel_poisci_rastlino: Panel = $"../Control/PanelPoisciRastlino"
 
@@ -36,6 +37,7 @@ func naslednjaRastlina():
 		poisciRastlino = rastline[indeksRastline]
 		panel_poisci_rastlino.updatePanel(poisciRastlino)
 		panel_opis_rastline.updateOpisRastline()
+		panel_kviz.naslednja_rastlina()
 	else:
 		konec = true
 		get_tree().paused = true
@@ -49,15 +51,9 @@ func odstej(st):
 		konec = true
 		panel_konec.prikaziPanel("Zmanjkalo ti je točk!")
 		
-func pristej():
-	tocke += 3
+func pristej(st):
+	tocke += st
 	panel_tocke.updateTocke()
-	
-func poiskano():
-	if poiskanoBool == false:
-		poiskanoBool = true
-	else:
-		poiskanoBool = false
 
 func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("E") and trenutnaRastlina != null):

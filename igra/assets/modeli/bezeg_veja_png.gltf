@@ -677,8 +677,8 @@
 	"images":[
 		{
 			"mimeType":"image/png",
-			"name":"bezeg_veja",
-			"uri":"bezeg_veja.png"
+			"name":"bezeg_veja_foto",
+			"uri":"bezeg_veja_foto.png"
 		},
 		{
 			"mimeType":"image/png",

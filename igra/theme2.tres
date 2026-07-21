@@ -1,7 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://bfwlny1oxbfb7"]
 
 [ext_resource type="FontFile" uid="uid://bjpewfhdpoguk" path="res://assets/IM_Fell_English/IMFellEnglish-Regular.ttf" id="1_8v8pg"]
-[ext_resource type="FontFile" uid="uid://d1twkv33pe068" path="res://assets/leander/Leander.ttf" id="1_dha4e"]
 [ext_resource type="Texture2D" uid="uid://klu75cta44u2" path="res://assets/teksture/list.png" id="1_hktir"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hktir"]
@@ -19,7 +18,7 @@ corner_radius_bottom_left = 10
 texture = ExtResource("1_hktir")
 
 [resource]
-default_font = ExtResource("1_dha4e")
+default_font = ExtResource("1_8v8pg")
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/font_sizes/font_size = 16
 Button/fonts/font = ExtResource("1_8v8pg")
