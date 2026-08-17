@@ -35,8 +35,13 @@
 [ext_resource type="Texture2D" uid="uid://b7g7bgm11lwko" path="res://assets/rastline/smrdljivi bezeg/Sambucus_ebulus_bgiu.jpg" id="22_tm6hj"]
 [ext_resource type="Texture2D" uid="uid://ksoot0pxprr7" path="res://assets/rastline/smrdljivi bezeg/Sureau_hieble_(4).jpg" id="23_kf5aa"]
 [ext_resource type="Texture2D" uid="uid://c262xyil78jcr" path="res://assets/ikone/sukaj.png" id="24_c6pm6"]
+[ext_resource type="Script" uid="uid://boo2piyrc7qso" path="res://scenes/jesenski_podlesek.gd" id="25_e755i"]
+[ext_resource type="Texture2D" uid="uid://chjciqgrynebr" path="res://assets/rastline/jesenski podlesek/goranh-autumn-crocus-4495455.jpg" id="26_ro3en"]
+[ext_resource type="Texture2D" uid="uid://bktig406pdiwf" path="res://assets/rastline/jesenski podlesek/mabelamber-crocus-3086733.jpg" id="28_e755i"]
+[ext_resource type="Texture2D" uid="uid://l8ml0r6jyukq" path="res://assets/rastline/jesenski podlesek/20130305172646-8f7dae8c.jpg" id="28_xhfw6"]
 [ext_resource type="Texture2D" uid="uid://ct62s3pnqy73u" path="res://assets/ikone/puscice_desno_white.png" id="29_j8jky"]
 [ext_resource type="Theme" uid="uid://bfwlny1oxbfb7" path="res://theme2.tres" id="29_qkpxi"]
+[ext_resource type="Script" uid="uid://b1qwmnwgt4ipb" path="res://scenes/gaber.gd" id="30_ro3en"]
 [ext_resource type="Texture2D" uid="uid://mltsmea480lf" path="res://assets/ikone/knjiga.png" id="33_dgi5k"]
 [ext_resource type="Texture2D" uid="uid://bpfuspbc5kd6s" path="res://assets/ikone/backpack_white.png" id="34_j8jky"]
 [ext_resource type="Texture2D" uid="uid://blw2cp3yx8olm" path="res://assets/ikone/pomoc.png" id="36_fuf3a"]
@@ -354,6 +359,76 @@ metadata/_custom_type_script = "uid://dqtr78135l4ej"
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_0loja"]
 
+[sub_resource type="Resource" id="Resource_4ue30"]
+script = ExtResource("7_vc5cj")
+besedilo = "Čemaža"
+metadata/_custom_type_script = "uid://cwti87s0mkmid"
+
+[sub_resource type="Resource" id="Resource_k42av"]
+script = ExtResource("7_vc5cj")
+besedilo = "Bezga"
+metadata/_custom_type_script = "uid://cwti87s0mkmid"
+
+[sub_resource type="Resource" id="Resource_gr8w0"]
+script = ExtResource("7_vc5cj")
+pravilno = true
+besedilo = "Žafrana"
+metadata/_custom_type_script = "uid://cwti87s0mkmid"
+
+[sub_resource type="Resource" id="Resource_673bd"]
+script = ExtResource("6_txyw0")
+besedilo = "Cvetovi so podobni cvetovom…"
+odgovori = Array[ExtResource("7_vc5cj")]([SubResource("Resource_4ue30"), SubResource("Resource_k42av"), SubResource("Resource_gr8w0")])
+metadata/_custom_type_script = "uid://dqtr78135l4ej"
+
+[sub_resource type="Resource" id="Resource_akjxb"]
+script = ExtResource("7_vc5cj")
+pravilno = true
+besedilo = "Na vlažnih travnikih in ob gozdovih."
+metadata/_custom_type_script = "uid://cwti87s0mkmid"
+
+[sub_resource type="Resource" id="Resource_vrx01"]
+script = ExtResource("7_vc5cj")
+besedilo = "Na peščenih tleh in ob gozdovih."
+metadata/_custom_type_script = "uid://cwti87s0mkmid"
+
+[sub_resource type="Resource" id="Resource_1uevf"]
+script = ExtResource("7_vc5cj")
+besedilo = "Na skalnatih območjih"
+metadata/_custom_type_script = "uid://cwti87s0mkmid"
+
+[sub_resource type="Resource" id="Resource_tc087"]
+script = ExtResource("6_txyw0")
+besedilo = "Kje raste?"
+odgovori = Array[ExtResource("7_vc5cj")]([SubResource("Resource_akjxb"), SubResource("Resource_vrx01"), SubResource("Resource_1uevf")])
+metadata/_custom_type_script = "uid://dqtr78135l4ej"
+
+[sub_resource type="Resource" id="Resource_73205"]
+script = ExtResource("7_vc5cj")
+pravilno = true
+besedilo = "Kolhicina"
+metadata/_custom_type_script = "uid://cwti87s0mkmid"
+
+[sub_resource type="Resource" id="Resource_0tljd"]
+script = ExtResource("7_vc5cj")
+besedilo = "Kalija"
+metadata/_custom_type_script = "uid://cwti87s0mkmid"
+
+[sub_resource type="Resource" id="Resource_mgpkq"]
+script = ExtResource("7_vc5cj")
+besedilo = "Atropina"
+metadata/_custom_type_script = "uid://cwti87s0mkmid"
+
+[sub_resource type="Resource" id="Resource_xmrkg"]
+script = ExtResource("6_txyw0")
+besedilo = "Zaradi katere snovi je strupen?"
+odgovori = Array[ExtResource("7_vc5cj")]([SubResource("Resource_73205"), SubResource("Resource_0tljd"), SubResource("Resource_mgpkq")])
+metadata/_custom_type_script = "uid://dqtr78135l4ej"
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_e755i"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vchkt"]
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jkv2x"]
 sky_top_color = Color(0.12675866, 0.49858016, 0.72374344, 1)
 sky_horizon_color = Color(0.4397096, 0.71199214, 0.69824743, 1)
@@ -450,8 +525,6 @@ func _process(delta: float) -> void:
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dp3eg"]
 texture = ExtResource("13_dp3eg")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_vchkt"]
-
 [node name="main" type="Node3D" unique_id=2027404022]
 
 [node name="Dob" type="Node3D" parent="." unique_id=1475397641]
@@ -475,7 +548,7 @@ shape = SubResource("SphereShape3D_pm3ni")
 [node name="dob_koncni_siv_foto" parent="Dob" unique_id=930957102 instance=ExtResource("43_chjal")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7960377, -0.29367328, 0.011122704)
 
-[node name="Cemaz" type="Node3D" parent="." unique_id=1443877113]
+[node name="Cemaz" type="Node3D" parent="." unique_id=1278551052]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -15.282282, 0.54433095, -7.0587997)
 script = ExtResource("5_pm3ni")
 ime = "Čemaž"
@@ -483,6 +556,7 @@ video = ExtResource("7_fv21b")
 opisi = Array[String](["OPIS: Čemaž je lukovka, raste od marca do junija. zraste do največ 30 cm. Njegovi listi so podolgovati in suličasti. Ima bel cvet, ki ga sestavlja šest listov in spominja na zvezdo. Socvetje vsebuje od šest do dvajset cvetov. Cveti od aprila do maja. Diši po česnu.", "Pazi! Podoben je strupenima rastlinama šmarnici ter in podlesku, ki nimata vonja česna. Listi šmarnice se ne razlikujejo od čemaževih, razlikujeta pa se po cvetju. Podlesek za razliko od čemaža raste v rozetah, ter raste bolj navpično.", "KJE RASTE:Različne vrste čemaža so avtohtone Evropi in Aziji. Najdemo jih v vlažnejših gozdovih.", "UPORABA:Čemaž ima blažji okus od česna in čebule. Lahko je začimba blažjega okusa v rižotah in solatah, iz njega se lahko skuha tudi juha ali celo čemažev pesto. Uporablja se v ljudski medicini, danes dokazano deluje protivnetno in protibakterijsko."])
 slike = Array[Texture2D]([ExtResource("7_2wyq8"), ExtResource("5_yc10j"), ExtResource("9_vxglm"), ExtResource("10_2f3dj")])
 vpr_odg = Array[ExtResource("6_txyw0")]([SubResource("Resource_t5ykj"), SubResource("Resource_xhfw6"), SubResource("Resource_y57op")])
+metadata/_custom_type_script = "uid://cgx3420clp5en"
 
 [node name="MeshInstance3D_cemaz" type="MeshInstance3D" parent="Cemaz" unique_id=298896123]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41026688, 0, 0.0015411377)
@@ -524,7 +598,7 @@ transform = Transform3D(0.88425046, 0, 1.5691644, 0, 1.8011597, 0, -1.5691644, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.106556, 0, 33.72248)
 script = SubResource("GDScript_ids8r")
 ime = "Smrdljivi bezeg"
-opisi = Array[String](["OPIS: Smrdljivi bezeg ali habat ni grm, temveč je zelnata trajnica, ki raste od 1 do 2 metra visoko. Njegova stebla so pokončna in rastejo v gostih skupinah iz podzemeljskega stebla (korenike). Listi oddajajo smrdljiv vonj, od tod tudi ime. Socvetje je ploščato, cvetovi pa so drobni, beli in včasih rožnati. Imajo pet listov in izstopajoče prašnike. Cveti od junija do avgusta. Plodovi so majhne črne jagode, ki dozorijo pozno poleti ali zgodaj jeseni. Konec jeseni odmre.", "KJE RASTE: Avtohton je v južni in srednji Evropi, zahodni Aziji in severni Afriki. Raste na sončnih in polsenčnih mestih, na vlažnih in z dušikom bogatih, pogosto ilovnatih tleh.", "UPORABA:Celotna rastlina je strupena in lahko povzroči bruhanje, drisko ter bolečine v trebuhu. Včasih so posušeno koreniko, liste in plodove uporabljali kot odvajalo, v vodi namočene cvetove pa za odganjanje glodalcev, ščurkov in stenic."])
+opisi = Array[String](["OPIS: Smrdljivi bezeg ali habat je zelnata trajnica, ki raste od 1 do 2 metra visoko. Njegova stebla so pokončna in rastejo v gostih skupinah iz podzemeljskega stebla (korenike). Listi oddajajo smrdljiv vonj, od tod tudi ime. Socvetje je ploščato, cvetovi pa so drobni, beli in včasih rožnati. Plodovi so majhne črne jagode.", "KJE RASTE: Avtohton je v južni in srednji Evropi, zahodni Aziji in severni Afriki. Raste na sončnih in polsenčnih mestih, na vlažnih in z dušikom bogatih, pogosto ilovnatih tleh.", "UPORABA:Celotna rastlina je strupena in lahko povzroči bruhanje, drisko ter bolečine v trebuhu. Včasih so posušeno koreniko, liste in plodove uporabljali kot odvajalo, v vodi namočene cvetove pa za odganjanje glodalcev, ščurkov in stenic."])
 slike = Array[Texture2D]([ExtResource("21_augu2"), ExtResource("22_tm6hj"), ExtResource("23_kf5aa")])
 vpr_odg = Array[ExtResource("6_txyw0")]([SubResource("Resource_155or"), SubResource("Resource_bfu41"), SubResource("Resource_6nfnn")])
 
@@ -536,6 +610,35 @@ transform = Transform3D(6.839145, 0, 0, 0, 6.839145, 0, 0, 0, 6.839145, 0, -0.43
 
 [node name="smrdljivibezeg_trop2" parent="SmrdljiviBezeg" unique_id=788914849 instance=ExtResource("46_txyw0")]
 transform = Transform3D(0.5970874, 0, 0, 0, 0.5970874, 0, 0, 0, 0.5970874, -0.085596085, -0.21622223, 0.40065026)
+
+[node name="JesenskiPodlesek" parent="." unique_id=1397879530 instance=ExtResource("43_cjqg0")]
+script = ExtResource("25_e755i")
+ime = "Jesenski podlesek"
+strupenost = 1
+opisi = Array[String](["OPIS: Jesenski podlesek je gomoljasta trajnica. Čebulica (gomolj) je od 10 do 20 cm globoko pod zemljo, ki jeseni požene vijolične cvetove, podobne žafranu. Listi se razvijejo šele naslednjo pomlad. Mladi listi so suličasti, gladki in mesnati, na čemaž najbolj spominja konec marca in začetek aprila. Med listi se razvijejo mnogosemenske glavice (plodovi). V drugi polovici maja so listi tanki in porumeneli. ", "KJE RASTE: Razširjen je po vsej Sloveniji in večjem delu Evrope. Raste na vlažnih travnikih, ob gozdovih in na pašnikih.", "UPORABA:Celotna rastlina je zelo strupena zaradi kolhicina, ki se nahaja predvsem v semenih, listih in gomolju. Že 5 gramov semen ali listov je lahko smrtno nevarnih. Znaki zastrupitve so bruhanje, driska, bolečine v trebuhu, motnje krvnega obtoka in ohromelost dihanja. Kolhicin se v sodobni medicini uporablja v zdravilih na recept predvsem pri akutnih napadih putike (protina) in nekaterih vnetnih boleznih."])
+slike = Array[Texture2D]([ExtResource("26_ro3en"), ExtResource("28_xhfw6"), ExtResource("28_e755i")])
+vpr_odg = Array[ExtResource("6_txyw0")]([SubResource("Resource_673bd"), SubResource("Resource_tc087"), SubResource("Resource_xmrkg")])
+
+[node name="MeshInstance3D" parent="JesenskiPodlesek" index="0" unique_id=1893549]
+mesh = SubResource("ArrayMesh_e755i")
+
+[node name="jesenskipodlesek_star_trop" parent="JesenskiPodlesek" unique_id=1674718845 instance=ExtResource("48_nvyfr")]
+transform = Transform3D(0.41283315, 0, 0, 0, 0.41283315, 0, 0, 0, 0.41283315, 0.67099, -0.2001316, 0.2144208)
+
+[node name="Gaber" parent="." unique_id=558343830 instance=ExtResource("43_cjqg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.994843, 0, 23.284435)
+script = ExtResource("30_ro3en")
+ime = "Gaber"
+opisi = Array[String](["", "", ""])
+
+[node name="MeshInstance3D" parent="Gaber" index="0" unique_id=1893549]
+mesh = SubResource("ArrayMesh_vchkt")
+
+[node name="CollisionShape3D" parent="Gaber/Area3D" parent_id_path=PackedInt32Array(558343830, 150169033) index="0" unique_id=1509536775]
+transform = Transform3D(10.441632, 0, 0, 0, 10.441632, 0, 0, 0, 10.441632, 0, 0, 0)
+
+[node name="gaber_koncni" parent="Gaber" unique_id=2010140488 instance=ExtResource("21_cjqg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.74907064, 0.13427377, 0.23366117)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1864792197]
 environment = SubResource("Environment_jkv2x")
@@ -1644,23 +1747,8 @@ text = "ESC"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Gaber" parent="." unique_id=1397879530 instance=ExtResource("43_cjqg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.994843, 0, 23.284435)
-
-[node name="MeshInstance3D" parent="Gaber" index="0" unique_id=1893549]
-mesh = SubResource("ArrayMesh_vchkt")
-
-[node name="CollisionShape3D" parent="Gaber/Area3D" parent_id_path=PackedInt32Array(1397879530, 150169033) index="0" unique_id=1509536775]
-transform = Transform3D(10.441632, 0, 0, 0, 10.441632, 0, 0, 0, 10.441632, 0, 0, 0)
-
-[node name="gaber_koncni" parent="Gaber" unique_id=2010140488 instance=ExtResource("21_cjqg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.74907064, 0.13427377, 0.23366117)
-
 [node name="smrdljivi_bezeg" parent="." unique_id=1869326303 instance=ExtResource("45_vchkt")]
 transform = Transform3D(0.17064828, 0, 0, 0, 0.17064828, 0, 0, 0, 0.17064828, 15.169014, 0.06120926, 11.505029)
-
-[node name="jesenskipodlesek_star_trop" parent="." unique_id=1674718845 instance=ExtResource("48_nvyfr")]
-transform = Transform3D(0.41283315, 0, 0, 0, 0.41283315, 0, 0, 0, 0.41283315, -35.216545, -0.2001316, -11.403082)
 
 [node name="smarnica_koncna" parent="." unique_id=56323289 instance=ExtResource("49_ty1g6")]
 transform = Transform3D(0.1018533, 0, 0, 0, 0.1018533, 0, 0, 0, 0.1018533, -38.535816, -0.0043644905, -13.48429)
@@ -1701,7 +1789,8 @@ stream = ExtResource("52_o7ddy")
 [editable path="Dob/dob_koncni_siv_foto"]
 [editable path="Bezeg/bezeg_veja_png"]
 [editable path="SmrdljiviBezeg"]
-[editable path="ProtoController"]
+[editable path="JesenskiPodlesek"]
 [editable path="Gaber"]
 [editable path="Gaber/gaber_koncni"]
+[editable path="ProtoController"]
 [editable path="smrdljivi_bezeg"]
