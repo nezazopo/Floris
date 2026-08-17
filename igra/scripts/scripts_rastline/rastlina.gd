@@ -19,6 +19,8 @@ var isPlayerInside = null
 @onready var timer_rez: Timer = $"../Control/PanelRez/TimerRez"
 @onready var video_stream_playerE: VideoStreamPlayer = $"../Control/PanelE/AspectRatioContainer/VideoStreamPlayer"
 @onready var panel_kviz: Panel = $"../Control/PanelKviz"
+@onready var narobe: AudioStreamPlayer = $"../Avdio/Narobe"
+@onready var pravilno: AudioStreamPlayer = $"../Avdio/Pravilno"
 
 
 var inv_celica = null
@@ -81,6 +83,7 @@ func prikazi_dn():
 	if(self == game_manager.poisciRastlino && odgovor == "da"):
 		label_rez.text = "Pravilno!"
 		print("pravilno si našel " + ime +"!")
+		pravilno.play()
 		game_manager.pristej(3)
 		print("st tock: ", game_manager.tocke)
 		panel_kviz.visible = true;
@@ -101,6 +104,7 @@ func prikazi_dn():
 	if(self == game_manager.poisciRastlino &&  odgovor == "ne"):
 		label_rez.text = "Narobe!"
 		print("napačen odgovor! -1 točka")
+		narobe.play()
 		game_manager.odstej(1)
 		odgovor = null
 	
@@ -108,6 +112,7 @@ func prikazi_dn():
 	if(self != game_manager.poisciRastlino && odgovor == "da"):
 		label_rez.text = "Narobe!"
 		print("napačen odgovor! -", game_manager.tocke, "točke")
+		narobe.play()
 		if strupenost == 2: #ce je smrtonosna
 			game_manager.umre()
 		else:

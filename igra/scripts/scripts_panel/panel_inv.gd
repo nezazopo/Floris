@@ -20,6 +20,12 @@ func _process(_delta: float) -> void:
 			self.visible = false
 
 func _on_button_inv_pressed() -> void:
+	toggle()
+
+func _on_button_zapri_inv_pressed() -> void:
+	toggle()
+		
+func toggle():
 	if self.visible == false:
 		panel_opis_rastline.visible = false
 		if label_pritisni.visible:

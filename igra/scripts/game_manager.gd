@@ -15,6 +15,7 @@ var konec = false
 @onready var panel_e: Panel = $"../Control/PanelE"
 @onready var label_pritisni: Label = $"../Control/LabelPritisni"
 @onready var panel_kviz: Panel = $"../Control/PanelKviz"
+@onready var texture_rect_esc: TextureRect = $"../Control/TextureRectESC"
 
 @onready var panel_poisci_rastlino: Panel = $"../Control/PanelPoisciRastlino"
 
@@ -25,6 +26,7 @@ func _ready():
 	rastline.assign(rastline_nodes)
 	poisciRastlino = rastline[0]
 	panel_poisci_rastlino.updatePanel(poisciRastlino)
+
 	
 func naslednjaRastlina():
 	if poisciRastlino and poisciRastlino.inv_celica:
@@ -56,7 +58,7 @@ func pristej(st):
 	panel_tocke.updateTocke()
 
 func _process(delta: float) -> void:
-	if(Input.is_action_just_pressed("E") and trenutnaRastlina != null):
+	if(Input.is_action_just_pressed("E") and trenutnaRastlina != null and !panel_kviz.visible):
 		panel_e.visible = false
 		label_pritisni.visible = false
 		trenutnaRastlina.prikazi_dn()

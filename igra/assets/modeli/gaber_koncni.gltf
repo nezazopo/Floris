@@ -6400,9 +6400,6 @@
 			"doubleSided":true,
 			"name":"gaber_plod_ink",
 			"pbrMetallicRoughness":{
-				"baseColorTexture":{
-					"index":3
-				},
 				"metallicFactor":0
 			}
 		},
@@ -6411,9 +6408,6 @@
 			"doubleSided":true,
 			"name":"gaber_plod_ink.001",
 			"pbrMetallicRoughness":{
-				"baseColorTexture":{
-					"index":4
-				},
 				"metallicFactor":0
 			}
 		},
@@ -6423,7 +6417,7 @@
 			"name":"gaber_plod_ink.002",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
-					"index":5
+					"index":3
 				},
 				"metallicFactor":0
 			}
@@ -6434,7 +6428,7 @@
 			"name":"gaber_plod_ink.003",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
-					"index":6
+					"index":4
 				},
 				"metallicFactor":0
 			}
@@ -6564,14 +6558,6 @@
 		},
 		{
 			"sampler":1,
-			"source":3
-		},
-		{
-			"sampler":1,
-			"source":3
-		},
-		{
-			"sampler":1,
 			"source":2
 		},
 		{
@@ -6594,11 +6580,6 @@
 			"mimeType":"image/png",
 			"name":"gaber_plod_ink",
 			"uri":"gaber_plod_ink.png"
-		},
-		{
-			"mimeType":"image/png",
-			"name":"gaber_plod_ink.png",
-			"uri":"gaber_plod_ink_png.png"
 		}
 	],
 	"accessors":[

@@ -21,6 +21,8 @@ extends CharacterBody3D
 @onready var panel_opis_rastline: Panel = $"../Control/PanelOpisRastline"
 @onready var panel_inv: Panel = $"../Control/PanelInv"
 @onready var panel_izberi_dn: Panel = $"../Control/PanelIzberiDN"
+@onready var stopinje: AudioStreamPlayer = $"../Avdio/Stopinje"
+@onready var texture_rect_esc: TextureRect = $"../Control/TextureRectESC"
 
 @export_group("Speeds")
 ## Look around rotation speed.
@@ -112,9 +114,12 @@ func _physics_process(delta: float) -> void:
 		var input_dir := Input.get_vector(input_left, input_right, input_forward, input_back)
 		var move_dir := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if move_dir:
+			if stopinje.playing == false:
+				stopinje.play()
 			velocity.x = move_dir.x * move_speed
 			velocity.z = move_dir.z * move_speed
 		else:
+			stopinje.stop()
 			velocity.x = move_toward(velocity.x, 0, move_speed)
 			velocity.z = move_toward(velocity.z, 0, move_speed)
 	else:
@@ -186,9 +191,12 @@ func check_input_mappings():
 func _process(delta: float):
 	if !mouse_captured:
 		label_pritisni.visible = true
+		texture_rect_esc.visible = false
 		can_move = true
 		if panel_pomoc.visible or panel_opis_rastline.visible or panel_inv.visible or panel_izberi_dn.visible:
+			texture_rect_esc.visible = false
 			can_move = false
 			label_pritisni.visible = false
 	else:
 		label_pritisni.visible = false
+		texture_rect_esc.visible = true

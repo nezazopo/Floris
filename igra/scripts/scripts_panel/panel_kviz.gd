@@ -1,9 +1,12 @@
 extends Panel
 @onready var game_manager: Node = $"../../GameManager"
 @onready var label_vprasanje: Label = $LabelVprasanje
-@onready var label_odgovor: Label = $LabelOdgovor
-@onready var label_odgovor2: Label = $LabelOdgovor2
-@onready var label_odgovor3: Label = $LabelOdgovor3
+@onready var label_odgovor: Label = $Odgovori/Odg1/LabelOdgovor
+@onready var label_odgovor2: Label = $Odgovori/Odg2/ButtonB/LabelOdgovor2
+@onready var label_odgovor3: Label = $Odgovori/Odg3/ButtonC/LabelOdgovor3
+@onready var pravilno: AudioStreamPlayer = $"../../Avdio/Pravilno"
+@onready var narobe: AudioStreamPlayer = $"../../Avdio/Narobe"
+@onready var pridobitev: AudioStreamPlayer = $"../../Avdio/Pridobitev"
 
 signal kviz_resen(resen: bool)
 var poisciRastlino
@@ -26,6 +29,7 @@ func naslednje_vprasanje():
 		print("konec vprašanj")
 		self.visible = false
 		game_manager.pristej(3)
+		pridobitev.play()
 		kviz_resen.emit(true)
 		
 
@@ -49,26 +53,32 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("A_pressed"):
 			#pravilen odgovor, naslednje vprašanje
 			if poisciRastlino.vpr_odg[i].odgovori[0].pravilno:
+				pravilno.play()
 				naslednje_vprasanje()
 			else:
 				print("napacen odgovor")
+				narobe.play()
 				game_manager.odstej(1)
 						
 		if Input.is_action_just_pressed("B_pressed"):
 			#pravilen odgovor, naslednje vprašanje
 			if poisciRastlino.vpr_odg[i].odgovori[1].pravilno:
+				pravilno.play()
 				naslednje_vprasanje()
 			else:
 				print("napacen odgovor")
+				narobe.play()
 				game_manager.odstej(1)
 						
 			
 		if Input.is_action_just_pressed("C_pressed"):
 			#pravilen odgovor, naslednje vprašanje
 			if poisciRastlino.vpr_odg[i].odgovori[2].pravilno:
+				pravilno.play()
 				naslednje_vprasanje()
 			else:
 				print("napacen odgovor")
+				narobe.play()
 				game_manager.odstej(1)
 	else:
 		pass

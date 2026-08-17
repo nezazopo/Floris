@@ -68,4 +68,33 @@ func toggle():
 			panel_inv.visible = false
 			if label_pritisni.visible:
 					label_pritisni.visible = false
-	
+
+func _on_button_puscica_levo_pressed() -> void:
+	listaj_nazaj()
+
+
+func _on_button_puscica_desno_pressed() -> void:
+	listaj_naprej()
+
+func listaj_naprej():
+		if(stranOpisa == game_manager.poisciRastlino.opisi.size() - 1):
+			stranOpisa = 0
+		else:
+			stranOpisa = stranOpisa+1
+		print(stranOpisa)
+		texture_rect.texture = game_manager.poisciRastlino.slike[stranOpisa]
+		label_opis_rastline.text = game_manager.poisciRastlino.opisi[stranOpisa]
+		
+func listaj_nazaj():
+	print(stranOpisa);
+	if(stranOpisa == 0):
+		stranOpisa = game_manager.poisciRastlino.opisi.size() -1
+	else:
+		stranOpisa = stranOpisa - 1;
+	print(stranOpisa)
+	texture_rect.texture = game_manager.poisciRastlino.slike[stranOpisa]
+	label_opis_rastline.text = game_manager.poisciRastlino.opisi[stranOpisa]	
+
+
+func _on_button_zapri_opis_pressed() -> void:
+	toggle()
