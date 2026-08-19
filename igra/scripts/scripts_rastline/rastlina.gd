@@ -9,16 +9,16 @@ class_name Rastlina
 @export var vpr_odg: Array[Vprasanje];
  
 var isPlayerInside = null
-@onready var aspect_ratio_container: AspectRatioContainer = $"../Control/PanelIzberiDN/AspectRatioContainer"
+@onready var aspect_ratio_container: AspectRatioContainer = $"../ControlPanel/PanelIzberiDN/AspectRatioContainer"
 @onready var game_manager: Node = $"../GameManager"
-@onready var panel_izberi_dn: Panel = $"../Control/PanelIzberiDN"
-@onready var video_stream_player: VideoStreamPlayer = $"../Control/PanelIzberiDN/AspectRatioContainer/VideoStreamPlayer"
-@onready var panel_e: Panel = $"../Control/PanelE"
-@onready var panel_rez: Panel = $"../Control/PanelRez"
-@onready var label_rez: Label = $"../Control/PanelRez/LabelRez"
-@onready var timer_rez: Timer = $"../Control/PanelRez/TimerRez"
-@onready var video_stream_playerE: VideoStreamPlayer = $"../Control/PanelE/AspectRatioContainer/VideoStreamPlayer"
-@onready var panel_kviz: Panel = $"../Control/PanelKviz"
+@onready var panel_izberi_dn: Panel = $"../ControlPanel/PanelIzberiDN"
+@onready var video_stream_player: VideoStreamPlayer = $"../ControlPanel/PanelIzberiDN/AspectRatioContainer/VideoStreamPlayer"
+@onready var panel_e: Panel = $"../ControlPanel/PanelE"
+@onready var panel_rez: Panel = $"../ControlPanel/PanelRez"
+@onready var label_rez: Label = $"../ControlPanel/PanelRez/LabelRez"
+@onready var timer_rez: Timer = $"../ControlPanel/PanelRez/TimerRez"
+@onready var video_stream_playerE: VideoStreamPlayer = $"../ControlPanel/PanelE/AspectRatioContainer/VideoStreamPlayer"
+@onready var panel_kviz: Panel = $"../ControlPanel/PanelKviz"
 @onready var narobe: AudioStreamPlayer = $"../Avdio/Narobe"
 @onready var pravilno: AudioStreamPlayer = $"../Avdio/Pravilno"
 
@@ -29,13 +29,12 @@ const InvCelica = preload("uid://c7toowx5upyjc")
 
 func _ready():
 	add_to_group("rastline")
-	
 	var nova_celica = InvCelica.instantiate()
-	nova_celica.ime = name
+	nova_celica.ime = ime
 	nova_celica.ikona = video
 	self.inv_celica = nova_celica	
-	var inv = get_parent().get_node("Control/PanelInv/GridContainerInv")
-	inv.add_child(nova_celica)
+	var inv = get_parent().get_node("ControlPanel/PanelInv")
+	inv.call_deferred("dodaj_celico", nova_celica)
 	
 	panel_e.visible = false
 	panel_rez.visible = false
@@ -49,6 +48,14 @@ func _ready():
 	add_to_group("rastline") #rastlino dodam v "rastline", array, definiran v gamemanager
 	$Area3D.body_entered.connect(_on_body_entered)
 	$Area3D.body_exited.connect(_on_body_exited)
+	
+	for i in range(2, 30):
+		var path = "Area3D" + str(i)
+		if has_node(path):
+			var area = get_node(path)
+			area.body_entered.connect(_on_body_entered)
+			area.body_exited.connect(_on_body_exited)
+
 
 	
 func _on_body_entered(body: Node3D):

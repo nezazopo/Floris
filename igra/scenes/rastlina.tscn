@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cjbthrjnggv8r"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_d6yt8"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_q6yvu"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_c571f"]
 
 [node name="Rastlina" type="Node3D" unique_id=1397879530]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1893549]
-mesh = SubResource("CylinderMesh_d6yt8")
+mesh = SubResource("ArrayMesh_q6yvu")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=150169033]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.43687993, 0)

@@ -8,16 +8,16 @@ var poiskanoBool = false
 var indeksRastline = 0
 var konec = false
 
-@onready var panel_tocke: Panel = $"../Control/PanelTocke"
+@onready var panel_tocke: Panel = $"../ControlPanel/PanelTocke"
 @onready var timer: Timer = $"../Timer"
-@onready var panel_konec: Panel = $"../Control/PanelKonec"
-@onready var panel_opis_rastline: Panel = $"../Control/PanelOpisRastline"
-@onready var panel_e: Panel = $"../Control/PanelE"
-@onready var label_pritisni: Label = $"../Control/LabelPritisni"
-@onready var panel_kviz: Panel = $"../Control/PanelKviz"
-@onready var texture_rect_esc: TextureRect = $"../Control/TextureRectESC"
+@onready var panel_konec: Panel = $"../ControlPanel/PanelKonec"
+@onready var panel_opis_rastline: Panel = $"../ControlPanel/PanelOpisRastline"
+@onready var panel_e: Panel = $"../ControlPanel/PanelE"
+@onready var label_pritisni: Label = $"../ControlPanel/LabelPritisni"
+@onready var panel_kviz: Panel = $"../ControlPanel/PanelKviz"
+@onready var texture_rect_esc: TextureRect = $"../ControlPanel/TextureRectESC"
 
-@onready var panel_poisci_rastlino: Panel = $"../Control/PanelPoisciRastlino"
+@onready var panel_poisci_rastlino: Panel = $"../ControlPanel/PanelPoisciRastlino"
 
 func _ready():
 	if get_tree().paused:
@@ -27,7 +27,6 @@ func _ready():
 	poisciRastlino = rastline[0]
 	panel_poisci_rastlino.updatePanel(poisciRastlino)
 
-	
 func naslednjaRastlina():
 	if poisciRastlino and poisciRastlino.inv_celica:
 		var celica = poisciRastlino.inv_celica

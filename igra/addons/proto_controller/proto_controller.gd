@@ -5,7 +5,7 @@
 
 extends CharacterBody3D
 
-@onready var label_pritisni: Label = $"../Control/LabelPritisni"
+@onready var label_pritisni: Label = $"../ControlPanel/LabelPritisni"
 ## Can we move around?
 @export var can_move : bool = true
 ## Are we affected by gravity?
@@ -17,12 +17,12 @@ extends CharacterBody3D
 ## Can we press to enter freefly mode (noclip)?
 @export var can_freefly : bool = false
 
-@onready var panel_pomoc: Panel = $"../Control/PanelPomoc"
-@onready var panel_opis_rastline: Panel = $"../Control/PanelOpisRastline"
-@onready var panel_inv: Panel = $"../Control/PanelInv"
-@onready var panel_izberi_dn: Panel = $"../Control/PanelIzberiDN"
+@onready var panel_pomoc: Panel = $"../ControlPanel/PanelPomoc"
+@onready var panel_opis_rastline: Panel = $"../ControlPanel/PanelOpisRastline"
+@onready var panel_inv: Panel = $"../ControlPanel/PanelInv"
+@onready var panel_izberi_dn: Panel = $"../ControlPanel/PanelIzberiDN"
 @onready var stopinje: AudioStreamPlayer = $"../Avdio/Stopinje"
-@onready var texture_rect_esc: TextureRect = $"../Control/TextureRectESC"
+@onready var texture_rect_esc: TextureRect = $"../ControlPanel/TextureRectESC"
 
 @export_group("Speeds")
 ## Look around rotation speed.
@@ -193,10 +193,11 @@ func _process(delta: float):
 		label_pritisni.visible = true
 		texture_rect_esc.visible = false
 		can_move = true
-		if panel_pomoc.visible or panel_opis_rastline.visible or panel_inv.visible or panel_izberi_dn.visible:
-			texture_rect_esc.visible = false
-			can_move = false
-			label_pritisni.visible = false
-	else:
+	if panel_pomoc.visible or panel_opis_rastline.visible or panel_inv.visible or panel_izberi_dn.visible:
+		release_mouse()
+		texture_rect_esc.visible = false
+		can_move = false
+		label_pritisni.visible = false
+	if mouse_captured:
 		label_pritisni.visible = false
 		texture_rect_esc.visible = true

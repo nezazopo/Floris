@@ -63,6 +63,7 @@ func toggle():
 	else:
 		if self.visible:
 				self.visible = false
+				stranOpisa = 0
 		else:
 			self.visible = true
 			panel_inv.visible = false

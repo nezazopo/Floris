@@ -1,5 +1,5 @@
 extends Panel
-@onready var panel_death_text: Label = $MarginContainer/PanelDeathText
+@onready var panel_death_text: Label = $PanelDeathText
 @onready var proto_controller: CharacterBody3D = $"../../ProtoController"
 
 
