@@ -51,34 +51,48 @@ func naslednja_rastlina():
 func _process(delta: float) -> void:
 	if self.visible:
 		if Input.is_action_just_pressed("A_pressed"):
-			#pravilen odgovor, naslednje vprašanje
-			if poisciRastlino.vpr_odg[i].odgovori[0].pravilno:
-				pravilno.play()
-				naslednje_vprasanje()
-			else:
-				print("napacen odgovor")
-				narobe.play()
-				game_manager.odstej(1)
-						
+			odgovor_a()
 		if Input.is_action_just_pressed("B_pressed"):
-			#pravilen odgovor, naslednje vprašanje
-			if poisciRastlino.vpr_odg[i].odgovori[1].pravilno:
-				pravilno.play()
-				naslednje_vprasanje()
-			else:
-				print("napacen odgovor")
-				narobe.play()
-				game_manager.odstej(1)
-						
-			
+			odgovor_b()
 		if Input.is_action_just_pressed("C_pressed"):
-			#pravilen odgovor, naslednje vprašanje
-			if poisciRastlino.vpr_odg[i].odgovori[2].pravilno:
-				pravilno.play()
-				naslednje_vprasanje()
-			else:
-				print("napacen odgovor")
-				narobe.play()
-				game_manager.odstej(1)
+			odgovor_c()
 	else:
 		pass
+
+func _on_button_a_pressed() -> void:
+	odgovor_a()
+
+func _on_button_b_pressed() -> void:
+	odgovor_b()
+
+func _on_button_c_pressed() -> void:
+	odgovor_c()
+
+func odgovor_a():
+	#pravilen odgovor, naslednje vprašanje
+	if poisciRastlino.vpr_odg[i].odgovori[0].pravilno:
+		pravilno.play()
+		naslednje_vprasanje()
+	else:
+		print("napacen odgovor")
+		narobe.play()
+		game_manager.odstej(1)
+				
+func odgovor_b():
+	#pravilen odgovor, naslednje vprašanje
+	if poisciRastlino.vpr_odg[i].odgovori[1].pravilno:
+		pravilno.play()
+		naslednje_vprasanje()
+	else:
+		print("napacen odgovor")
+		narobe.play()
+		game_manager.odstej(1)
+
+func odgovor_c():
+	if poisciRastlino.vpr_odg[i].odgovori[2].pravilno:
+		pravilno.play()
+		naslednje_vprasanje()
+	else:
+		print("napacen odgovor")
+		narobe.play()
+		game_manager.odstej(1)

@@ -20,7 +20,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var poisciRastlino = game_manager.poisciRastlino
-	if Input.is_action_just_pressed("R_pressed"):
+	if Input.is_action_just_pressed("O_pressed"):
 		toggle()
 			
 	if self.visible and Input.is_action_just_pressed("ListNaprej"):

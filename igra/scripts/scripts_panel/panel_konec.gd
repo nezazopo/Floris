@@ -14,5 +14,10 @@ func prikaziPanel(razlog):
 
 func _process(delta: float) -> void:
 	if visible and Input.is_action_just_pressed("ui_accept"):
-		get_tree().call_deferred("reload_current_scene")	
-	
+		ponovi_igro()
+
+func _on_button_pressed() -> void:
+	ponovi_igro()
+
+func ponovi_igro():
+	get_tree().call_deferred("reload_current_scene")

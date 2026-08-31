@@ -16,8 +16,9 @@ var konec = false
 @onready var label_pritisni: Label = $"../ControlPanel/LabelPritisni"
 @onready var panel_kviz: Panel = $"../ControlPanel/PanelKviz"
 @onready var texture_rect_esc: TextureRect = $"../ControlPanel/TextureRectESC"
-
 @onready var panel_poisci_rastlino: Panel = $"../ControlPanel/PanelPoisciRastlino"
+@onready var zmaga: AudioStreamPlayer = $"../Avdio/Zmaga"
+@onready var poraz: AudioStreamPlayer = $"../Avdio/Poraz"
 
 func _ready():
 	if get_tree().paused:
@@ -41,16 +42,18 @@ func naslednjaRastlina():
 		panel_kviz.naslednja_rastlina()
 	else:
 		konec = true
+		zmaga.play()
 		get_tree().paused = true
-		panel_konec.prikaziPanel("Zmaga!")
+		panel_konec.prikaziPanel("Zmaga!\n Bi igral ponovno?")
 	
 func odstej(st): 
 	tocke -= st
 	panel_tocke.updateTocke()
 	if(tocke <= 0):
 		get_tree().paused = true
+		poraz.play()
 		konec = true
-		panel_konec.prikaziPanel("Zmanjkalo ti je točk!")
+		panel_konec.prikaziPanel("Zmanjkalo ti je točk...\n Bi igral ponovno?")
 		
 func pristej(st):
 	tocke += st

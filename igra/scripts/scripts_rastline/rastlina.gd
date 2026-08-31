@@ -22,7 +22,6 @@ var isPlayerInside = null
 @onready var narobe: AudioStreamPlayer = $"../Avdio/Narobe"
 @onready var pravilno: AudioStreamPlayer = $"../Avdio/Pravilno"
 
-
 var inv_celica = null
 
 const InvCelica = preload("uid://c7toowx5upyjc")
@@ -56,8 +55,6 @@ func _ready():
 			area.body_entered.connect(_on_body_entered)
 			area.body_exited.connect(_on_body_exited)
 
-
-	
 func _on_body_entered(body: Node3D):
 	if body is CharacterBody3D:  #ce je igralec vstopil v okolico rastline
 		## video
