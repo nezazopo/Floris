@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Vprasanje" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://vprasanje.gd" id="1_vprasanje"]
+[ext_resource type="Script" path="res://odgovor.gd" id="2_odgovor"]
+
+[sub_resource type="Resource" id="Odgovor_a"]
+script = ExtResource("2_odgovor")
+besedilo = "Vlažnih, z dušikom bogatih in ilovnatih."
+pravilno = true
+tipka = 65
+
+[sub_resource type="Resource" id="Odgovor_b"]
+script = ExtResource("2_odgovor")
+besedilo = "Vlažnih in opečnih."
+pravilno = false
+tipka = 66
+
+[sub_resource type="Resource" id="Odgovor_c"]
+script = ExtResource("2_odgovor")
+besedilo = "Suhih in ilovnatih."
+pravilno = false
+tipka = 67
+
+[resource]
+script = ExtResource("1_vprasanje")
+besedilo = "Na kakšnih tleh uspeva?"
+odgovori = Array[ExtResource("2_odgovor")]([SubResource("Odgovor_a"), SubResource("Odgovor_b"), SubResource("Odgovor_c")])
