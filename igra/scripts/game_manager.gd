@@ -19,10 +19,12 @@ var konec = false
 @onready var panel_poisci_rastlino: Panel = $"../ControlPanel/PanelPoisciRastlino"
 @onready var zmaga: AudioStreamPlayer = $"../Avdio/Zmaga"
 @onready var poraz: AudioStreamPlayer = $"../Avdio/Poraz"
+@onready var ambient: AudioStreamPlayer = $"../Avdio/Ambient"
 
 func _ready():
 	if get_tree().paused:
 		get_tree().paused = false
+		ambient.play()
 	var rastline_nodes = get_tree().get_nodes_in_group("rastline")
 	rastline.assign(rastline_nodes)
 	poisciRastlino = rastline[0]

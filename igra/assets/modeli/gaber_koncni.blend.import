@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dlkatjhf8p8du"
-path="res://.godot/imported/gaber_koncni.blend-bc3f5f0915009e8c8ecaf98433eac38d.scn"
+uid="uid://dab71v2e3ngm2"
+path="res://.godot/imported/gaber_KONCNI.blend-f01f30faf3cc278685d20746fbac836d.scn"
 
 [deps]
 
-source_file="res://assets/modeli/gaber_koncni.blend"
-dest_files=["res://.godot/imported/gaber_koncni.blend-bc3f5f0915009e8c8ecaf98433eac38d.scn"]
+source_file="res://assets/modeli/gaber_KONCNI.blend"
+dest_files=["res://.godot/imported/gaber_KONCNI.blend-f01f30faf3cc278685d20746fbac836d.scn"]
 
 [params]
 
